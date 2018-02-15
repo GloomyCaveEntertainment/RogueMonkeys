@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item_data>
+   <item id="Winged Crocs" equipped="True" new="False" count="1" />
+  <item id="Kevlar Gloves" equipped="True" new="False" count="1" />
+  <item id="Lightning Sack" equipped="True" new="False" count="1" />
+  <item id="Sunglasses" equipped="True" new="False" count="1" />
+  <item id="Wool Gloves" equipped="False" new="False" count="1" />
+  <item id="Light Sack" equipped="False" new="False" count="1" />
+  <item id="Winged Rollers" equipped="False" new="False" count="1" />
+  <item id="Santa Sack" equipped="False" new="False" count="1" />
+  <item id="Leather Sack" equipped="False" new="False" count="1" />
+  <item id="Winged Boots" equipped="False" new="False" count="1" />
+  <item id="Mage Sack" equipped="False" new="False" count="1" />
+  <item id="Finger Case" equipped="False" new="False" count="1" />
+  <item id="Fairy Boots" equipped="False" new="False" count="1" />
+  <item id="Air Camera Crocs" equipped="False" new="False" count="1" />
+  <item id="Jumping Crocs" equipped="True" new="False" count="1" />
+  <item id="Jumping Boots" equipped="True" new="False" count="1" />
+  <item id="Winged Sports" equipped="False" new="False" count="1" />
+  <item id="Gorilla Gloves" equipped="False" new="False" count="1" />
+  <item id="Kevlar Sack" equipped="False" new="False" count="1" />-->
+   <item id="Winged Rockets" equipped="False" new="False" count="1" />
+  <item id="Teleport Boots" equipped="False" new="False" count="1" />
+   <item id="Laser Tools" equipped="False" new="False" count="1" />
+  <item id="Mech Gloves" equipped="False" new="False" count="1" />
+  <item id="Thief's Toolset" equipped="False" new="False" count="1" />
+  <item id="Shiny Glasses" equipped="False" new="False" count="1" /> 
+  <!-- 
+  <item id="Silk Gloves" equipped="False" new="False" count="1" /> -->
+</item_data>
