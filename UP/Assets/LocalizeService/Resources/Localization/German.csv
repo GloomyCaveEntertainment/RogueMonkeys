@@ -1,0 +1,138 @@
+﻿Id,German
+loc_start,Anfang
+loc_play,Spielen
+loc_pause,Pause
+loc_tutorial,Tutorial
+loc_options,Optionen
+loc_credits,Kredite
+loc_exit,verlassen
+loc_sureExit,Bist du sicher?
+loc_no,Nein
+loc_yes,Ja
+loc_next,Folgende
+loc_globVol,Master Volumen
+loc_musicVol,Musiklautstärke
+loc_sfxVol,Effektvolumen
+loc_vibration,Vibration
+loc_language,Sprache
+loc_spanish,Spanisch
+loc_french,Französisch
+loc_portuguese,Portugiesisch
+loc_english,Englisch
+loc_german,Deutsche
+loc_chinese,Chinesisch
+loc_japanese,Japanisch
+loc_return,Zurückfahren
+loc_stage,Szene
+loc_stageCom,Bühne abgeschlossen!
+loc_level,Niveau
+loc_empty,Leeren
+loc_score,Ergebnis
+loc_accuracy,Genauigkeit
+loc_speedCol,Kollektorgeschwindigkeit
+loc_speedFruitFall,Fruchtabfallgeschwindigkeit
+loc_goldChance,Gold Artikel Spawn Chance
+loc_equipChance,
+loc_sackSize,Sackgröße
+loc_reloadSpeed,Neubildungsrate Sack
+loc_strikerArea,Striker Hit Bereich
+loc_strikerSpeed,Striker Geschwindigkeit
+loc_equip,Ausrüsten
+loc_remove,Entfernen
+loc_buy,kaufen
+loc_sell,verkaufen
+loc_gameDesign,Spieldesign
+loc_programming,Spielprogrammierer
+loc_music,Musikproduktion
+loc_art,Kunst
+loc_producedBy,Ein Spiel von Gloomy Cave Entertainment produziert
+loc_s,S
+loc_a,A
+loc_b,B
+loc_c,C
+loc_d,D
+loc_e,E
+loc_lose,Sie haben gefangen!
+loc_retry,Wiederholen
+loc_ok,Akzeptieren
+loc_shop,Geschäft
+loc_inventory,Inventar
+loc_backToMenu,Menü
+loc_tut_welcome,Willkommen bei Rogue Monkeys tutorial!
+loc_tut_collector,"Schieben Sie den linken Finger, um den Collector-Affen zu bewegen."
+loc_tut_striker,"Tippen Sie auf den rechten Bereich, um den Striker-Affen zu bewegen."
+loc_tut_shaker,"Shaker Affe machen Fruchtregen. Versuche, die Früchte zu treffen, bevor sie zu Boden fällt."
+loc_tut_alarm1,"Wenn irgendwelche Fr�chte auf den Boden fallen, werden enge Tiere gewarnt."
+loc_tut_alarm2,"Wenn die Alarmleiste voll wird, wird unsere Mission abgebrochen."
+loc_tut_run1,Sammle fünf Früchte.
+loc_tut_sack,"Wenn der Beutel voll ist, entleeren sie mehr Frucht zu bekommen."
+loc_tut_run2,Sammle fünf weitere Früchte.
+loc_tut_end,Gut gemacht!
+loc_popup_ad,Möchten Sie eine Anzeige für Gold sehen?
+loc_gold_full_ad,Vollständige Werbung sehen mehr Gold ...
+loc_gold,Oro
+loc_ready,Ready
+loc_steady,Steady
+loc_go,Go!
+loc_newRecord,Neuer Rekord!
+loc_continue,Fortfahren
+loc_stage_0,Strand
+loc_stage_1,Dschungel
+loc_stage_2,Oase
+loc_stage_3,Hoher Berg
+loc_stage_4,Tropenwald
+loc_Quick Sack,Quick sack
+loc_Leather Sack,Leather sack
+loc_Light Sack,Light sack
+loc_Santa Sack,Santa's sack
+loc_Mage Sack,Mage sack
+loc_Lightning Sack,Lightning sack
+loc_Kevlar Sack,Kevlar Sack
+loc_Winged Crocs,Winged crocs
+loc_Winged Boots,Winged boots
+loc_Winged Sports,Winged sports
+loc_Winged Rollers,Winged rollers
+loc_winged_rockets,Winged rockets
+loc_Leather Gloves,Leather gloves
+loc_Wool Gloves,Wool gloves
+loc_Gorilla Gloves,Gorilla gloves
+loc_Fitness Gloves,Fitness gloves
+loc_Silk Gloves,Silk gloves
+loc_Baseball Gloves,Baseball gloves
+loc_Kevlar Gloves,Kevlar gloves
+loc_Foam Gloves,Foam gloves
+loc_Finger Case,Finger case
+loc_Mech Gloves,Mech gloves
+loc_Jumping Crocs,Jumping crocs
+loc_Jumping Boots,Jumping boots
+loc_Air Camera Crocs,Air camera crocs
+loc_Fairy Boots,Fairy boots
+loc_Teleport Boots,Teleport boots
+loc_Working Glasses,Working glasses
+loc_Shiny Glasses,Shiny glasses
+loc_Fortune Glasses,Fortune glasses
+loc_lucky_glasses,Lucky glasses
+loc_gnome_glasses,Gnome glasses
+loc_midas_sight,Midas' sight
+loc_scavenger_glasses,Scavenger glasses
+loc_sunglasses,Sunglasses
+loc_wealth_glasses,Wealth glasses
+loc_Future Glasses,Future glasses
+loc_Manipulation Gloves,Manipulation gloves
+loc_Prune Scissors,Prune scissors
+loc_Thief's Toolset,Thief's toolset
+loc_Laser Tools,Laser tools
+loc_Ring,Ring
+loc_Earrings,Earrings
+loc_Necklace,Necklace
+loc_Gold Nugget,Gold nugget
+loc_Bling Bling,Bling bling
+loc_Golden Egg,Golden egg
+loc_Medallion,Medallion
+loc_Pocket Watch,Pocket watch
+Maneki-neko,Maneki-neko
+loc_Lingot,Lingot
+loc_Chalice,Chalice
+loc_Ankh,Ankh
+loc_cancel,Cancel
+loc_localization,Lokalisierung

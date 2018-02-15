@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1974805664775060}
+  m_IsPrefabParent: 1
+--- !u!1 &1974805664775060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4114711538941256}
+  - component: {fileID: 114539772661265860}
+  m_Layer: 0
+  m_Name: SceneLayout
+  m_TagString: SceneLayout
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4114711538941256
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974805664775060}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 809.78235, y: 560.2432, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114539772661265860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974805664775060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f084174e709cd6148878c3931e827db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _netObject: {fileID: 0}
+  _leftBotSpawnLimit: {fileID: 0}
+  _rightTopSpawnLimit: {fileID: 0}
+  _leftCollectorLimit: {fileID: 0}
+  _rightCollectorLimit: {fileID: 0}
+  _collectorMonkeyStartPos: {fileID: 0}
+  _strikerMonkeyStartPos: {fileID: 0}
+  _netHeightRef: {fileID: 0}
+  _floorHeightRef: {fileID: 0}
+  _background: {fileID: 0}
+  _fruitTree: {fileID: 0}
+  _guardSpawnPositionsLeft: []
+  _guardSpawnPositionsRight: []
+  _minLeftFingerRef: {fileID: 0}
+  _maxLeftFingerRef: {fileID: 0}
+  _minRightFingerRef: {fileID: 0}
+  _maxRightFingerRef: {fileID: 0}

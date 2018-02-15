@@ -1,0 +1,2311 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1633832734992362}
+  m_IsPrefabParent: 1
+--- !u!1 &1018198607225872
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4578023670129610}
+  - component: {fileID: 114871334397855048}
+  m_Layer: 0
+  m_Name: Level_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1078445591142384
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4907270542152876}
+  - component: {fileID: 114435336128303366}
+  m_Layer: 0
+  m_Name: Level_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1114840675237816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4611638511932208}
+  - component: {fileID: 114107983115607418}
+  m_Layer: 0
+  m_Name: Stage_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1170066719701472
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4825262150795770}
+  - component: {fileID: 114542280844206086}
+  m_Layer: 0
+  m_Name: Level_4_10pcAndRatio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1184463918070528
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4619297402597896}
+  - component: {fileID: 114782918323079400}
+  m_Layer: 0
+  m_Name: Level_2_30pc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1185834408098342
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4424685950512334}
+  - component: {fileID: 114085333925077720}
+  m_Layer: 0
+  m_Name: Level_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1194016801119754
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4014001385540922}
+  - component: {fileID: 114202823401715460}
+  m_Layer: 0
+  m_Name: Level_2_30pc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1206556539464348
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4918660085660124}
+  - component: {fileID: 114094541818682908}
+  m_Layer: 0
+  m_Name: Level_5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1246112177784186
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4866718903564118}
+  - component: {fileID: 114423109487332998}
+  m_Layer: 0
+  m_Name: Level_4_10pcAndRatio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1340801379152780
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4639537938919470}
+  - component: {fileID: 114725460690218664}
+  m_Layer: 0
+  m_Name: Level_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1349890875176960
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4476200517620202}
+  - component: {fileID: 114098761569886328}
+  m_Layer: 0
+  m_Name: Level_4_10pcAndRatio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1419416583341628
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4695029709948244}
+  - component: {fileID: 114927950129531492}
+  m_Layer: 0
+  m_Name: Level_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1435121109376956
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4665378149326620}
+  - component: {fileID: 114200337716227172}
+  m_Layer: 0
+  m_Name: Level_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1446207726525164
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4651973837854318}
+  - component: {fileID: 114569457324315066}
+  m_Layer: 0
+  m_Name: Level_3_2fruits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1457913317732126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4033004681846926}
+  - component: {fileID: 114786061835419464}
+  m_Layer: 0
+  m_Name: Stage_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1471839981351652
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4302949064425172}
+  - component: {fileID: 114241952500931772}
+  m_Layer: 0
+  m_Name: Level_3_2fruits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1474859158852654
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4808288000823776}
+  - component: {fileID: 114641949839072310}
+  m_Layer: 0
+  m_Name: Level_3_2fruits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1532514378127016
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4049280726520216}
+  - component: {fileID: 114972744369997118}
+  m_Layer: 0
+  m_Name: Level_4_10pcAndRatio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1534163494672390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4776187142937160}
+  - component: {fileID: 114828650847929652}
+  m_Layer: 0
+  m_Name: Stage_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1545455521897534
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4875958064734730}
+  - component: {fileID: 114524755378764608}
+  m_Layer: 0
+  m_Name: Level_3_2fruits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1633832734992362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4219600230768600}
+  m_Layer: 0
+  m_Name: Level_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1636255757230570
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4320171170179932}
+  - component: {fileID: 114034865835541050}
+  m_Layer: 0
+  m_Name: Level_5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1652186040463080
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4365493193463684}
+  - component: {fileID: 114631339356677628}
+  m_Layer: 0
+  m_Name: Level_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1668251830273948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4607222059278154}
+  - component: {fileID: 114031932419912240}
+  m_Layer: 0
+  m_Name: Stage_4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1693992873646276
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4079687235893978}
+  - component: {fileID: 114271891896761922}
+  m_Layer: 0
+  m_Name: Level_5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1712460758364664
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4731611049053724}
+  - component: {fileID: 114680470551620618}
+  m_Layer: 0
+  m_Name: Level_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1738012115027156
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4916861833598084}
+  - component: {fileID: 114578448896458124}
+  m_Layer: 0
+  m_Name: Level_3_2fruits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1768233491299492
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4598508147988182}
+  - component: {fileID: 114055809073848166}
+  m_Layer: 0
+  m_Name: Level_5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1820034241315288
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4079821878497524}
+  - component: {fileID: 114613430211620936}
+  m_Layer: 0
+  m_Name: Level_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1820336273514524
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4968978130789120}
+  - component: {fileID: 114428156854395784}
+  m_Layer: 0
+  m_Name: Level_5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1860302360473534
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4683299843864064}
+  - component: {fileID: 114619608736618302}
+  m_Layer: 0
+  m_Name: Level_2_30pc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1908632613107230
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4550538382752872}
+  - component: {fileID: 114684094148041442}
+  m_Layer: 0
+  m_Name: Level_2_30pc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1927362094382210
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4145915072342156}
+  - component: {fileID: 114147882972756638}
+  m_Layer: 0
+  m_Name: Level_2_30pc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1936854497005406
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4976244969734884}
+  - component: {fileID: 114738553740961188}
+  m_Layer: 0
+  m_Name: Level_4_10pcAndRatio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1956590487789316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4734430474962430}
+  - component: {fileID: 114531948811582918}
+  m_Layer: 0
+  m_Name: Stage_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1995958862980560
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4031862558037294}
+  - component: {fileID: 114187280269810754}
+  m_Layer: 0
+  m_Name: Level_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4014001385540922
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1194016801119754}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4607222059278154}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4031862558037294
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995958862980560}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4607222059278154}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4033004681846926
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1457913317732126}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4079821878497524}
+  - {fileID: 4365493193463684}
+  - {fileID: 4683299843864064}
+  - {fileID: 4651973837854318}
+  - {fileID: 4049280726520216}
+  - {fileID: 4968978130789120}
+  m_Father: {fileID: 4219600230768600}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4049280726520216
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1532514378127016}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4033004681846926}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4079687235893978
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1693992873646276}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4607222059278154}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4079821878497524
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1820034241315288}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4033004681846926}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4145915072342156
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1927362094382210}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4776187142937160}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4219600230768600
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1633832734992362}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 809.78235, y: 560.2432, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4033004681846926}
+  - {fileID: 4611638511932208}
+  - {fileID: 4776187142937160}
+  - {fileID: 4734430474962430}
+  - {fileID: 4607222059278154}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4302949064425172
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471839981351652}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4607222059278154}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4320171170179932
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1636255757230570}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4734430474962430}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4365493193463684
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1652186040463080}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4033004681846926}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4424685950512334
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1185834408098342}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4611638511932208}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4476200517620202
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1349890875176960}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4607222059278154}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4550538382752872
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1908632613107230}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4734430474962430}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4578023670129610
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1018198607225872}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4611638511932208}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4598508147988182
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1768233491299492}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4611638511932208}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4607222059278154
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668251830273948}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4665378149326620}
+  - {fileID: 4031862558037294}
+  - {fileID: 4014001385540922}
+  - {fileID: 4302949064425172}
+  - {fileID: 4476200517620202}
+  - {fileID: 4079687235893978}
+  m_Father: {fileID: 4219600230768600}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4611638511932208
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1114840675237816}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4578023670129610}
+  - {fileID: 4424685950512334}
+  - {fileID: 4619297402597896}
+  - {fileID: 4916861833598084}
+  - {fileID: 4825262150795770}
+  - {fileID: 4598508147988182}
+  m_Father: {fileID: 4219600230768600}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4619297402597896
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1184463918070528}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4611638511932208}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4639537938919470
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1340801379152780}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4734430474962430}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4651973837854318
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1446207726525164}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4033004681846926}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4665378149326620
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1435121109376956}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4607222059278154}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4683299843864064
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860302360473534}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4033004681846926}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4695029709948244
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1419416583341628}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4734430474962430}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4731611049053724
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1712460758364664}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4776187142937160}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4734430474962430
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1956590487789316}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4639537938919470}
+  - {fileID: 4695029709948244}
+  - {fileID: 4550538382752872}
+  - {fileID: 4875958064734730}
+  - {fileID: 4866718903564118}
+  - {fileID: 4320171170179932}
+  m_Father: {fileID: 4219600230768600}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4776187142937160
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1534163494672390}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4731611049053724}
+  - {fileID: 4907270542152876}
+  - {fileID: 4145915072342156}
+  - {fileID: 4808288000823776}
+  - {fileID: 4976244969734884}
+  - {fileID: 4918660085660124}
+  m_Father: {fileID: 4219600230768600}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4808288000823776
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474859158852654}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4776187142937160}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4825262150795770
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1170066719701472}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4611638511932208}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4866718903564118
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1246112177784186}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4734430474962430}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4875958064734730
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1545455521897534}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4734430474962430}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4907270542152876
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1078445591142384}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4776187142937160}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4916861833598084
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738012115027156}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4611638511932208}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4918660085660124
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1206556539464348}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4776187142937160}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4968978130789120
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1820336273514524}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4033004681846926}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4976244969734884
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1936854497005406}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4776187142937160}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114031932419912240
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668251830273948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1235920afb7f5143a7cdf05fb0f28db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stageIndex: 4
+  _stageName: Artic
+  _levelList:
+  - {fileID: 114200337716227172}
+  - {fileID: 114187280269810754}
+  - {fileID: 114202823401715460}
+  - {fileID: 114241952500931772}
+  - {fileID: 114098761569886328}
+  - {fileID: 114271891896761922}
+--- !u!114 &114034865835541050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1636255757230570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.3
+  _fFallSpeed: 1.7
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.5
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.35
+  - FruitTypeIndex: 2
+    SpawnRatio: 0.15
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114055809073848166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1768233491299492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.3
+  _fFallSpeed: 1.7
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.5
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.35
+  - FruitTypeIndex: 2
+    SpawnRatio: 0.15
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114085333925077720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1185834408098342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.5
+  _fFallSpeed: 2
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 1
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114094541818682908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1206556539464348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.3
+  _fFallSpeed: 1.7
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.5
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.35
+  - FruitTypeIndex: 2
+    SpawnRatio: 0.15
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114098761569886328
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1349890875176960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.15
+  _fFallSpeed: 1.8
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.65
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.35
+  - FruitTypeIndex: 2
+    SpawnRatio: 0.15
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114107983115607418
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1114840675237816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1235920afb7f5143a7cdf05fb0f28db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stageIndex: 1
+  _stageName: Mountain
+  _levelList:
+  - {fileID: 114871334397855048}
+  - {fileID: 114085333925077720}
+  - {fileID: 114782918323079400}
+  - {fileID: 114578448896458124}
+  - {fileID: 114542280844206086}
+  - {fileID: 114055809073848166}
+--- !u!114 &114147882972756638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1927362094382210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.3
+  _fFallSpeed: 1.8
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 1
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114187280269810754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995958862980560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.5
+  _fFallSpeed: 2
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 1
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114200337716227172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1435121109376956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.5
+  _fFallSpeed: 2
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.5
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.35
+  - FruitTypeIndex: 2
+    SpawnRatio: 0.15
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114202823401715460
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1194016801119754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.3
+  _fFallSpeed: 1.8
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 1
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114241952500931772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471839981351652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.3
+  _fFallSpeed: 1.8
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.75
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.25
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114271891896761922
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1693992873646276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.3
+  _fFallSpeed: 1.7
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.5
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.35
+  - FruitTypeIndex: 2
+    SpawnRatio: 0.15
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114423109487332998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1246112177784186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.15
+  _fFallSpeed: 1.8
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.65
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.35
+  - FruitTypeIndex: 2
+    SpawnRatio: 0.15
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114428156854395784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1820336273514524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.3
+  _fFallSpeed: 1.7
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.5
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.35
+  - FruitTypeIndex: 2
+    SpawnRatio: 0.15
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114435336128303366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1078445591142384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.5
+  _fFallSpeed: 2
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 1
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114524755378764608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1545455521897534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.3
+  _fFallSpeed: 1.8
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.75
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.25
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114531948811582918
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1956590487789316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1235920afb7f5143a7cdf05fb0f28db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stageIndex: 3
+  _stageName: City
+  _levelList:
+  - {fileID: 114725460690218664}
+  - {fileID: 114927950129531492}
+  - {fileID: 114684094148041442}
+  - {fileID: 114524755378764608}
+  - {fileID: 114423109487332998}
+  - {fileID: 114034865835541050}
+--- !u!114 &114542280844206086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1170066719701472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.15
+  _fFallSpeed: 1.8
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.65
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.35
+  - FruitTypeIndex: 2
+    SpawnRatio: 0.15
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114569457324315066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1446207726525164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.3
+  _fFallSpeed: 1.8
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.75
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.25
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114578448896458124
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738012115027156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.3
+  _fFallSpeed: 1.8
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.75
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.25
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114613430211620936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1820034241315288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.5
+  _fFallSpeed: 2
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.5
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.35
+  - FruitTypeIndex: 2
+    SpawnRatio: 0.15
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114619608736618302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860302360473534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.3
+  _fFallSpeed: 1.8
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 1
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114631339356677628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1652186040463080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.5
+  _fFallSpeed: 2
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 1
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114641949839072310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474859158852654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.3
+  _fFallSpeed: 1.8
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.75
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.25
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114680470551620618
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1712460758364664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.5
+  _fFallSpeed: 2
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.5
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.35
+  - FruitTypeIndex: 2
+    SpawnRatio: 0.15
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114684094148041442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1908632613107230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.3
+  _fFallSpeed: 1.8
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 1
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114725460690218664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1340801379152780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.5
+  _fFallSpeed: 2
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.5
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.35
+  - FruitTypeIndex: 2
+    SpawnRatio: 0.15
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114738553740961188
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1936854497005406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.15
+  _fFallSpeed: 1.8
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.65
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.35
+  - FruitTypeIndex: 2
+    SpawnRatio: 0.15
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114782918323079400
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1184463918070528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.3
+  _fFallSpeed: 1.8
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 1
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114786061835419464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1457913317732126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1235920afb7f5143a7cdf05fb0f28db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stageIndex: 0
+  _stageName: Jungle
+  _levelList:
+  - {fileID: 114613430211620936}
+  - {fileID: 114631339356677628}
+  - {fileID: 114619608736618302}
+  - {fileID: 114569457324315066}
+  - {fileID: 114972744369997118}
+  - {fileID: 114428156854395784}
+--- !u!114 &114828650847929652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1534163494672390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1235920afb7f5143a7cdf05fb0f28db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stageIndex: 2
+  _stageName: Zoo
+  _levelList:
+  - {fileID: 114680470551620618}
+  - {fileID: 114435336128303366}
+  - {fileID: 114147882972756638}
+  - {fileID: 114641949839072310}
+  - {fileID: 114738553740961188}
+  - {fileID: 114094541818682908}
+--- !u!114 &114871334397855048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1018198607225872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.5
+  _fFallSpeed: 2
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.5
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.35
+  - FruitTypeIndex: 2
+    SpawnRatio: 0.15
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114927950129531492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1419416583341628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.5
+  _fFallSpeed: 2
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 1
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0
+--- !u!114 &114972744369997118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1532514378127016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b1ff7e6e0db2d4d9dce75120f79d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneLayoutId: 
+  _backgroundId: backgroundTest
+  _treeId: Vector-palm-tree-clip-art-palm-trees-clipart-mylocalguide-site
+  _netSpriteId: brick-background-clipart-17
+  _netSize: 0
+  _fSpawnTime: 1.15
+  _fFallSpeed: 1.8
+  _fruitPoolType:
+  - FruitTypeIndex: 0
+    SpawnRatio: 0.65
+  - FruitTypeIndex: 1
+    SpawnRatio: 0.35
+  - FruitTypeIndex: 2
+    SpawnRatio: 0.15
+  _goldItemPoolType: []
+  _equipmentItemPoolType: []
+  _goldItemSpawnChance: 0
+  _equipmentItemSpawnChance: 0
+  _levelTime: 20
+  _maxAlarmLvl: 0
+  _missedFruitAlarm: 0
+  _alarmDepletion: 0
+  _guardCount: 0
+  _guardDistribution: 0
+  _penaltyPerAlarmPt: 0
+  _minRankSuperScore: 0
+  _maxScore: 0
+  _availabilitySt: 0

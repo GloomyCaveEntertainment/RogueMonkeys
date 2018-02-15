@@ -1,0 +1,138 @@
+﻿Id,English
+loc_start,Start
+loc_play,Play
+loc_pause,Pause
+loc_tutorial,Tutorial
+loc_options,Options
+loc_credits,Credits
+loc_exit,Quit
+loc_sureExit,Are you sure?
+loc_no,No
+loc_yes,Yes
+loc_next,Next
+loc_globVol,Master volume
+loc_musicVol,Music volume
+loc_sfxVol,SFX volume
+loc_vibration,Vibration
+loc_language,Language
+loc_spanish,Spanish
+loc_french,French
+loc_portuguese,Portuguese
+loc_english,English
+loc_german,German
+loc_chinese,Chinese
+loc_japanese,Japanese
+loc_return,Back
+loc_stage,Stage
+loc_stageCom,Stage completed!
+loc_level,Level
+loc_empty,Empty
+loc_score,Score
+loc_accuracy,Accuracy
+loc_speedCol,Collector's speed
+loc_speedFruitFall,Fruit fall speed
+loc_goldChance,Gold item spawn chance
+loc_equipChance,Weareable item spawn chance
+loc_sackSize,Sack's size
+loc_reloadSpeed,Sack reload speed
+loc_strikerArea,Striker's hit area
+loc_strikerSpeed,Striker's speed
+loc_equip,Equip
+loc_remove,Remove
+loc_buy,Buy
+loc_sell,Sell
+loc_gameDesign,Game Design
+loc_programming,Game Programming
+loc_music,Music production
+loc_art,Art
+loc_producedBy,A game produced by Gloomy Cave Entertainment
+loc_s,S
+loc_a,A
+loc_b,B
+loc_c,C
+loc_d,D
+loc_e,E
+loc_lose,You got caught!
+loc_retry,Retry
+loc_ok,Okay
+loc_shop,Shop
+loc_inventory,Inventory
+loc_backToMenu,Menu
+loc_tut_welcome,Welcome to Rogue Monkeys tutorial!
+loc_tut_collector,Slide left finger to move Collector monkey
+loc_tut_striker,Tap on right area to move Striker monkey
+loc_tut_shaker,Shaker monkey makes fruit rain. Try to hit the fruit before it falls to the ground.
+loc_tut_alarm1,"If any fruit falls to the ground, close animals will get warned."
+loc_tut_alarm2,"If alarm bar gets full, our mission will get aborted."
+loc_tut_run1,Collect five fruits.
+loc_tut_sack,"When the sack is full, empty it for more fruit."
+loc_tut_run2,Collect five more fruits.
+loc_tut_end,Well done!
+loc_popup_ad,Would you like to watch an advertisment for gold?
+loc_gold_full_ad,View full advertisement gives more gold...
+loc_gold,Gold
+loc_ready,Ready
+loc_steady,Steady
+loc_go,Go!
+loc_newRecord,New score!
+loc_continue,Continue
+loc_stage_0,Beach
+loc_stage_1,Jungle
+loc_stage_2,Oasis
+loc_stage_3,High Mountain
+loc_stage_4,Tropical Forest
+loc_Quick Sack,Quick sack
+loc_Leather Sack,Leather sack
+loc_Light Sack,Light sack
+loc_Santa Sack,Santa's sack
+loc_Mage Sack,Mage sack
+loc_Lightning Sack,Lightning sack
+loc_Kevlar Sack,Kevlar Sack
+loc_Winged Crocs,Winged crocs
+loc_Winged Boots,Winged boots
+loc_Winged Sports,Winged sports
+loc_Winged Rollers,Winged rollers
+loc_winged_rockets,Winged rockets
+loc_Leather Gloves,Leather gloves
+loc_Wool Gloves,Wool gloves
+loc_Gorilla Gloves,Gorilla gloves
+loc_Fitness Gloves,Fitness gloves
+loc_Silk Gloves,Silk gloves
+loc_Baseball Gloves,Baseball gloves
+loc_Kevlar Gloves,Kevlar gloves
+loc_Foam Gloves,Foam gloves
+loc_Finger Case,Finger case
+loc_Mech Gloves,Mech gloves
+loc_Jumping Crocs,Jumping crocs
+loc_Jumping Boots,Jumping boots
+loc_Air Camera Crocs,Air camera crocs
+loc_Fairy Boots,Fairy boots
+loc_Teleport Boots,Teleport boots
+loc_Working Glasses,Working glasses
+loc_Shiny Glasses,Shiny glasses
+loc_Fortune Glasses,Fortune glasses
+loc_lucky_glasses,Lucky glasses
+loc_gnome_glasses,Gnome glasses
+loc_midas_sight,Midas' sight
+loc_scavenger_glasses,Scavenger glasses
+loc_sunglasses,Sunglasses
+loc_wealth_glasses,Wealth glasses
+loc_Future Glasses,Future glasses
+loc_Manipulation Gloves,Manipulation gloves
+loc_Prune Scissors,Prune scissors
+loc_Thief's Toolset,Thief's toolset
+loc_Laser Tools,Laser tools
+loc_Ring,Ring
+loc_Earrings,Earrings
+loc_Necklace,Necklace
+loc_Gold Nugget,Gold nugget
+loc_Bling Bling,Bling bling
+loc_Golden Egg,Golden egg
+loc_Medallion,Medallion
+loc_Pocket Watch,Pocket watch
+Maneki-neko,Maneki-neko
+loc_Lingot,Lingot
+loc_Chalice,Chalice
+loc_Ankh,Ankh
+loc_cancel,Cancel
+loc_localization,Localization

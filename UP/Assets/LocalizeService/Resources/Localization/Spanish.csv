@@ -1,0 +1,144 @@
+﻿Id,Spanish
+loc_start,Comenzar
+loc_play,Jugar
+loc_pause,Pausa
+loc_tutorial,Tutorial
+loc_options,Opciones
+loc_credits,Créditos
+loc_exit,Salir
+loc_sureExit,¿Estás seguro?
+loc_globVol,Volumen global
+loc_musicVol,Volumen música
+loc_sfxVol,Volumen efectos
+loc_vibration,Vibración
+loc_yes,Si
+loc_no,No
+loc_next,Siguiente
+loc_language,Idioma
+loc_spanish,Español
+loc_french,Francés
+loc_portuguese,Portugués
+loc_english,Inglés
+loc_german,Alemán
+loc_chinese,Chino
+loc_japanese,Japonés
+loc_return,Volver
+loc_stage,Escena
+loc_StageCom,¡Escena completada!
+loc_level,Nivel
+loc_empty,Vaciar
+loc_score,Puntuación
+loc_accuracy,Puntería
+loc_speedCol,Velocidad de Colector
+loc_speedFruitFall,Velocidad de caída
+loc_goldChance,Probabilidad de objetos de oro
+loc_sackSize,Tamaño de saco
+loc_strikerArea,Area de golpe
+loc_strikerSpeed,Velocidad de golpeador
+loc_equip,Equipar
+loc_remove,Quitar
+loc_buy,Comprar
+loc_sell,Vender
+loc_gameDesign,Diseño de juego
+loc_programming,Programación
+loc_music,Producción musical
+loc_art,Arte
+loc_producedBy,Un juego producido por Gloomy Cave Entertainment
+loc_rank_s,S
+loc_rank_a,A
+loc_rank_b,B
+loc_rank_c,C
+loc_rank_d,D
+loc_rank_e,E
+loc_lose,¡Te han pillado!
+loc_retry,Reintentar
+loc_ok,Aceptar
+loc_shop,Tienda
+loc_inventory,Inventario
+loc_backToMenu,Menu
+loc_tut_welcome,¡Bienvenido al tutorial de Rogue Monkeys!
+loc_tut_collector,Desliza el pulgar izquierdo sobre el mono Collector para moverlo.
+loc_tut_striker,Pulsa sobre el área derecha para mover al mono Striker.
+loc_tut_shaker,El mono Shaker hace que llueva fruta. Intenta golpear la fruta antes de que caiga al suelo.
+loc_tut_alarm1,"Si alguna fruta cae al suelo cerca de algún animal dormido, el nivel de alarma aumentará."
+loc_tut_alarm2,"Si la barra de alarma llega al máximo, nuestra misión será abortada."
+loc_tut_run1,Recoge cinco frutas.
+loc_tut_sack,"Cuando el saco esté lleno, deberás vaciarlo para seguir cogiendo fruta."
+loc_tut_run2,Recoge 5 frutas más.
+loc_tut_end,¡Bien hecho!
+loc_popup_ad,¿Desearías ver un anuncio a cambio de oro?
+loc_gold_full_ad,Ver el anuncio completo da más oro…
+loc_gold,Oro
+loc_striker_accuracy,Puntería
+loc_collector_mSpeed,Velocidad de Colector
+loc_shaker_fSpeed,Velocidad de caida de fruta
+loc_shaker_item,Probabilidad de objeto
+loc_collector_rSpeed,Velocidad de recarga del saco
+loc_collector_sSize,Tamanio de saco
+loc_striker_area,Área de golpeo
+loc_striker_jSpeed,Velocidad de Striker
+loc_ready,Preparados
+loc_steady,Listos
+loc_go,¡Ya!
+loc_newRecord,¡Nuevo record!
+loc_continue,Continuar
+loc_stage_0,Playa
+loc_stage_1,Jungla
+loc_stage_2,Oasis
+loc_stage_3,Alta Montaña
+loc_stage_4,Bosque Tropical
+loc_Quick Sack,Saco rápido
+loc_Leather Sack,Saco de cuero
+loc_Light Sack,Saco ligero
+loc_Santa Sack,Saco de Santa
+loc_Mage Sack,Saco de mago
+loc_Lightning Sack,Saco relámpago
+loc_Kevlar Sack,Saco de kevlar
+loc_Winged Crocs,Crocs aladas
+loc_Winged Boots,Botas aladas
+loc_Winged Sports,Deportivas aladas
+loc_Winged Rollers,Patines alados
+loc_Winged Rockets,Coehetes alados
+loc_Leather Gloves,Guantes de cuero
+loc_Wool Gloves,Guantes de lana
+loc_Gorilla Gloves,Guantes de gorila
+loc_Fitness Gloves,Guantes de deporte
+loc_Silk Gloves,Guantes de seda
+loc_Baseball Gloves,Guantes de béisbol
+loc_Kevlar Gloves,Guantes de kevlar
+loc_Foam Gloves,Guantes de gomaespuma
+loc_Finger Case,,Guante de dedo
+loc_Mech Gloves,Guantes mecánicos
+loc_Jumping Crocs,Crocs saltarinas
+loc_Jumping Boots,Botas saltarinas
+loc_Air Camera Crocs,Crocs cámara de aire
+loc_Fairy Boots,Botas de hada
+loc_Teleport Boots,Botas de teletransporte
+loc_Working Glasses,Gafas de trabajo
+loc_Shiny Glasses,Gafas relucientes
+loc_Fortune Glasses,Gafas de la fortuna
+loc_Lucky Glasses,Gafas de la suerte
+loc_Gnome Glasses,Gafas de duende
+loc_Midas' Sight,Mirada de Midas
+loc_Scavenger Glasses,Gafas de chatarrero
+loc_Sunglasses,Gafas de sol
+loc_Wealth Glasses,Gafas de la abundancia
+loc_Future Glasses,Gafas del futuro
+loc_Manipulation Gloves,Guantes de manipulación
+loc_Prune Scissors,Tijeras de podar
+loc_Thief's Toolset,Herramientas de ladrón
+loc_Laser Tools,Herramientas láser
+loc_Ring,Anillo
+loc_Earrings,Pendientes
+loc_Necklace,Collar
+loc_Gold Nugget,Pepita de oro
+loc_Bling Bling,Bling bling
+loc_Golden Egg,Huevo de oro
+loc_Medallion,Medallón
+loc_Pocket Watch,Reloj de bolsillo
+Maneki-neko,Maneki-neko
+loc_Lingot,Lingote
+loc_Chalice,Cáliz
+loc_Ankh,Ankh
+loc_cancel,Cancelar
+loc_localization,Localización

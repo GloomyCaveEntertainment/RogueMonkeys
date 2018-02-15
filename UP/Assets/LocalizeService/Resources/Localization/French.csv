@@ -1,0 +1,133 @@
+﻿Id,French
+loc_start,Début
+loc_play,Jouer
+loc_pause,Pause
+loc_tutorial,Tutoriel
+loc_options,Options
+loc_credits,Crédits
+loc_exit,Sortir
+loc_sureExit,Êtes-vous sûr?
+loc_globVol,Volumen global
+loc_musicVol,Volume musique
+loc_sfxVol,Volume effets
+loc_vibration,Vibration
+loc_yes,Oui
+loc_no,Non
+loc_next,Suivant
+loc_language,Langage
+loc_spanish,Espagnol
+loc_french,Français
+loc_portuguese,Portugese
+loc_english,Anglais
+loc_german,Allemand
+loc_chinese,Chinois
+loc_japanese,Japonais
+loc_return,Retourner
+loc_stage,Étape
+loc_StageCom,Ètape terminée!
+loc_level,Niveau
+loc_empty,Vider
+loc_score,Score
+loc_accuracy,Précision,
+loc_speedCol,Vitesse du collecteur
+loc_speedFruitFall,Vitesse de chute des fruits
+loc_goldChance,Chance de spawn d'élément d'or
+loc_sackSize,Taille du sac
+loc_strikerArea,Zone de Striker
+loc_strikerSpeed,Vitesse du Striker
+loc_equip,Équiper
+loc_remove,,Retirer
+loc_buy,Acheter
+loc_sell,Vendre
+loc_gameDesign,Design du jeu
+loc_programming,Programmation de jeux
+loc_music,Production de musique
+loc_art,Art
+loc_producedBy,Un jeu produit par Gloomy Cave Entertainment
+loc_rank_s,S
+loc_rank_a,A
+loc_rank_b,B
+loc_rank_c,C
+loc_rank_d,D
+loc_rank_e,E
+loc_lose,Vous avez été pris!
+loc_retry,Recommencez
+loc_ok,Accepter
+loc_shop,Boutique
+loc_inventory,Inventaire
+loc_backToMenu,Menu
+loc_tut_welcome,Bienvenue sur le didacticiel de Rogue Monkeys!
+loc_tut_collector,glisser le pouce gauche sur le singe Collector.
+loc_tut_striker,Faites un clic droit sur la zone pour déplacer le singe Striker.
+loc_tut_shaker,Le singe fait pleuvoir des fruits Shaker. Essayez de frapper le fruit avant qu'il ne touche le sol.
+loc_tut_alarm1,"Si tous les fruits tombe à terre près d'un animal endormi, le niveau d'alarme augmentera."
+loc_tut_alarm2,"Si la barre d'alarme atteint le maximum, notre mission sera annulée."
+loc_tut_run1,Recueillir cinq fruits.
+loc_tut_sack,"Lorsque le sac est plein, vous devez vider de continuer la cueillette des fruits."
+loc_tut_run2,Recueillir cinq fruits.
+loc_tut_end,Bien joué!
+loc_popup_ad,Voulez-vous voir une annonce pour l'or?
+loc_gold_full_ad,Voir l'annonce complète donne plus d'or ...
+loc_gold,Oro
+loc_newRecord,Nouveau record!
+loc_continue,Continuer
+loc_stage_0,Plage
+loc_stage_1,Jungle
+loc_stage_2,Oasis
+loc_stage_3,Haute Montagne
+loc_stage_4,Forêt Tropicale
+loc_Quick Sack,Quick sack
+loc_Leather Sack,Leather sack
+loc_Light Sack,Light sack
+loc_Santa Sack,Santa's sack
+loc_Mage Sack,Mage sack
+loc_Lightning Sack,Lightning sack
+loc_Kevlar Sack,Kevlar Sack
+loc_Winged Crocs,Winged crocs
+loc_Winged Boots,Winged boots
+loc_Winged Sports,Winged sports
+loc_Winged Rollers,Winged rollers
+loc_winged_rockets,Winged rockets
+loc_Leather Gloves,Leather gloves
+loc_Wool Gloves,Wool gloves
+loc_Gorilla Gloves,Gorilla gloves
+loc_Fitness Gloves,Fitness gloves
+loc_Silk Gloves,Silk gloves
+loc_Baseball Gloves,Baseball gloves
+loc_Kevlar Gloves,Kevlar gloves
+loc_Foam Gloves,Foam gloves
+loc_Finger Case,Finger case
+loc_Mech Gloves,Mech gloves
+loc_Jumping Crocs,Jumping crocs
+loc_Jumping Boots,Jumping boots
+loc_Air Camera Crocs,Air camera crocs
+loc_Fairy Boots,Fairy boots
+loc_Teleport Boots,Teleport boots
+loc_Working Glasses,Working glasses
+loc_Shiny Glasses,Shiny glasses
+loc_Fortune Glasses,Fortune glasses
+loc_lucky_glasses,Lucky glasses
+loc_gnome_glasses,Gnome glasses
+loc_midas_sight,Midas' sight
+loc_scavenger_glasses,Scavenger glasses
+loc_sunglasses,Sunglasses
+loc_wealth_glasses,Wealth glasses
+loc_Future Glasses,Future glasses
+loc_Manipulation Gloves,Manipulation gloves
+loc_Prune Scissors,Prune scissors
+loc_Thief's Toolset,Thief's toolset
+loc_Laser Tools,Laser tools
+loc_Ring,Ring
+loc_Earrings,Earrings
+loc_Necklace,Necklace
+loc_Gold Nugget,Gold nugget
+loc_Bling Bling,Bling bling
+loc_Golden Egg,Golden egg
+loc_Medallion,Medallion
+loc_Pocket Watch,Pocket watch
+Maneki-neko,Maneki-neko
+loc_Lingot,Lingot
+loc_Chalice,Chalice
+loc_Ankh,Ankh
+loc_cancel,Cancel
+loc_localization,Localisation

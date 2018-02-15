@@ -1,0 +1,146 @@
+﻿Id,Chinese
+loc_start,开始
+loc_play,玩
+loc_pause,暂停
+loc_tutorial,教程
+loc_options,选项
+loc_credits,鸣谢
+loc_exit,离开
+loc_sureExit,你确定？
+loc_no,否
+loc_yes,是
+loc_next,下一步
+loc_globVol,主音量
+loc_musicVol,音乐音量
+loc_sfxVol,效果音量
+loc_vibration,振動
+loc_language,语言
+loc_spanish,西班牙语
+loc_french,法语
+loc_portuguese,葡萄牙语
+loc_english,英语
+loc_german,德语
+loc_chinese,汉语
+loc_japanese,日语
+loc_return,返回
+loc_stage,场景
+loc_stageCom,全景
+loc_level,级别
+loc_empty,清空
+loc_score,分数
+loc_accuracy,精确度
+loc_speedCol,收集速度
+loc_speedFruitFall,水果降落速度
+loc_goldChance,黄金获取概率
+loc_equipChance,装备获取概率
+loc_sackSize,袋子大小
+loc_reloadSpeed,袋子补给速度
+loc_strikerArea,击中区域
+loc_strikerSpeed,出击速度
+loc_equip,装备
+loc_remove,卸掉
+loc_buy,购买
+loc_sell,出售
+loc_gameDesign,游戏设计
+loc_programming,游戏编程
+loc_music,音乐制作
+loc_art,艺术
+loc_producedBy,由Gloomy Cave Entertainment制作的游戏
+loc_s,优秀
+loc_a,很好
+loc_b,良好
+loc_c,中等
+loc_d,及格
+loc_e,不及格
+loc_lose,你被抓了！
+loc_retry,再试一次
+loc_ok,接受
+loc_shop,商店
+loc_inventory*,物品栏
+loc_backToMenu,菜单
+loc_tut_welcome,欢迎来到Rogue Monkeys教程！
+loc_tut_collector,向左滑动拇指移动Collector猴子
+loc_tut_striker,点击右侧区域移动Striker猴子
+loc_tut_shaker,Shaker猴子会制造水果雨。 在水果掉地前将它们击中。
+loc_tut_alarm1,如果有水果落在睡着的动物旁边，会提高警报级别。
+loc_tut_alarm2,如果超出警报值，任务则会停止
+loc_tut_run1,收集五个水果
+loc_tut_sack,"如果袋子满了，需要清空后才可以继续收集更多的水果.."
+loc_tut_run2,再收集五个水果。
+loc_tut_end,做得好！
+loc_popup_ad,你想通过看广告来获取黄金吗？
+loc_gold_full_ad,观看完整的广告获得更多的黄金...
+loc_gold,黄金
+loc_striker_accuracy,Puntería
+loc_collector_mSpeed,Velocidad de Colector
+loc_shaker_fSpeed,Velocidad de caida de fruta
+loc_shaker_item,Probabilidad de objeto
+loc_collector_rSpeed,Velocidad de Colector
+loc_collector_sSize,Tamanio de saco
+loc_striker_area,Área de golpeo
+loc_striker_jSpeed,Velocidad de Striker
+loc_ready,准备
+loc_steady,好了
+loc_go,出发
+loc_newRecord,新纪录！
+loc_continue,继续
+loc_stage_0,海滩
+loc_stage_1,丛林
+loc_stage_2,绿洲
+loc_stage_3,高山
+loc_stage_4,热带雨林
+loc_Quick Sack,速度包
+loc_Leather Sack,皮革包
+loc_Light Sack,轻盈包
+loc_Santa Sack,圣诞包
+loc_Mage Sack,魔法包
+loc_Lightning Sack,闪电包
+loc_Kevlar Sack,纤维包
+loc_Winged Crocs,飞鞋
+loc_Winged Boots,飞靴
+loc_Winged Sports,运动飞鞋
+loc_Winged Rollers,滑轮飞鞋
+loc_winged_rockets,火箭飞鞋
+loc_Leather Gloves,皮革手套
+loc_Wool Gloves,羊毛手套
+loc_Gorilla Gloves,大猩猩手套
+loc_Fitness Gloves,健身手套
+loc_Silk Gloves,丝绸手套
+loc_Baseball Gloves,棒球手套
+loc_Kevlar Gloves,纤维手套
+loc_Foam Gloves,泡沫手套
+loc_Finger Case,手指套
+loc_Mech Gloves,机械手套
+loc_Jumping Crocs,弹跳鞋
+loc_Jumping Boots,弹跳靴
+loc_Air Camera Crocs,跑鞋
+loc_Fairy Boots,仙女鞋
+loc_Teleport Boots,隐形鞋
+loc_Working Glasses,保护眼镜
+loc_Shiny Glasses,闪光眼镜
+loc_Fortune Glasses,福运眼镜
+loc_lucky_glasses,幸运眼镜
+loc_gnome_glasses,精灵眼镜
+loc_midas_sight,点石成金眼镜
+loc_scavenger_glasses,净化眼镜
+loc_sunglasses,太阳眼镜
+loc_wealth_glasses,财富眼镜
+loc_Future Glasses,未来眼镜
+loc_Manipulation Gloves,操控手套
+loc_Prune Scissors,修枝剪
+loc_Thief's Toolset,小偷工具
+loc_Laser Tools,激光工具
+loc_Ring,戒指
+loc_Earrings,耳朵
+loc_Necklace,项链
+loc_Gold Nugget,金块
+loc_Bling Bling,金光闪闪
+loc_Golden Egg,金蛋
+loc_Medallion,金牌
+loc_Pocket Watch,怀表
+Maneki-neko,招财猫
+loc_Lingot,金条
+loc_Chalice,奖杯
+loc_Ankh,生命之符
+loc_cancel,取消
+loc_localization,翻译

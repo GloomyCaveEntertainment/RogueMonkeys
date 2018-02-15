@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - HeightRef
+  - Fruit
+  - SceneLayout
+  - Collector
+  - Striker
+  - InventoryScreen
+  - ShopScreen
+  - Guard
+  - RewardPopupBtn
+  - Enemy
+  - EnemyCollider
+  - MainMenu
+  - SelectionMenu
+  - PauseBtn
+  - FarGuardCanvas
+  - FrontGuardCanvas
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Fruit
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1858036159
+    locked: 0
+  - name: FarGuard
+    uniqueID: 3822464435
+    locked: 0
+  - name: Tree
+    uniqueID: 746806593
+    locked: 0
+  - name: FrontGuard
+    uniqueID: 1204300159
+    locked: 0
+  - name: Monkeys
+    uniqueID: 454879589
+    locked: 0
+  - name: Tutorial
+    uniqueID: 1339490389
+    locked: 0
+  - name: FrontFx
+    uniqueID: 189962057
+    locked: 0

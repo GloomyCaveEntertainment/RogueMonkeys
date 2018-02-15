@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1342942478708660}
+  m_IsPrefabParent: 1
+--- !u!1 &1342942478708660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4476707800979024}
+  - component: {fileID: 114763476126528570}
+  m_Layer: 0
+  m_Name: DataMgr
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4476707800979024
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1342942478708660}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 745.3337, y: 234.5416, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114763476126528570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1342942478708660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e7be02dfed9da545981a2bbccd946d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameItemList: []
+  _shopItemList:
+  - BreakLvl: 6
+    BoxQualityDistr:
+    - Quality: 0
+      Ratio: 1
+    ItemSizePairList: []
+  - BreakLvl: 0
+    BoxQualityDistr: []
+    ItemSizePairList: []
+  _itemDataTA: {fileID: 4900000, guid: adcaabbff6e5ea9409549aa2ef9ecad1, type: 3}
+  _shopDataTA: {fileID: 4900000, guid: 73654d407f914334d84244ee06d1754b, type: 3}
+  _inventoryDataTA: {fileID: 4900000, guid: e7327a79b8366f84a9936616d2ff66af, type: 3}
+  _levelDataTA: {fileID: 4900000, guid: 176b74f031514dc4eb8281a1ca99eb0a, type: 3}
+  _dataRelativePath: 
+  _levelFileName: levelDataTest.xml
+  _invFileName: invDataTest.xml

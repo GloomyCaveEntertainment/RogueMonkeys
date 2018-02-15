@@ -1,0 +1,138 @@
+﻿Id,Japanese
+loc_start,スタート！
+loc_play,プレイ
+loc_pause,一時停止
+loc_tutorial,説明
+loc_options,設定
+loc_credits,ライフ
+loc_exit,辞める
+loc_sureExit,続ける？
+loc_no,いいえ
+loc_yes,はい
+loc_next,次へ
+loc_globVol,サウンド
+loc_musicVol,音楽
+loc_sfxVol,効果音
+loc_vibration,振動
+loc_language,言語
+loc_spanish,スペイン語
+loc_french,フランス語
+loc_portuguese,ポルトガル語
+loc_english,英語
+loc_german,ドイツ語
+loc_chinese,中国語
+loc_japanese,日本語
+loc_return,戻る
+loc_stage,ステージ
+loc_stageCom,ステージ完了！
+loc_level,レベル
+loc_empty,空にする
+loc_score,スコア
+loc_accuracy,命中率
+loc_speedCol,回収スピード
+loc_speedFruitFall,果物落下スピード
+loc_goldChance,ゴールドアイテム出没確率
+loc_equipChance,服装アイテム出没確率
+loc_sackSize,袋サイズ
+loc_reloadSpeed,袋チャージスピード
+loc_strikerArea,命中範囲
+loc_strikerSpeed,攻撃スピード
+loc_equip,装備
+loc_remove,装備を外す
+loc_buy,買う
+loc_sell,売る
+loc_gameDesign,ゲームデザイン
+loc_programming,ゲームプログラマー
+loc_music,音楽製作
+loc_art,アート
+loc_producedBy,Gloomy Cave Entertainment作品
+loc_s,S
+loc_a,A
+loc_b,B
+loc_c,C
+loc_d,D
+loc_e,E
+loc_lose,捕まった！
+loc_retry,もう一回
+loc_ok,OK
+loc_shop,お店
+loc_inventory,在庫
+loc_backToMenu,メニュー
+loc_tut_welcome,Rogue Monkeysへようこそ！
+loc_tut_collector,左の親指をスライドし、物回収サルを動かす。
+loc_tut_striker,右側のエリアをタップし、攻撃サルを動かす。
+loc_tut_shaker,揺らすサルは果物を地面に落とす。 果物が地面に落ちる前に打つ。
+loc_tut_alarm1,果物が睡眠中の動物の近くに落ちると、危険性が上がる。
+loc_tut_alarm2,危険性がマックスになると、ミッション終了となる。
+loc_tut_run1,5つの果物を回収してください。
+loc_tut_sack,袋が果物でいっぱいになったら、一旦空にしよう。
+loc_tut_run2,追加で5つの果物を回収してください。
+loc_tut_end,よくやった！
+loc_popup_ad,ゴールドを取得するよう広告を見ますか？
+loc_gold_full_ad,最後まで広告を見ると更にゴールドをもらえます。
+loc_gold,ゴールド
+loc_ready,ヨーイ
+loc_steady,Steady
+loc_go,スタート！
+loc_newRecord,新しい記録！
+loc_continue,続ける
+loc_stage_0,ビーチ
+loc_stage_1,ジャングル
+loc_stage_2,オアシス
+loc_stage_3,高い山
+loc_stage_4,熱帯林
+loc_Quick Sack,激早袋
+loc_Leather Sack,革袋
+loc_Light Sack,軽い袋
+loc_Santa Sack,サンタの袋
+loc_Mage Sack,魔法袋
+loc_Lightning Sack,雷袋
+loc_Kevlar Sack,頑丈袋
+loc_Winged Crocs,羽付きクロックス
+loc_Winged Boots,羽付き長靴
+loc_Winged Sports,羽付きスポーツ靴
+loc_Winged Rollers,羽付きローラースケート
+loc_winged_rockets,羽付きロケット
+loc_Leather Gloves,革手袋
+loc_Wool Gloves,ウール手袋
+loc_Gorilla Gloves,ゴリラ手袋
+loc_Fitness Gloves,フィットネス手袋
+loc_Silk Gloves,絹手袋
+loc_Baseball Gloves,野球手袋
+loc_Kevlar Gloves,頑丈手袋
+loc_Foam Gloves,泡手袋
+loc_Finger Case,一本指袋
+loc_Mech Gloves,ロボット手袋
+loc_Jumping Crocs,飛ぶクロックス
+loc_Jumping Boots,飛ぶ長靴
+loc_Air Camera Crocs,エアーマックスクロックス
+loc_Fairy Boots,魔法ブーツ
+loc_Teleport Boots,テレポート長靴
+loc_Working Glasses,作業用メガネ
+loc_Shiny Glasses,ピカピカメガネ
+loc_Fortune Glasses,占いメガネ
+loc_lucky_glasses,ラッキーメガネ
+loc_gnome_glasses,小人メガネ
+loc_midas_sight,王様メガネ
+loc_scavenger_glasses,鉄作業メガネ
+loc_sunglasses,サングラス
+loc_wealth_glasses,金持ちメガネ
+loc_Future Glasses,未来メガネ
+loc_Manipulation Gloves,作業用手袋
+loc_Prune Scissors,剪定ばさみ
+loc_Thief's Toolset,泥棒道具セット
+loc_Laser Tools,レザー道具
+loc_Ring,指輪
+loc_Earrings,イヤリング
+loc_Necklace,ネックレス
+loc_Gold Nugget,金粒
+loc_Bling Bling,ブリングブリング
+loc_Golden Egg,ゴールデンエッグ
+loc_Medallion,メダリオン
+loc_Pocket Watch,懐中時計
+Maneki-neko,招き猫
+loc_Lingot,ゴールドバー
+loc_Chalice,聖杯
+loc_Ankh,アンク
+loc_cancel,キャンセル
+loc_localization,Localization
