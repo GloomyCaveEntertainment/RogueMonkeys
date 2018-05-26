@@ -12,22 +12,59 @@ using UnityEngine.UI;
 public class FruitTree : MonoBehaviour {
 
 	#region Public Data
-    public enum PT_STATE { IDLE = 0, SPAWNING, ENDED }
-	#endregion
+    public enum PT_STATE { IDLE = 0, SPAWNING, ENDED, INTRO_SHAKE }
+
+    public const float _shakeAudioCooldown = 0.6f;
+    #endregion
 
 
-	#region Behaviour Methods
-	// Use this for initialization
-	void Start () {
+    #region Behaviour Methods
+    // Use this for initialization
+    //void Start () {
         //InitPalmTree();
-	}
+	//}
 	
 	// Update is called once per frame
 	void Update () {
         switch (_state)
         {
-            case PT_STATE.IDLE:
+            case PT_STATE.IDLE:               
+                break;
 
+            case PT_STATE.INTRO_SHAKE:
+                //Intro animation
+                _shakingTimer += Time.deltaTime;
+                if (_shaking)
+                {
+                    if (_shakingTimer >= _shakingTime)
+                    {
+                        _shaking = false;
+                        _img.sprite = _shakeSpList[0];  //idle
+                        _shakerImg.sprite = _shakerMonkeySpList[0];
+                        _shakerImg.rectTransform.anchoredPosition = _shakerOffsetList[0];
+                    }
+                    else
+                    {
+                        _frameTimer += Time.deltaTime;
+                        if (_frameTimer >= _gameMgr.FrameTime * 0.5f)
+                        {
+                            _frameTimer = 0f;
+                            _frameIndex = (_frameIndex + 1) % _shakeSpList.Count;
+                            _img.sprite = _shakeSpList[_frameIndex];
+                            _shakerImg.sprite = _shakerMonkeySpList[_frameIndex];
+                            _shakerImg.rectTransform.anchoredPosition = _shakerOffsetList[_frameIndex];
+                        }
+                    }
+                    //SFX
+                    _audioTimer += Time.deltaTime;
+                    if (_audioTimer >= _shakeAudioCooldown)
+                    {
+                        _audioTimer = 0f;
+                        AudioController.Play("shake_intro", GameMgr.Instance.transform,0.5f);
+                        //Leaves particles
+                        SetLeavesParticle(new Vector2(Random.Range(_spawnMinXLimit.position.x, _spawnMaxXLimit.position.x), Random.Range(_spawnMinYLimit.position.y, _spawnMaxYLimit.position.y)));
+                    }
+                }
                 break;
 
             case PT_STATE.SPAWNING:
@@ -43,10 +80,19 @@ public class FruitTree : MonoBehaviour {
                 _shakingTimer += Time.deltaTime;
                 if (_shaking)
                 {
+                    //SFX
+                    _audioTimer += Time.deltaTime;
+                    if (_audioTimer >= _shakeAudioCooldown)
+                    {
+                        _audioTimer = 0f;
+                        AudioController.Play("shake_intro", GameMgr.Instance.transform, 0.5f);
+                    }
+
                     if (_shakingTimer >= _shakingTime)
                     {
                         _shaking = false;
-                        _img.sprite = _idleSp;
+                        _img.sprite = _shakeSpList[0];  //idle;
+                        _shakerImg.sprite = _shakerMonkeySpList[0];
                     }
                     else
                     {
@@ -56,6 +102,8 @@ public class FruitTree : MonoBehaviour {
                             _frameTimer = 0f;
                             _frameIndex = (_frameIndex + 1) % _shakeSpList.Count;
                             _img.sprite = _shakeSpList[_frameIndex];
+                            _shakerImg.sprite = _shakerMonkeySpList[_frameIndex];
+                            _shakerImg.rectTransform.anchoredPosition = _shakerOffsetList[_frameIndex];
                         }
                     }
                 }
@@ -68,7 +116,9 @@ public class FruitTree : MonoBehaviour {
                         _frameTimer = 0f;
                         _shakingTimer = 0f;
                         _frameIndex = 0;
-                        AudioController.Play("shake_1");
+                        //AudioController.Play("shake_1");
+                        _audioTimer = 0f;
+                        AudioController.Play("shake_intro", GameMgr.Instance.transform, 0.5f);
                     }
                 }
                 //Audio
@@ -117,6 +167,10 @@ public class FruitTree : MonoBehaviour {
             _gameMgr = GameMgr.Instance;
         if (_img == null)
             _img = GetComponent<Image>();
+        if (_shakerImg == null)
+            _shakerImg = transform.GetChild(0).GetChild(0).GetComponent<Image>();
+        if (_shakerImg == null)
+            Debug.LogError("No shaker monkey img found!");
         //init coconut pool
         //if (_fruitList != null)
             //_fruitList.Clear();
@@ -134,7 +188,10 @@ public class FruitTree : MonoBehaviour {
         _shaking = true;
         _shakingTimer = 0f;
         _state = PT_STATE.IDLE;
-        _img.sprite = _idleSp;
+        _img.sprite = _shakeSpList[0];  //idle;
+        _audioTimer = 0f;
+        AudioController.Play("shake_intro", GameMgr.Instance.transform, 0.5f);
+        //_shakerImg.sprite = _shakerMonkeySpList[0];
     }
 
     /// <summary>
@@ -221,25 +278,18 @@ public class FruitTree : MonoBehaviour {
             }
         }
         //Add gold items
-        //foreach (Level.FruitSpawn fs in fruitSpawnTypeList)
-        //{
         Debug.Log("Generating " + Mathf.FloorToInt(goldSpawnChance * listSize) + " gold items");
         _auxIdList = GetPoolIdList(_goldItemPoolType, goldSpawnChance, listSize);
         for (int i = 0; i < _auxIdList.Count; ++i)
         {
 
             temp = (Fruit)Instantiate(_fruitPrefab, _fruitRoot).GetComponent<Fruit>();
-            //TODO: golditempool type setup
-
             temp.SetupFruitAsGoldItem(_auxIdList[i]);
             temp.gameObject.SetActive(false);
             _fruitList.Add(temp);
         }
-        //}
 
         //Add equipment items
-        //foreach (Level.FruitSpawn fs in fruitSpawnTypeList)
-        //{
         Debug.Log("Generating " + Mathf.FloorToInt(goldSpawnChance * listSize) + " equip items");
         _auxIdList = GetPoolIdList(_equipmentItemPoolType,equipmentSpawnChance, listSize);
         for (int i = 0; i < _auxIdList.Count; ++i)
@@ -249,7 +299,6 @@ public class FruitTree : MonoBehaviour {
             temp.gameObject.SetActive(false);
             _fruitList.Add(temp);
         }
-        //}
 
         //(3)Check if we need cluster pool instantiating
         if (fruitSpawnTypeList.Find((fr) => (fr.FruitTypeIndex == (int)Fruit.F_TYPE.CLUSTER_SEED)) != null)
@@ -380,40 +429,6 @@ public class FruitTree : MonoBehaviour {
         _currentFruitFallTime = fallSpeed;
     }
 
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="goldItemSpawnTypeList"></param>
-    /// <param name="listSize"></param>
-    /*public void SetGoldItemsPool(List<Level.ItemSpawn> goldItemSpawnTypeList, int listSize = 50)
-    {
-        float sum = 0f;
-        Fruit temp = null;
-
-        //(1) Check total sum = 1f
-        foreach (Level.ItemSpawn gs in goldItemSpawnTypeList)
-            sum += gs.SpawnRatio;
-        if (sum != 1f && sum != 0f)
-            Debug.LogError("Gold item prob distribution wrong!" +sum);
-
-        //(2)Create shuffle bag based on type chance
-        if (_goldItemsTypePool != null)
-            _goldItemsTypePool.Clear();
-        else
-            _goldItemsTypePool = new List<Fruit.G_TYPE>();
-
-        foreach (Level.ItemSpawn gs in goldItemSpawnTypeList)
-        {
-            for (int i = 0; i < Mathf.FloorToInt(gs.SpawnRatio * listSize); ++i)
-            {
-                _goldItemsTypePool.Add((Fruit.G_TYPE)gs.GoldTypeIndex);
-            }
-        }
-
-        Shuffle(_goldItemsTypePool);
-    }*/
-
     /// <summary>
     /// 
     /// </summary>
@@ -467,6 +482,7 @@ public class FruitTree : MonoBehaviour {
     /// </summary>
     public void StartSpawn()
     {
+        Debug.Log("Start spawn");
         //_currentSpawnTime = _baseSpawnTime;
         _timer = 0f;
         _state = PT_STATE.SPAWNING;
@@ -479,14 +495,12 @@ public class FruitTree : MonoBehaviour {
     /// </summary>
     public void Stop(bool destroyFlyingFruits = true)
     {
-        //TODO: dont setctive false, destroy properly
         if (destroyFlyingFruits)
         {
             foreach (GameObject go in GameObject.FindGameObjectsWithTag("Fruit"))
             {
                 if (go.GetComponent<Fruit>()._FState == Fruit.FRUIT_ST.FALLING_FROM_TREE)
                     DestroyFruit(go.GetComponent<Fruit>());
-                    //go.SetActive(false); 
             }
         }
         _state = PT_STATE.ENDED;
@@ -700,7 +714,7 @@ public class FruitTree : MonoBehaviour {
             Debug.Log("Attepmting to destroy: "+fr._Ftype);
             fruitIndex = _fruitList.FindIndex(((c) => c == fr));
             Debug.Log("Fruit index found: " + fruitIndex);
-            //seek left and place at the end the current disabled coco
+            //seek left and place at the end the current disabled fruit
             for (int i = fruitIndex; i < _fruitList.Count - 1; ++i)
                 _fruitList[i] = _fruitList[i + 1];
 
@@ -715,12 +729,12 @@ public class FruitTree : MonoBehaviour {
         if (fruitMissed)
         {
             
-            //Water sound
+            //Water sound: deprecated
             if (_gameMgr.StageIndex == 0 && fr.transform.position.x < _gameMgr.MinRightFingerRef.position.x && fr.transform.position.x > _gameMgr.MaxLeftFingerRef.position.x)
                 AudioController.Play("aud_fr_missed_0");
             if (fr._Ftype == Fruit.F_TYPE.CHICKEN || fr._Ftype == Fruit.F_TYPE.SACK_BREAKER || fr._Ftype == Fruit.F_TYPE.SBREAKER_CLUSTER_DUO)
             {
-                //Splash particles
+                //Splash particles: deprecated
                 GameMgr.Instance.SetSplashParticle(fr, fr.transform.position);
                 AudioController.Play("aud_fr_bird_ground_0");
             }
@@ -756,12 +770,17 @@ public class FruitTree : MonoBehaviour {
                 }
                 //EquipmentVsGround particles
                 GameMgr.Instance.SetItemCollisionParticle(fr, fr.transform.position);
+                //Analytics
+                ++GameMgr.Instance.EqpItmLostCount;
+                    
             }
             else if (fr._Ftype == Fruit.F_TYPE.GOLD_ITEM)
             {
                 AudioController.Play("aud_fr_gold_missed_01");
                 //Particles
                 GameMgr.Instance.SetItemCollisionParticle(fr, fr.transform.position);
+                //Analytics
+                ++GameMgr.Instance.GoldItmLostCount;
             }
             else
             {
@@ -783,12 +802,28 @@ public class FruitTree : MonoBehaviour {
     /// <summary>
     ///     
     /// </summary>
-    public void Reset()
+    public void ResetTree()
     {
         _state = PT_STATE.IDLE;
         _currentAudioTime = Random.Range(_minTreeAudioTime, _maxTreeAudioTime);
         _treeAudioTimer = 0f;
     }
+
+    /// <summary>
+    /// Play shake animation
+    /// </summary>
+    public void Shake()
+    {
+        if (_gameMgr == null)
+            InitPalmTree();
+        _shaking = true;
+        _shakingTimer = 0f;
+        _state = PT_STATE.INTRO_SHAKE;
+        _audioTimer = 0f;
+        AudioController.Play("shake_intro", GameMgr.Instance.transform);
+        //Leaves particles
+        SetLeavesParticle(new Vector2(Random.Range(_spawnMinXLimit.position.x, _spawnMaxXLimit.position.x), Random.Range(_spawnMinYLimit.position.y, _spawnMaxYLimit.position.y)));
+    }   
     #endregion
 
 
@@ -803,9 +838,9 @@ public class FruitTree : MonoBehaviour {
     private List<string> GetPoolIdList(List<Level.ItemSpawn> itemSpawnList, float spawnChance, int listSize)
     {
         List<string> _retList = new List<string>();
+
         for (int i = 0; i < itemSpawnList.Count; ++i)
         {
-
             for (int j = 0; j < Mathf.FloorToInt(itemSpawnList[i].SpawnRatio * spawnChance * listSize); ++j)
                 _retList.Add(itemSpawnList[i].Id);
         }
@@ -904,11 +939,23 @@ public class FruitTree : MonoBehaviour {
         _poolLeavesParticle[_currentPoolLeavesIndex].Play();
         _currentPoolLeavesIndex = (_currentPoolLeavesIndex + 1) % _poolLeavesParticle.Count;
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="pos"></param>
+    private void SetLeavesParticle(Vector2 pos)
+    {
+        _poolLeavesParticle[_currentPoolLeavesIndex].transform.position = pos;
+        _poolLeavesParticle[_currentPoolLeavesIndex].gameObject.SetActive(true);
+        _poolLeavesParticle[_currentPoolLeavesIndex].Play();
+        _currentPoolLeavesIndex = (_currentPoolLeavesIndex + 1) % _poolLeavesParticle.Count;
+    }
     #endregion
 
 
-    #region Properties
-    //Shaker Monkey
+        #region Properties
+        //Shaker Monkey
     public float SapwnRatioModifier { get { return _spawnRatioModifier; } set { _spawnRatioModifier = value; } }
     public float BurstChanceOnSpawn { get { return _burstChanceOnSpawn; } set { _burstChanceOnSpawn = value; } }
     public int BurtsAmount { get { return _burtsAmount; } set { _burtsAmount = value; } }
@@ -925,17 +972,21 @@ public class FruitTree : MonoBehaviour {
     [SerializeField]
     private List<Sprite> _shakeSpList;
     [SerializeField]
-    private Sprite _idleSp;
+    private List<Vector2> _shakerOffsetList;    //offset used during shake animation frames
+    //[SerializeField]
+    //private Sprite _idleSp;
+    [SerializeField]
+    private List<Sprite> _shakerMonkeySpList;
     [SerializeField]
     private GameObject _fruitPrefab;
     [SerializeField]
     private Transform _fruitRoot;
     [SerializeField]
     private Transform _spawnMinXLimit, _spawnMaxXLimit, _spawnMinYLimit, _spawnMaxYLimit;
-    [SerializeField]
-    private int _fruitInitCountPool;
-    private int _fruitMaxPool;
-    private int _fruitIncrement;
+    //[SerializeField]
+    //private int _fruitInitCountPool;
+    //private int _fruitMaxPool;
+    //private int _fruitIncrement;
 	
     //Shaker monkey stats
     [SerializeField]
@@ -975,6 +1026,7 @@ public class FruitTree : MonoBehaviour {
     #region Private Non-serialized Fields
     private GameMgr _gameMgr;
     private Image _img;
+    private Image _shakerImg;
     private PT_STATE _state, _lastState;
     private float _currentSpawnTime, _baseSpawnTime;
     private List<Fruit> _fruitList;
@@ -984,7 +1036,7 @@ public class FruitTree : MonoBehaviour {
     private List<Fruit> _eggFruitPool; //pool used for instantiating eggs spawned from any chicken on Sack
     private List<Fruit> _kiwiFruitPool; //pool used for instantiating kiwi fruit spawned from any SACK_BREAKER_DUO on Launch
     private List<Fruit> _bananaUnitFruitPool;   //pool used for banana cluster
-    private float _timer;
+    private float _timer, _audioTimer;
 
     private int _currentPoolIndex;
     private int _currentClusterPoolIndex, _currentMultifruitPoolIndex, _currentEggPoolIndex, _currentKiwiPoolIndex,_currentBananaClusterIndex;

@@ -606,17 +606,17 @@ public class DataMgr : MonoBehaviour {
     /// <param name="lvlIndex"></param>
     public void SaveLevelData(int stageIndex, int lvlIndex)
     {
-        Debug.Log("Save level data________" + stageIndex + " / " + lvlIndex);
+        //Debug.Log("Save level data________" + stageIndex + " / " + lvlIndex);
         XmlDocument doc = new XmlDocument();
         doc.Load(Path.Combine(Application.persistentDataPath,_levelFileName));
 
         XmlNode root = doc.DocumentElement;
-        Debug.Log("R00t: " + root.Name);
+        //Debug.Log("R00t: " + root.Name);
         //XmlElement levelDataNode = (XmlElement)root.SelectSingleNode("level_data");
         //Debug.Log("Leveldatanode: " + levelDataNode);
         //Current stage
         XmlNodeList stages = ((XmlElement)root).GetElementsByTagName("stage");
-        Debug.Log("stages: " + stages);
+        //Debug.Log("stages: " + stages);
 
         //go to stage-level aand rewrite attribute data
         foreach (XmlAttribute attr in stages[stageIndex].ChildNodes[lvlIndex].Attributes)

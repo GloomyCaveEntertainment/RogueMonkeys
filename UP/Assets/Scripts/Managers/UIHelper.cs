@@ -13,7 +13,15 @@ using SunCubeStudio.Localization;
 
 public class UIHelper : MonoBehaviour {
 
-	#region Public Data
+    #region Public Data
+    public const int _comboCount_s = 5;
+    public const int _comboCount_m = 10;
+    public const int _comboCount_l = 15;
+    public const int _comboFontSize_s = 35; //[2,5]
+    public const int _comboFontSize_m = 40; //[6,10]
+    public const int _comboFontSize_l = 45; //[11,15]
+    public const int _comboFontSize_xl = 50; //[16,inf)
+    public const int _comboFontSize_result = 35;
     public static UIHelper Instance;
 	#endregion
 
@@ -40,6 +48,11 @@ public class UIHelper : MonoBehaviour {
         _gameMgr = GameMgr.Instance;
         if (_gameMgr == null)
             Debug.LogError("No Game Manager found!");
+        _comboFeedbackTime = _gameMgr.MaxComboTime;
+        _slowmotionDecal.SetActive(false);
+        _slowmotionStrikerBgFx.SetActive(false);
+        _slowMoSand_bot.gameObject.SetActive(false);
+        _slowMoSand_top.gameObject.SetActive(false);
 
     }
 	
@@ -227,6 +240,9 @@ public class UIHelper : MonoBehaviour {
             _glowSprite.color = Color.white;
         }     
     }
+    /// <summary>
+    /// 
+    /// </summary>
     public void ResetAlarmUI()
     {
         glowEnabled = false;
@@ -251,6 +267,8 @@ public class UIHelper : MonoBehaviour {
     public void ShowLoseScreen(bool show)
     {
         _loseScreen.SetActive(show);
+        _slowmotionDecal.SetActive(false);
+        _slowmotionStrikerBgFx.SetActive(false);
     }
 
     /// <summary>
@@ -258,8 +276,9 @@ public class UIHelper : MonoBehaviour {
     /// </summary>
     public void GoToMenu()
     {
-        //if (Tutorial.Instance != null)
-            //DestroyImmediate(Tutorial.Instance);
+        if (Tutorial.Instance != null)
+            DestroyImmediate(Tutorial.Instance.gameObject);
+        _gameMgr.SetIdle();
         SceneManager.LoadScene("LevelSelection");
     }
 
@@ -286,6 +305,7 @@ public class UIHelper : MonoBehaviour {
     {
         _showLevelTime = show;
         _timeText.gameObject.SetActive(show);
+        _clock.SetActive(show);
     }
 
     /// <summary>
@@ -314,18 +334,33 @@ public class UIHelper : MonoBehaviour {
     public void SetSlowMoGlow(bool enable)
     {
         _slowMoGlow.SetActive(enable);
-            if (enable)
+        if (enable)
+        {
             _slowMoGlow.GetComponent<ParticleSystem>().Play();
+            
+        }
+        _slowmotionDecal.SetActive(enable);
+        _slowmotionStrikerBgFx.SetActive(enable);
+        _slowMoSand_bot.gameObject.SetActive(enable);
+        _slowMoSand_top.gameObject.SetActive(enable);
     }
 
     /// <summary>
     /// Speed boos / slowmotion UI feedback
     /// </summary>
     /// <param name="value"></param>
-    public void UpdateSlowMoFill(float value)
+    public void UpdateSlowMoFill(float value, bool enabled = false)
     {
-        _slowMoFill.fillAmount = value;
+        if (enabled)
+        {
+            _slowMoSand_top.fillAmount = value;
+            _slowMoSand_bot.fillAmount = 1f - value;
+        }
+        else
+            _slowMoFill_global.fillAmount = value;
     }
+
+   
 
     /// <summary>
     /// Speed boost
@@ -334,7 +369,7 @@ public class UIHelper : MonoBehaviour {
     public void SetSpeedUp(bool enable)
     {
         _slowMoBg.gameObject.SetActive(enable);
-        _slowMoFill.gameObject.SetActive(enable);
+        _slowMoFill_global.gameObject.SetActive(enable);
         //if (_slowMoGlow.gameObject.activeSelf)
             //_slowMoGlow.gameObject.SetActive(false);
     }
@@ -350,7 +385,7 @@ public class UIHelper : MonoBehaviour {
         if ((pos.x >= _pauseBtn.transform.position.x - _pauseBtn.GetComponent<RectTransform>().rect.width * 0.5f) &&
                 (pos.x <= _pauseBtn.transform.position.x + _pauseBtn.GetComponent<RectTransform>().rect.width * 0.5f) &&
                 (pos.y >= _pauseBtn.transform.position.y - _pauseBtn.GetComponent<RectTransform>().rect.height * 0.5f) &&
-                (pos.y >= _pauseBtn.transform.position.y + _pauseBtn.GetComponent<RectTransform>().rect.height * 0.5f))
+                (pos.y <= _pauseBtn.transform.position.y + _pauseBtn.GetComponent<RectTransform>().rect.height * 0.5f))
             return true;
         return false;
         //return _pauseBtn.GetComponent<RectTransform>().rect.Contains(pos);
@@ -364,7 +399,74 @@ public class UIHelper : MonoBehaviour {
     {
         GameMgr.Instance._CollectorMonkey._Sack.GetComponent<Image>().enabled = !show;
         GameMgr.Instance._CollectorMonkey._Sack.transform.GetChild(4).GetComponent<Image>().enabled = !show;    //sack fill img
+        GameMgr.Instance._CollectorMonkey._Sack.transform.GetChild(5).gameObject.SetActive(!show);    //sack count miniatures
         _fakeShack.gameObject.SetActive(show);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="count"></param>
+    public void ShowComboCount(int count)
+    {
+        //Size
+        if (count <= _comboCount_s)
+        {
+            _comboText.fontSize = _comboFontSize_s;
+            _comboText.color = _comboColor_s;
+        }         
+        else if (count <= _comboCount_m)
+        {
+            _comboText.fontSize = _comboFontSize_m;
+            _comboText.color = _comboColor_m;
+        }      
+        else if (count <= _comboCount_l)
+        {
+            _comboText.fontSize = _comboFontSize_l;
+            _comboText.color = _comboColor_l;
+        }       
+        else
+        {
+            _comboText.fontSize = _comboFontSize_xl;
+            _comboText.color = _comboColor_xl;
+        }
+            
+
+        _comboText.text = "x " + count.ToString();
+        //_comboText.color = Color.white;
+        if (!_comboText.transform.parent.gameObject.activeInHierarchy)
+            _comboText.transform.parent.gameObject.SetActive(true);
+        LeanTween.cancel(_comboText.gameObject);
+        LeanTween.cancel(_comboText.transform.parent.gameObject);
+        _comboText.transform.parent.localScale = Vector3.one;
+        _comboText.transform.parent.gameObject.transform.localPosition = Vector3.zero;
+        LeanTween.moveLocalY(_comboText.transform.parent.gameObject, _comboOffset, _comboFeedbackTime);
+        LeanTween.textAlpha(_comboText.rectTransform, .01f, _comboFeedbackTime);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="comboCount"></param>
+    public void ShowComboResult(int comboCount)
+    {
+        //TODO: localization
+        _comboText.text = "Bonus + " + comboCount.ToString();
+        _comboText.color = _comboResultColor;
+        _comboText.fontSize = _comboFontSize_result;
+        if (!_comboText.gameObject.activeInHierarchy)
+            _comboText.gameObject.SetActive(true);
+        LeanTween.cancel(_comboText.transform.parent.gameObject);
+        LeanTween.cancel(_comboText.gameObject);
+        LeanTween.moveLocalY(_comboText.transform.parent.gameObject, _comboOffset, _comboFeedbackTime);
+        LeanTween.scale(_comboText.transform.parent.gameObject, Vector3.one * 2f, _comboFeedbackTime);
+        LeanTween.textAlpha(_comboText.rectTransform, .01f, _comboFeedbackTime).setOnComplete(() => { Debug.Log("ONCOMPLETEEEEEEEEEEEEEEEEEEEEEEEEEEE"); _comboText.transform.parent.gameObject.SetActive(false); });
+    }
+
+    public void HideComboCount()
+    {
+        _comboText.gameObject.SetActive(false);
+        _comboText.transform.parent.gameObject.SetActive(false);
     }
     #endregion
 
@@ -420,7 +522,7 @@ public class UIHelper : MonoBehaviour {
     private float _glowFadeTime_50pc, _glowFadeTime_75pc;
 
     [SerializeField]
-    private Image _slowMoFill, _slowMoBg;
+    private Image _slowMoFill_global, _slowMoSand_top, _slowMoSand_bot, _slowMoBg;
     [SerializeField]
     private GameObject _slowMoGlow;
 
@@ -429,6 +531,26 @@ public class UIHelper : MonoBehaviour {
 
     [SerializeField]
     private GameObject _fakeShack;
+
+    [SerializeField]
+    private Text _comboText;
+    [SerializeField]
+    private float _comboOffset;
+    [SerializeField]
+    private float _comboFeedbackTime;
+
+    [SerializeField]
+    private Color _comboColor_s, _comboColor_m, _comboColor_l, _comboColor_xl;
+    [SerializeField]
+    private Color _comboResultColor;
+
+    [SerializeField]
+    private GameObject _slowmotionDecal;
+    [SerializeField]
+    private GameObject _slowmotionStrikerBgFx;
+
+    [SerializeField]
+    private GameObject _clock;
     #endregion
 
     #region Private Non-serialized Fields

@@ -341,24 +341,28 @@ public class MenuSelection : MonoBehaviour {
                     _stageMiniList[i].transform.GetChild(2).gameObject.SetActive(false);
                     _stageMiniList[i].transform.GetChild(3).gameObject.SetActive(true);
                     _stageMiniList[i].transform.GetChild(3).GetChild(0).GetComponent<Image>().sprite = GetStageRank(i);
+                    _stageMiniList[i].GetComponent<Image>().color = Color.white;
                     break;
 
                 case Stage.STAGE_STATE.UNLOCKED:
                     _stageMiniList[i].transform.GetChild(1).gameObject.SetActive(false);
                     _stageMiniList[i].transform.GetChild(2).gameObject.SetActive(false);
                     _stageMiniList[i].transform.GetChild(3).gameObject.SetActive(false);
+                    _stageMiniList[i].GetComponent<Image>().color = Color.white;
                     break;
 
                 case Stage.STAGE_STATE.LOCKED:
                     _stageMiniList[i].transform.GetChild(1).gameObject.SetActive(true);
                     _stageMiniList[i].transform.GetChild(2).gameObject.SetActive(false);
                     _stageMiniList[i].transform.GetChild(3).gameObject.SetActive(false);
+                    _stageMiniList[i].GetComponent<Image>().color = Color.white;
                     break;
 
                 case Stage.STAGE_STATE.UNAVAILABLE:
                     _stageMiniList[i].transform.GetChild(1).gameObject.SetActive(false);
                     _stageMiniList[i].transform.GetChild(2).gameObject.SetActive(true);
                     _stageMiniList[i].transform.GetChild(3).gameObject.SetActive(false);
+                    _stageMiniList[i].GetComponent<Image>().color = new Color(0.2f, 0.2f, 0.2f, 1f); //almost black
                     break;
             }
             _stageLevelPanelList[i].SetActive(i == enabledIndex);

@@ -11,7 +11,7 @@ using UnityEngine.UI;
 public class StrikerMonkey : MonoBehaviour {
 
 	#region Public Data
-    public enum MONKEY_STATE { IDLE = 0, MOVING_TO_POS, HIT_ANIMATION, RECOVERING_TO_FLOOR, FLEE, STUN }
+    public enum MONKEY_STATE { IDLE = 0, MOVING_TO_POS, HIT_ANIMATION, RECOVERING_TO_FLOOR, FLEE, STUN, PAUSE }
     public enum S_BOOST_STATE { IDLE = 0, SPEED_UP, SLOWMOTION }
     public enum SHADOWING_STATE { DISABLED = 0, FADE_IN, ENABLED, FADE_OUT }
 
@@ -53,7 +53,7 @@ public class StrikerMonkey : MonoBehaviour {
             if (_speedBoostTimer <= 0f)
                 SpeedBoost(false);
             else
-                UIHelper.Instance.UpdateSlowMoFill(_speedBoostTimer / _speedBoostDur);
+                UIHelper.Instance.UpdateSlowMoFill(_speedBoostTimer / _speedBoostDur, false);
         }
 
         switch (_state)
@@ -394,8 +394,13 @@ public class StrikerMonkey : MonoBehaviour {
         //TODO
         Debug.Log("Flee! - striker");
         _frameTimer = 0f;
-        _state = MONKEY_STATE.FLEE;
         _img.sprite = _fleeSpList[0];
+        if (_state == MONKEY_STATE.STUN)
+        {
+            _img.SetNativeSize();
+            _img.rectTransform.pivot = Vector2.right * 0.5f;    //recover bot pivot
+        }
+        _state = MONKEY_STATE.FLEE;
         transform.position = new Vector3(transform.position.x, _gameMgr.FloorYPos, transform.position.z);
         transform.rotation = Quaternion.identity;
     }
@@ -458,7 +463,7 @@ public class StrikerMonkey : MonoBehaviour {
                 _sBoostSt = S_BOOST_STATE.SPEED_UP;
                 EnableShadowing(_shadowsPerStack);
                 UIHelper.Instance.SetSpeedUp(true);
-                UIHelper.Instance.UpdateSlowMoFill(_speedBoostTimer / _speedBoostDur);
+                UIHelper.Instance.UpdateSlowMoFill(_speedBoostTimer / _speedBoostDur, false);
                 AudioController.Play("aud_fr_SpeedUp");
                 break;
 
@@ -584,6 +589,23 @@ public class StrikerMonkey : MonoBehaviour {
         if (_shadowSt == SHADOWING_STATE.ENABLED || _shadowSt == SHADOWING_STATE.FADE_IN)
             _shadowSt = SHADOWING_STATE.FADE_OUT;
 
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="pause"></param>
+    public void Pause(bool pause)
+    {
+        if (pause && _state != MONKEY_STATE.PAUSE)
+        {
+            _lastState = _state;
+            _state = MONKEY_STATE.PAUSE;
+        }
+        else if (!pause && _state == MONKEY_STATE.PAUSE)
+        {
+            _state = _lastState;
+        }
     }
     #endregion
 
@@ -736,7 +758,7 @@ public class StrikerMonkey : MonoBehaviour {
     #endregion
 
     #region Private Non-serialized Fields
-    private MONKEY_STATE _state;
+    private MONKEY_STATE _state, _lastState;
 
     //Items
     private EquipmentItem _slotA, _slotB;

@@ -56,7 +56,7 @@ loc_lose,你被抓了！
 loc_retry,再试一次
 loc_ok,接受
 loc_shop,商店
-loc_inventory*,物品栏
+loc_inventory,物品栏
 loc_backToMenu,菜单
 loc_tut_welcome,欢迎来到Rogue Monkeys教程！
 loc_tut_collector,向左滑动拇指移动Collector猴子
@@ -100,7 +100,7 @@ loc_Winged Crocs,飞鞋
 loc_Winged Boots,飞靴
 loc_Winged Sports,运动飞鞋
 loc_Winged Rollers,滑轮飞鞋
-loc_winged_rockets,火箭飞鞋
+loc_Winged Rockets,火箭飞鞋
 loc_Leather Gloves,皮革手套
 loc_Wool Gloves,羊毛手套
 loc_Gorilla Gloves,大猩猩手套
@@ -119,12 +119,12 @@ loc_Teleport Boots,隐形鞋
 loc_Working Glasses,保护眼镜
 loc_Shiny Glasses,闪光眼镜
 loc_Fortune Glasses,福运眼镜
-loc_lucky_glasses,幸运眼镜
-loc_gnome_glasses,精灵眼镜
-loc_midas_sight,点石成金眼镜
-loc_scavenger_glasses,净化眼镜
-loc_sunglasses,太阳眼镜
-loc_wealth_glasses,财富眼镜
+loc_Lucky Glasses,幸运眼镜
+loc_Gnome Glasses,精灵眼镜
+loc_Midas' Sight,点石成金眼镜
+loc_Scavenger Glasses,净化眼镜
+loc_Sunglasses,太阳眼镜
+loc_Wealth Glasses,财富眼镜
 loc_Future Glasses,未来眼镜
 loc_Manipulation Gloves,操控手套
 loc_Prune Scissors,修枝剪
@@ -138,7 +138,7 @@ loc_Bling Bling,金光闪闪
 loc_Golden Egg,金蛋
 loc_Medallion,金牌
 loc_Pocket Watch,怀表
-Maneki-neko,招财猫
+loc_Maneki-neko,招财猫
 loc_Lingot,金条
 loc_Chalice,奖杯
 loc_Ankh,生命之符

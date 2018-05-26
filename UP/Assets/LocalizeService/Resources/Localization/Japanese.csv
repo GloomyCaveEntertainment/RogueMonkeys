@@ -92,7 +92,7 @@ loc_Winged Crocs,羽付きクロックス
 loc_Winged Boots,羽付き長靴
 loc_Winged Sports,羽付きスポーツ靴
 loc_Winged Rollers,羽付きローラースケート
-loc_winged_rockets,羽付きロケット
+loc_Winged Rockets,羽付きロケット
 loc_Leather Gloves,革手袋
 loc_Wool Gloves,ウール手袋
 loc_Gorilla Gloves,ゴリラ手袋
@@ -111,12 +111,12 @@ loc_Teleport Boots,テレポート長靴
 loc_Working Glasses,作業用メガネ
 loc_Shiny Glasses,ピカピカメガネ
 loc_Fortune Glasses,占いメガネ
-loc_lucky_glasses,ラッキーメガネ
-loc_gnome_glasses,小人メガネ
-loc_midas_sight,王様メガネ
-loc_scavenger_glasses,鉄作業メガネ
-loc_sunglasses,サングラス
-loc_wealth_glasses,金持ちメガネ
+loc_Lucky Glasses,ラッキーメガネ
+loc_Gnome Glasses,小人メガネ
+loc_Midas' Sight,王様メガネ
+loc_Scavenger Glasses,鉄作業メガネ
+loc_Sunglasses,サングラス
+loc_Wealth Glasses,金持ちメガネ
 loc_Future Glasses,未来メガネ
 loc_Manipulation Gloves,作業用手袋
 loc_Prune Scissors,剪定ばさみ
@@ -130,7 +130,7 @@ loc_Bling Bling,ブリングブリング
 loc_Golden Egg,ゴールデンエッグ
 loc_Medallion,メダリオン
 loc_Pocket Watch,懐中時計
-Maneki-neko,招き猫
+loc_Maneki-neko,招き猫
 loc_Lingot,ゴールドバー
 loc_Chalice,聖杯
 loc_Ankh,アンク

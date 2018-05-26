@@ -64,7 +64,7 @@
     <level id="14" score="0" state="locked" rank="F">
     </level>
   </stage>
-  <stage id="2" state="unlocked">
+  <stage id="2" state="locked">
     <level id="0" score="0" state="locked" rank="F">
     </level>
     <level id="1" score="0" state="locked" rank="F">

@@ -16,7 +16,7 @@ public class AdsMgr : MonoBehaviour {
 	#region Public Data
     public static AdsMgr Instance;
 
-    public const int _minGoldRewardSuccess = 10, _maxGoldRewardSuccess = 25;
+    public const int _goldRewardSuccessMultiplier = 20;   //per stage
     public const int _skippedGoldReward = 1, _failedGoldReward = 1;
 	#endregion
 
@@ -198,22 +198,22 @@ public class AdsMgr : MonoBehaviour {
         switch (result)
         {
             case ShowResult.Finished:
-                //
-                // YOUR CODE TO REWARD THE GAMER
-                // Give coins etc.
                 Debug.Log("ADS::: Ad Success");
                 ++AnalyticsMgr.Instance.RewardAdsSkippedCount;
-                GameMgr.Instance.AddGold(Random.Range(_minGoldRewardSuccess, _maxGoldRewardSuccess));
+                GameMgr.Instance.AddGold(_goldRewardSuccessMultiplier * (GameMgr.Instance.StageIndex+1));
+                AudioController.Play("aud_money_01"); 
                 break;
             case ShowResult.Skipped:
                 Debug.Log("ADS::: Ad Skipped");
                 ++AnalyticsMgr.Instance.RewardAdsSkippedCount;
                 GameMgr.Instance.AddGold(_skippedGoldReward);
+                AudioController.Play("aud_item_fail");
                 break;
             case ShowResult.Failed:
                 Debug.Log("ADS::: Ad Failed");
                 ++AnalyticsMgr.Instance.RewardAdsFailedCount;
                 GameMgr.Instance.AddGold(_failedGoldReward);
+                AudioController.Play("aud_item_fail");
                 break;
         }
         //TODO: gold animation + sound feedback

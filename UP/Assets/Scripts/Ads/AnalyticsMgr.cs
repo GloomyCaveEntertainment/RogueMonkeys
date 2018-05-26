@@ -80,7 +80,7 @@ public class AnalyticsMgr : MonoBehaviour {
         _dict.Clear();
         _dict["stage"] = GameMgr.Instance.StageIndex;
         _dict["lvl"] = GameMgr.Instance.LevelIndex;
-        _dict["completed"] = GameMgr.Instance.Win;
+        //_dict["completed"] = GameMgr.Instance.Win;    //always True. Method called on Win
         _dict["attempts"] = GameMgr.Instance.LvlAttempts; //
         _dict["gold_itm_dropped"] = GameMgr.Instance.GoldItmLostCount;
         _dict["gold_itm_collected"] = GameMgr.Instance.GoldItmCount;

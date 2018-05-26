@@ -16,7 +16,7 @@ public class Level : MonoBehaviour {
     public enum L_STATE { IDLE = 0, LOADING, START, RUN, WAITNG_FLYING_FRUITS, RELOADING_SACK_END, FINISHED }
     public enum NET_SIZE { SMALL = 0, MEDIUM, LARGE, EXTRA_LARGE}
     public enum GUARD_POSITION { RIGHT = 0, LEFT, ALL }
-    public enum INTRO_STATE { READY = 0, STEADY_TREE, STEADY_RETURN, GO }
+    public enum INTRO_STATE { READY = 0, READY_TO_TREE, STEADY_TREE, STEADY_RETURN, GO }
     /// <summary>
     /// LOCKED : info shwon but cant play
     /// UNAVAILABLE : info hidden
@@ -25,9 +25,12 @@ public class Level : MonoBehaviour {
     public enum RANK { S = 0, A, B, C, D, E, F }
     public const float _endDelayTime = 2.5f;
     public const float _reloadingSackEndTimeOffset = 1f;
-    public const float _readyIntroTime = 1f;
+    public const float _readyIdleTime = 0.5f;
+    public const float _readyIntroTime = 1f;   
     public const float _steadyIntroTime = 1.5f;
     public const float _goIIntroTime = 0.5f;
+    //public const float _shakeAudioCooldown = 0.5f;                
+
 
     [System.Serializable]
     public class FruitSpawn
@@ -88,17 +91,30 @@ public class Level : MonoBehaviour {
                 switch (_introSt)
                 {
                     case INTRO_STATE.READY:
+                        if (_timer >= _readyIntroTime)
+                        {
+                            _timer = 0f;
+                            _introSt = INTRO_STATE.READY_TO_TREE;
+                        }
+                            break;
+                    case INTRO_STATE.READY_TO_TREE:
                         GameMgr.Instance.GameCamera.transform.position = new Vector3(Mathf.Lerp(_introCamStartPos.x, _introCamShakerPos.x, _timer / _readyIntroTime), Mathf.Lerp(_introCamStartPos.y, _introCamShakerPos.y, _timer / _readyIntroTime), GameMgr.Instance.GameCamera.transform.position.z);
                         if (_timer >= _readyIntroTime)
                         {
                             _timer = 0f;
                             _introSt = INTRO_STATE.STEADY_TREE;
                             UIHelper.Instance.LvlIntroText.text = LocalizationService.Instance.GetTextByKey("loc_steady");
-                            //TODO:ShakerAnimation
+                            //Shaker animation
+                            _fruitTree.Shake();
                         }
                         break;
-
-                    case INTRO_STATE.STEADY_TREE:    
+                    case INTRO_STATE.STEADY_TREE:
+                        /*_audioTimer += Time.deltaTime;
+                        if (_audioTimer >= _shakeAudioCooldown)
+                        {
+                            _audioTimer = 0f;
+                            AudioController.Play("shake_intro", GameMgr.Instance.GameCamera.transform);
+                        }*/
                         if (_timer >= _steadyIntroTime*0.75f)
                         {
                             _timer = 0f;
@@ -132,7 +148,7 @@ public class Level : MonoBehaviour {
                 break;
 
             case L_STATE.RUN:
-                if (UIHelper.Instance._ShowLevelTime)
+                if (UIHelper.Instance._ShowLevelTime && Tutorial.Instance == null)
                 {
                     _timer += Time.deltaTime;
                     UIHelper.Instance.SetLvlScreenTime(_levelTime - _timer);
@@ -174,6 +190,7 @@ public class Level : MonoBehaviour {
                         //Stop Level audio
                         if (AudioController.IsPlaying(_themeAudioId))
                             AudioController.Stop(_themeAudioId);
+                        GameMgr.Instance.ResetCombo();  //end combo immediately since there aren't more fruits to collect
                     }
                 }
                 break;
@@ -230,7 +247,7 @@ public class Level : MonoBehaviour {
             
             if (AudioController.IsPlaying("Menu_Theme"))
                 AudioController.Stop("Menu_Theme");
-            AudioController.Play(_themeAudioId, GameMgr.Instance.GameCamera.transform);
+            AudioController.Play(_themeAudioId);//, GameMgr.Instance.GameCamera.transform);
         }  
     }
 
@@ -294,6 +311,7 @@ public class Level : MonoBehaviour {
     /// </summary>
     public void LoadReferences()
     {
+        Debug.Log("Load References");
         //Get references from loaded scene
         GameObject sceneLO = null;
         sceneLO = GameObject.FindGameObjectWithTag("SceneLayout");
@@ -319,9 +337,10 @@ public class Level : MonoBehaviour {
         _introCamShakerPos = _currentSL.GetCamShakerPos();
         _introCamStartPos = _currentSL.GetCamInitPos();
         //Sprite setup
-        _background.GetComponent<Image>().sprite = Resources.Load(_backgroundId, typeof(Sprite)) as Sprite;
-        _netObject.GetComponent<Image>().sprite = Resources.Load(_netSpriteId, typeof(Sprite)) as Sprite;
-        _fruitTree.GetComponent<Image>().sprite = Resources.Load(_treeId, typeof(Sprite)) as Sprite;
+        //Deprecated: already baked in scenes
+        //_background.GetComponent<Image>().sprite = Resources.Load(_backgroundId, typeof(Sprite)) as Sprite;
+        //_netObject.GetComponent<Image>().sprite = Resources.Load(_netSpriteId, typeof(Sprite)) as Sprite;
+        //_fruitTree.GetComponent<Image>().sprite = Resources.Load(_treeId, typeof(Sprite)) as Sprite;
 
         //Setup Tree
         _fruitTree.SetGoldPool(_goldItemPoolType);
@@ -349,6 +368,7 @@ public class Level : MonoBehaviour {
         else
             _auxGuardLeftPosList.Clear();
 
+        //Save left/right positions depending on current level guard distribution list
         if (_guardDistribution.Contains(true))
         {
             foreach (Transform gPos in _currentSL.GetGuardPositionList(true))
@@ -396,17 +416,18 @@ public class Level : MonoBehaviour {
                 if (_guardDistribution[i])
                 {
                     _auxSelectedGuardPosIndex = Random.Range(0, _auxGuardRightPosList.Count);
-                    GameMgr.Instance._GuardPool[i].transform.position = _auxGuardRightPosList[_auxSelectedGuardPosIndex].transform.position;
+                    GameMgr.Instance._GuardPool[i].transform.position/*GetComponent<RectTransform>().position*/ = _auxGuardRightPosList[_auxSelectedGuardPosIndex].transform.position;
                 }
                 else
                 {
                     _auxSelectedGuardPosIndex = Random.Range(0, _auxGuardLeftPosList.Count);
-                    GameMgr.Instance._GuardPool[i].transform.position = _auxGuardLeftPosList[_auxSelectedGuardPosIndex].transform.position;
+                    GameMgr.Instance._GuardPool[i].transform.position/*GetComponent<RectTransform>().position*/ = _auxGuardLeftPosList[_auxSelectedGuardPosIndex].transform.position;
                 }
                 Debug.Log("Selected inddex " + _auxSelectedGuardPosIndex + "   and [i] " + i);
                 
-                GameMgr.Instance._GuardPool[i].SetupGuard();
-                GameMgr.Instance._GuardPool[i].gameObject.SetActive(true);
+                //GameMgr.Instance._GuardPool[i].SetupGuard(); //Done later from GameMgr since we haven't already canvases references
+                //GameMgr.Instance._GuardPool[i].gameObject.SetActive(true);
+                GameMgr.Instance._GuardPool[i].GetComponent<Image>().enabled = true;
                 _guardList.Add(GameMgr.Instance._GuardPool[i]);
                 if (_guardDistribution[i])
                     _auxGuardRightPosList.RemoveAt(_auxSelectedGuardPosIndex);

@@ -98,6 +98,7 @@ public class SceneLayout : MonoBehaviour {
 
     public Transform GetStrikerStartPos()
     {
+        _strikerMonkeyStartPos.position = new Vector3(_strikerMonkeyStartPos.position.x, _floorHeightRef.position.y, _strikerMonkeyStartPos.position.z);
         return _strikerMonkeyStartPos;
     }
 

@@ -1,5 +1,5 @@
 ﻿Id,French
-loc_start,Début
+loc_start,Commencer
 loc_play,Jouer
 loc_pause,Pause
 loc_tutorial,Tutoriel
@@ -32,7 +32,9 @@ loc_accuracy,Précision,
 loc_speedCol,Vitesse du collecteur
 loc_speedFruitFall,Vitesse de chute des fruits
 loc_goldChance,Chance de spawn d'élément d'or
+loc_equipChance,Chance de spawn 
 loc_sackSize,Taille du sac
+loc_reloadSpeed,Vitesse de rechargement
 loc_strikerArea,Zone de Striker
 loc_strikerSpeed,Vitesse du Striker
 loc_equip,Équiper
@@ -57,7 +59,7 @@ loc_shop,Boutique
 loc_inventory,Inventaire
 loc_backToMenu,Menu
 loc_tut_welcome,Bienvenue sur le didacticiel de Rogue Monkeys!
-loc_tut_collector,glisser le pouce gauche sur le singe Collector.
+loc_tut_collector,Glisser le pouce gauche sur le singe Collector.
 loc_tut_striker,Faites un clic droit sur la zone pour déplacer le singe Striker.
 loc_tut_shaker,Le singe fait pleuvoir des fruits Shaker. Essayez de frapper le fruit avant qu'il ne touche le sol.
 loc_tut_alarm1,"Si tous les fruits tombe à terre près d'un animal endormi, le niveau d'alarme augmentera."
@@ -76,58 +78,58 @@ loc_stage_1,Jungle
 loc_stage_2,Oasis
 loc_stage_3,Haute Montagne
 loc_stage_4,Forêt Tropicale
-loc_Quick Sack,Quick sack
-loc_Leather Sack,Leather sack
-loc_Light Sack,Light sack
-loc_Santa Sack,Santa's sack
-loc_Mage Sack,Mage sack
-loc_Lightning Sack,Lightning sack
-loc_Kevlar Sack,Kevlar Sack
-loc_Winged Crocs,Winged crocs
-loc_Winged Boots,Winged boots
-loc_Winged Sports,Winged sports
-loc_Winged Rollers,Winged rollers
-loc_winged_rockets,Winged rockets
-loc_Leather Gloves,Leather gloves
-loc_Wool Gloves,Wool gloves
-loc_Gorilla Gloves,Gorilla gloves
-loc_Fitness Gloves,Fitness gloves
-loc_Silk Gloves,Silk gloves
-loc_Baseball Gloves,Baseball gloves
-loc_Kevlar Gloves,Kevlar gloves
-loc_Foam Gloves,Foam gloves
-loc_Finger Case,Finger case
-loc_Mech Gloves,Mech gloves
-loc_Jumping Crocs,Jumping crocs
-loc_Jumping Boots,Jumping boots
+loc_Quick Sack,Sack rapide
+loc_Leather Sack,Sac en cuir
+loc_Light Sack,Sac léger
+loc_Santa Sack,Sac du Nöel
+loc_Mage Sack,Sac du magicien
+loc_Lightning Sack,Sac de foudre
+loc_Kevlar Sack,Sac de kevlar
+loc_Winged Crocs,Sabots ailés
+loc_Winged Boots,Bottes ailés
+loc_Winged Sports,Sports ailés
+loc_Winged Rollers,Patins ailés
+loc_Winged Rockets,Fusées ailées
+loc_Leather Gloves,Gants de cuir
+loc_Wool Gloves,Gants de laine
+loc_Gorilla Gloves,Gants de gorille
+loc_Fitness Gloves,Gants de fitness
+loc_Silk Gloves,Gants de soie
+loc_Baseball Gloves,Gants de baseball
+loc_Kevlar Gloves,Gants de kevlar
+loc_Foam Gloves,Gants en mousse
+loc_Finger Case,Cas de doigt
+loc_Mech Gloves,Gants mécaniques
+loc_Jumping Crocs,Sabots de saut
+loc_Jumping Boots,Bottes de saut
 loc_Air Camera Crocs,Air camera crocs
-loc_Fairy Boots,Fairy boots
-loc_Teleport Boots,Teleport boots
-loc_Working Glasses,Working glasses
-loc_Shiny Glasses,Shiny glasses
-loc_Fortune Glasses,Fortune glasses
-loc_lucky_glasses,Lucky glasses
-loc_gnome_glasses,Gnome glasses
-loc_midas_sight,Midas' sight
-loc_scavenger_glasses,Scavenger glasses
-loc_sunglasses,Sunglasses
-loc_wealth_glasses,Wealth glasses
-loc_Future Glasses,Future glasses
-loc_Manipulation Gloves,Manipulation gloves
-loc_Prune Scissors,Prune scissors
-loc_Thief's Toolset,Thief's toolset
-loc_Laser Tools,Laser tools
-loc_Ring,Ring
-loc_Earrings,Earrings
-loc_Necklace,Necklace
-loc_Gold Nugget,Gold nugget
+loc_Fairy Boots,Bottes de fée
+loc_Teleport Boots,Bottes de téléportation
+loc_Working Glasses,Lunettes de travail
+loc_Shiny Glasses,Lunettes brillantes
+loc_Fortune Glasses,Lunettes de fortune
+loc_Lucky Glasses,Lunettes du chanceaux
+loc_Gnome Glasses,Lunettes de lutin
+loc_Midas' Sight,La vue de Midas
+loc_Scavenger Glasses,Lunettes de charognard
+loc_Sunglasses,Lunettes de soleil
+loc_Wealth Glasses,Lunettes de richesse
+loc_Future Glasses,Lunettes du futur
+loc_Manipulation Gloves,Gants de manipulation
+loc_Prune Scissors,Sécateurs
+loc_Thief's Toolset,Outils de voleur
+loc_Laser Tools,Outils laser
+loc_Ring,anneau
+loc_Earrings,Boucles d'oreilles
+loc_Necklace,Collier
+loc_Gold Nugget,Pépite d'or
 loc_Bling Bling,Bling bling
-loc_Golden Egg,Golden egg
-loc_Medallion,Medallion
-loc_Pocket Watch,Pocket watch
-Maneki-neko,Maneki-neko
+loc_Golden Egg,Oeuf d'or
+loc_Medallion,Médaillon
+loc_Pocket Watch,Montre de poche
+loc_Maneki-neko,Maneki-neko
 loc_Lingot,Lingot
-loc_Chalice,Chalice
+loc_Chalice,Calice
 loc_Ankh,Ankh
-loc_cancel,Cancel
+loc_cancel,Annuler
 loc_localization,Localisation

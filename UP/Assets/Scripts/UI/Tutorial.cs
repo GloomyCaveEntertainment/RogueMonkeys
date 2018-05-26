@@ -13,7 +13,7 @@ using UnityEngine.SceneManagement;
 public class Tutorial : MonoBehaviour {
 
 	#region Public Data
-    public enum TUT_STATE { IDLE = 0, INTRO, COLLECTOR_MOV, TESTING_COLLECTOR, STRIKER_MOV, TESTING_STRIKER, SHAKER, RUNNING, SACK_FULL, WAITING_FOR_RELOAD, COLLECT_FRUIT, LAST_RUN, FINISHED, BACK_TO_MENU, ALARM_1, ALARM_2, ALARM_ENDED }
+    public enum TUT_STATE { IDLE = 0, INTRO, COLLECTOR_MOV, TESTING_COLLECTOR, STRIKER_MOV, TESTING_STRIKER, SHAKER_INTRO, SHAKER_TREE, SHAKER_INTRO_RETURN, SHAKER, RUNNING, SACK_FULL, WAITING_FOR_RELOAD, COLLECT_FRUIT, LAST_RUN, FINISHED, BACK_TO_MENU, ALARM_1, ALARM_2, ALARM_ENDED }
 
     public static Tutorial Instance;
 	#endregion
@@ -130,7 +130,27 @@ public class Tutorial : MonoBehaviour {
                     if (_strikerMovCount >= _strikerCountToNext)
                         Next();
                 }
+
                 break;
+            case TUT_STATE.SHAKER_INTRO:
+                _timer += Time.deltaTime;
+                GameMgr.Instance.GameCamera.transform.position = new Vector3(Mathf.Lerp(_introCamStartPos.x, _introCamShakerPos.x, _timer / _shakerIntroTimeIn), Mathf.Lerp(_introCamStartPos.y, _introCamShakerPos.y, _timer / _shakerIntroTimeIn), GameMgr.Instance.GameCamera.transform.position.z);
+                if (_timer >= _shakerIntroTimeIn)
+                    Next();
+                break;
+            case TUT_STATE.SHAKER_TREE:
+                _timer += Time.deltaTime;
+                if (_timer >= _shakerTreeShakeTIme)
+                    Next();
+                break;
+            case TUT_STATE.SHAKER_INTRO_RETURN:
+                GameMgr.Instance.GameCamera.transform.position = new Vector3(Mathf.Lerp(_introCamShakerPos.x, _introCamStartPos.x, _timer / _shakerIntroTimeOut), Mathf.Lerp(_introCamShakerPos.y, _introCamStartPos.y, _timer / _shakerIntroTimeOut), GameMgr.Instance.GameCamera.transform.position.z);
+
+                _timer += Time.deltaTime;
+                if (_timer >= _shakerIntroTimeOut)
+                    Next();
+                break;
+
         }
 	}
 	#endregion
@@ -147,8 +167,8 @@ public class Tutorial : MonoBehaviour {
         _sack.FruitCollectedEvt += new Sack.OnFruitCollectedEvent(FruitCollectedEvtHandler);
         GameMgr.Instance.AlarmRaisedEvt += new GameMgr.OnAlarmRaisedEvt(AlarmRaisedEvtHandler);
         _welcomeHelp.SetActive(true);
-        GameMgr.Instance.GetCurrentLevel().LevelTime = 60f;
-        UIHelper.Instance.SetLvlScreenTime(60f);
+        //GameMgr.Instance.GetCurrentLevel().LevelTime = 60f;
+        //UIHelper.Instance.SetLvlScreenTime(60f);
         UIHelper.Instance.ShowLevelTime(false);
         _alarmTipShown = false;
         //_mainMenu.TutorialReady();
@@ -156,6 +176,8 @@ public class Tutorial : MonoBehaviour {
         UIHelper.Instance.ShowFakeShack(false);
         //GameMgr.Instance.AlarmIncrease = 5f;
         GetComponent<Canvas>().worldCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        _introCamShakerPos = GameMgr.Instance.GetCurrentLevel().IntroCamShakerPos;
+        _introCamStartPos = GameMgr.Instance.GameCamera.transform.position;
         Next();
     }
     
@@ -244,8 +266,21 @@ public class Tutorial : MonoBehaviour {
                 GameMgr.Instance._FruitTree.Pause(true);
                 GameMgr.Instance.GetCurrentLevel().Pause(true);
                 break;
+            case TUT_STATE.SHAKER_INTRO:
+                _timer = 0f;
+                break;
+
+            case TUT_STATE.SHAKER_TREE:
+                _timer = 0f;
+                GameMgr.Instance._FruitTree.Shake();
+                break;
+
+            case TUT_STATE.SHAKER_INTRO_RETURN:
+                _timer = 0f;
+                break;
 
             case TUT_STATE.SHAKER:
+                _timer = 0f;
                 _blackBground.SetActive(true);
                 GameMgr.Instance.Pause(true);
                 _shakerHelp.SetActive(true);
@@ -256,6 +291,7 @@ public class Tutorial : MonoBehaviour {
                 _blackBground.SetActive(false);
                 GameMgr.Instance.Pause(false);
                 _shakerHelp.SetActive(false);
+                GameMgr.Instance._FruitTree.StartSpawn();
                 //TODO: run level
                 break;
 
@@ -421,7 +457,8 @@ public class Tutorial : MonoBehaviour {
     private AnimationCurve _collectorHandAC;
     //[SerializeField]
     //private float _handSpeed;
-    
+    [SerializeField]
+    private float _shakerIntroTimeIn, _shakerTreeShakeTIme, _shakerIntroTimeOut;
     #endregion
 
     #region Private Non-serialized Fields
@@ -438,5 +475,7 @@ public class Tutorial : MonoBehaviour {
     private int _strikerHelpMiniPtIndex;
     private bool _fadeOutMini;
     private bool _handToLeft;
-	#endregion
+
+    private Vector3 _introCamStartPos, _introCamShakerPos;
+    #endregion
 }

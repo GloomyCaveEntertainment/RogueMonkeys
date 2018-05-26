@@ -32,7 +32,9 @@ loc_accuracy,Puntería
 loc_speedCol,Velocidad de Colector
 loc_speedFruitFall,Velocidad de caída
 loc_goldChance,Probabilidad de objetos de oro
+loc_equipChance,Probabilidad de objetos de equipo
 loc_sackSize,Tamaño de saco
+loc_reloadSpeed,Velocidad de recarga de saco
 loc_strikerArea,Area de golpe
 loc_strikerSpeed,Velocidad de golpeador
 loc_equip,Equipar
@@ -136,7 +138,7 @@ loc_Bling Bling,Bling bling
 loc_Golden Egg,Huevo de oro
 loc_Medallion,Medallón
 loc_Pocket Watch,Reloj de bolsillo
-Maneki-neko,Maneki-neko
+loc_Maneki-neko,Maneki-neko
 loc_Lingot,Lingote
 loc_Chalice,Cáliz
 loc_Ankh,Ankh

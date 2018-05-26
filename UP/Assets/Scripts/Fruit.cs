@@ -66,9 +66,14 @@ public class Fruit : MonoBehaviour {
     public const int _matureRipenScore = 5;
     public const int _staleRipenScore = 0;
     public const int _chickenScore = 5;
+
     public const int _eggScoreQuality_0 = 10;
     public const int _eggScoreQuality_1 = 15;
     public const int _eggScoreQuality_2 = 20;
+    public const float _eggTierOneChance = 0.5f;
+    public const float _eggTierTwoChance = 0.35f;
+    public const float _eggTierGoldChance = 0.15f;
+
     public const int _slowMoScore = 15;
     public const int _clusterScore = 10;
     public const int _kiwiScore = 20;
@@ -76,6 +81,7 @@ public class Fruit : MonoBehaviour {
     public const int _equipmentItemScore = 75;
 
     //Egg
+    public const int _maxSpawnedEggs = 4;
     public const int _maxEggQuality = 4;
     public const int _goldenEggGoldValue = 15;
 
@@ -208,7 +214,7 @@ public class Fruit : MonoBehaviour {
                     }
                     
                 }
-                else if (_type == F_TYPE.CHICKEN && (GameMgr.Instance.GetCurrentLevel().GetLevelState() == Level.L_STATE.RUN || GameMgr.Instance.GetCurrentLevel().GetLevelState() == Level.L_STATE.WAITNG_FLYING_FRUITS) 
+                else if (_type == F_TYPE.CHICKEN && (_eggSpawnQuality < _maxSpawnedEggs) && (GameMgr.Instance.GetCurrentLevel().GetLevelState() == Level.L_STATE.RUN || GameMgr.Instance.GetCurrentLevel().GetLevelState() == Level.L_STATE.WAITNG_FLYING_FRUITS) 
                     && (GameMgr.Instance._CollectorMonkey._State != CollectorMonkey.C_STATE.STUN  && GameMgr.Instance._CollectorMonkey._State != CollectorMonkey.C_STATE.RELOADING))
                 {
                     _timer += Time.deltaTime;
@@ -226,10 +232,15 @@ public class Fruit : MonoBehaviour {
                         _timer = 0f;
                         transform.localScale = Vector3.one;
                         //Fruit newEgg =_fTree.GetEggFruit(_currentEggQuality);
-                        if (_eggSpawnQuality < _maxEggQuality)
+                        if (_eggSpawnQuality < _maxSpawnedEggs)
                         {  
                             GameMgr.Instance._CollectorMonkey._Sack.PushEgg(this);
                             ++_eggSpawnQuality;
+                            //increase golden egg time
+                            if (_eggSpawnQuality == _maxSpawnedEggs-1)
+                                _eggSpawnTime *= 2f;// 2f;
+                            if (_eggSpawnQuality == _maxSpawnedEggs)
+                                LeanTween.rotateAroundLocal(gameObject, Vector3.forward, 120f, 0.5f);
                         }
                         
                     }
@@ -598,6 +609,12 @@ public class Fruit : MonoBehaviour {
             AudioController.Play("aud_fr_dismissed_1");
          else
             AudioController.Play("aud_fr_dismissed_0");
+
+        //Analytics
+        if (_type == F_TYPE.EQUIPMENT)
+            ++GameMgr.Instance.EqpItmLostCount;
+        else if (_type == F_TYPE.GOLD_ITEM)
+            ++GameMgr.Instance.GoldItmLostCount;
     }
 
     /// <summary>
@@ -780,22 +797,49 @@ public class Fruit : MonoBehaviour {
         //_goldItemType = (G_TYPE)goldTypeIndex;
         if (_img == null)
             _img = GetComponent<Image>();
-
         _currentEggQuality = quality;
-        _img.sprite = _qualityEggSpList[quality];// DataMgr.Instance.GetGameItems().Find((itm) => (itm.IdName.CompareTo(id) == 0))._Sprite;
+        //2nd egg is random
+        /*if (quality == _maxSpawnedEggs-1)
+        {
+            float result = Random.Range(0f, 1f);
+            if (result <= _eggTierOneChance)
+            {
+                _currentEggQuality = 1;
+                _currentScore = _eggScoreQuality_1;
+            }
+                
+            else if (result <= _eggTierTwoChance)
+            {
+                _currentEggQuality = 2;
+                _currentScore = _eggScoreQuality_2;
+            }
+                
+            else
+            {
+                _currentEggQuality = 3;
+                _currentScore = _goldItemScore;
+            }
+                
+        }
+        else
+        {
+            _currentEggQuality = 0;
+            _currentScore = _eggScoreQuality_0;
+        }*/
+        _img.sprite = _qualityEggSpList[_currentEggQuality];// DataMgr.Instance.GetGameItems().Find((itm) => (itm.IdName.CompareTo(id) == 0))._Sprite;
         if (quality == 0)
             _currentScore = _eggScoreQuality_0;
         else if (quality == 0)
-            _currentScore = _eggScoreQuality_0;
+            _currentScore = _eggScoreQuality_1;
         else if (quality == 0)
-            _currentScore = _eggScoreQuality_0;
+            _currentScore = _eggScoreQuality_2;
         else
             _currentScore = _goldItemScore;
         _maturityLevel = 1;
         _type = F_TYPE.EGG;
         _state = FRUIT_ST.ON_SACK;
-        _size = 1f;
-        if (quality == _maxEggQuality - 1)
+        _size = 0.5f;// 1f;
+        if (_currentEggQuality == _maxEggQuality - 1)
             _goldValue = _goldenEggGoldValue;
 
         if (_fTree == null)

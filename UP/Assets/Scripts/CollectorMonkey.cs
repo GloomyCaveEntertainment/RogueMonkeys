@@ -12,7 +12,7 @@ using UnityEngine.UI;
 public class CollectorMonkey : MonoBehaviour {
 
 	#region Public Data
-    public enum C_STATE { IDLE = 0, MOVING, RELOADING, FLEE, STUN, TICK }
+    public enum C_STATE { IDLE = 0, MOVING, RELOADING, FLEE, STUN, TICK, PAUSE }
 	#endregion
 
 
@@ -326,6 +326,23 @@ public class CollectorMonkey : MonoBehaviour {
         else
             SetIdle();
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="pause"></param>
+    public void Pause(bool pause)
+    {
+        if (pause && _state != C_STATE.PAUSE)
+        {
+            _lastState = _state;
+            _state = C_STATE.PAUSE;
+        }
+        else if (!pause && _state == C_STATE.PAUSE)
+        {
+            _state = _lastState;
+        }
+    }
     #endregion
 
 
@@ -454,7 +471,7 @@ public class CollectorMonkey : MonoBehaviour {
     #endregion
 
     #region Private Non-serialized Fields
-    private C_STATE _state;
+    private C_STATE _state, _lastState;
     private GameMgr _gameMgr;
     private Image _img;
     private Touch _targetPosTouch;      //the sliding thumb the collector follows

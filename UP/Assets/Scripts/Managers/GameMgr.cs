@@ -14,6 +14,9 @@ using SunCubeStudio.Localization;
 public class GameMgr : MonoBehaviour {
 
 	#region Public Data
+    /// <summary>
+    /// Helper class used to store information about collected fruits, used later on LevelFinishedScreen
+    /// </summary>
     public class CollectedFruit
     {
         public Fruit.F_TYPE _F_Type;
@@ -24,6 +27,7 @@ public class GameMgr : MonoBehaviour {
         public int _Gold;
         public int _Score;
 
+        //Ctor
         public CollectedFruit(Fruit.F_TYPE fType, Fruit.RIPEN_STATE rState, int eggQuality, Sprite sp, EquipmentItem eI, int gold, int score)
         {
             _F_Type = fType;
@@ -48,7 +52,7 @@ public class GameMgr : MonoBehaviour {
     public const float _slowMoTimeScale = 0.5f;
     public const float _slowMoDuration = 2f;
     public const float _maxAccuracy = 2f;
-    public const float _farGuardCanvasScaleRatio = 0.9f;
+    public const float _farGuardCanvasScaleRatio = 0.7f;
 
     public delegate void OnAlarmRaisedEvt();
 
@@ -116,7 +120,7 @@ public class GameMgr : MonoBehaviour {
             if (_slowMoTimer <= 0f)
                 SetSlowMotion(false);
             else
-                UIHelper.Instance.UpdateSlowMoFill(_slowMoTimer / _slowMoDuration);
+                UIHelper.Instance.UpdateSlowMoFill(_slowMoTimer / _slowMoDuration, true);
         }
         switch (_gameState)
         {
@@ -261,7 +265,7 @@ public class GameMgr : MonoBehaviour {
         
         LeanTween.value(gameObject,_score, _score + pts, _scoreTimeCount).setOnUpdate((float val) =>
         {
-            UIHelper.Instance.ScoreText.text = val.ToString("0000");
+            UIHelper.Instance.ScoreText.text = val.ToString("000");
             //_scoreText.text = val.ToString("0000");
         });
         _score += pts;
@@ -357,7 +361,8 @@ public class GameMgr : MonoBehaviour {
         _gameState = GAME_STATE.LOADING_LEVEL;
         _lastHitTime = Mathf.Infinity;
         _lvlAttempts = 0;
-        ResetCombo();
+        //ResetCombo(false);
+        ClearCombo();
     }
 
     /// <summary>
@@ -460,7 +465,7 @@ public class GameMgr : MonoBehaviour {
         _strikerMonkey.ResetMonkey();
         _collectorMonkey.transform.position = _currentLevel.GetSceneLayout().GetCollectorStartPos().position;
         _collectorMonkey._Reset();
-        _fruitTree.Reset();
+        _fruitTree.ResetTree();
 
         //Set previous session equipped items
         foreach (EquipmentItem eI in DataMgr.Instance.GetInventoryItems())
@@ -532,10 +537,11 @@ public class GameMgr : MonoBehaviour {
         _collectorMonkey.LoadItemsStats();
 
         UIHelper.Instance.SetLevelText(_currentLevelIndex);
-        _currentAlarmLvl = 0f;
         _currentLevelTime = _currentLevel.LevelTime;
+        UIHelper.Instance.SetLvlScreenTime(_currentLevelTime);
+        _currentAlarmLvl = 0f;
         _score = 0;
-        UIHelper.Instance.ScoreText.text = _score.ToString("0000");
+        UIHelper.Instance.ScoreText.text = _score.ToString("000");
         UIHelper.Instance.SetAlarmLevel();
         UIHelper.Instance.ResetAlarmUI();
         _goldItmCount = _eqpItmCount = 0;
@@ -554,6 +560,8 @@ public class GameMgr : MonoBehaviour {
         foreach (Guard g in _guardPool)
             if (g.gameObject.activeSelf)
                 g.SetupGuard();
+        _comboCount = 0;
+        _currentLaunchAudioIndex = -1;
     }
 
     /// <summary>
@@ -668,7 +676,8 @@ public class GameMgr : MonoBehaviour {
     public void WakeUpGuards()
     {
         foreach (Guard g in _guardPool)
-            g.WakeUp();
+            if (g.gameObject.activeSelf)
+                g.WakeUp();
     }
 
     /// <summary>
@@ -708,11 +717,14 @@ public class GameMgr : MonoBehaviour {
         int awardedGuards = 0;
         float alarmRaised = 0f;
 
+        if (_currentAlarmLvl >= _maxAlarmLvl)
+            return;
+
         ResetCombo();
         foreach (Guard g in _currentLevel.GuardList)
         {
             if (g.CheckAlarm(xPos, alarm))
-                ++awardedGuards;
+                ++awardedGuards;              
         }
 
         //level alarm raise
@@ -720,8 +732,9 @@ public class GameMgr : MonoBehaviour {
         {
             //Get total alarm amount
             //alarmRaised = _alarmIncrease;
-            for (int i = 0; i < awardedGuards; ++i)
-                alarmRaised += _alarmIncrease;// * (1f / (2f * i));
+            alarmRaised = _alarmIncrease * awardedGuards;
+            /*for (int i = 0; i < awardedGuards; ++i)
+                alarmRaised += _alarmIncrease;// * (1f / (2f * i));*/
             if (awardedGuards != 0)
                 RaiseAlarm(alarmRaised);
         }
@@ -782,6 +795,7 @@ public class GameMgr : MonoBehaviour {
                 Debug.LogError("No Striker comp attached!");
 
         }
+        //Guards
         if (_guardPool == null)
             _guardPool = new List<Guard>();
         else
@@ -813,6 +827,11 @@ public class GameMgr : MonoBehaviour {
         }
         _currentLevel.Pause(pause);
         _fruitTree.Pause(pause);
+        _strikerMonkey.Pause(pause);
+        _collectorMonkey.Pause(pause);
+        foreach (Guard g in _guardPool)
+            if (g.gameObject.activeSelf)
+                g.Pause(pause);
         
     }
 
@@ -824,14 +843,19 @@ public class GameMgr : MonoBehaviour {
         if ((Time.time - _lastHitTime)  <= _maxcomboTime)
         {
             _lastHitTime = Time.time;
+            ++_comboCount;
+            if (_comboCount > 1)
+                UIHelper.Instance.ShowComboCount(_comboCount);
             ++_currentLaunchAudioIndex;
-            if (_currentLaunchAudioIndex > 9)    //TODO: magic numbers!
+            if (_comboCount > 9)    //TODO: magic numbers!
                 _currentLaunchAudioIndex = 9;
+            else
+                _currentLaunchAudioIndex = _comboCount;
         }
         else
         {
             _lastHitTime = Time.time;
-            _currentLaunchAudioIndex = 0;   //reset index if there's no combo
+            _currentLaunchAudioIndex = -1;   //reset index if there's no combo
         }
     }
 
@@ -849,9 +873,35 @@ public class GameMgr : MonoBehaviour {
     /// </summary>
     public void ResetCombo()
     {
-        _currentLaunchAudioIndex = 0;
+        if (_comboCount > 1)
+        {
+            _scoreResult = Mathf.FloorToInt(Mathf.Log(_comboCount * _comboCount, (float)System.Math.E) * _comboCount); // log(x^2)*x
+            //round it to closest 5
+            _restToFive = (_scoreResult % 5);
+            if (_restToFive < 3)
+                _scoreResult -= _restToFive;
+            else
+                _scoreResult += (5 - _restToFive);
+            //sum 5 to have a min value of 5 (combo x2)
+            _scoreResult += 5;
+            UIHelper.Instance.ShowComboResult(_scoreResult);
+            AddScore(_scoreResult);   
+        }
+        
+        _comboCount = 0;
+        _currentLaunchAudioIndex = -1;
+
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    public void ClearCombo()
+    {
+        _comboCount = 0;
+        _currentLaunchAudioIndex = -1;
+        //UIHelper.Instance.HideComboCount();
+    }
     public int GetCollectedAudioIndex()
     {
         return _currentCollectedAudioIndex;
@@ -1019,15 +1069,40 @@ public class GameMgr : MonoBehaviour {
     }
 
     /// <summary>
-    /// 
+    /// Sprite "!"
     /// </summary>
     /// <param name="pos"></param>
     public void SetAlarmPs(Vector3 pos)
     {
-        _alarmPsPool[_currentGoldItemSplashIndex].transform.position = pos;
-        _alarmPsPool[_currentGoldItemSplashIndex].Play();
+        Debug.Log("Particle pos: " + pos);
+        _alarmPsPool[_currentAlarmPsIndex].transform.position = pos;
+        _alarmPsPool[_currentAlarmPsIndex].Play();
         _currentAlarmPsIndex = (_currentAlarmPsIndex + 1) % _alarmPsPool.Count;
+        //stop any remaining warn
+        foreach (ParticleSystem ps in _alarmWarnPsPool)
+            ps.Stop();
+      
     }
+
+    /// <summary>
+    /// Sprite "?"
+    /// </summary>
+    /// <param name="pos"></param>
+    public void SetAlarmWarnPs(Vector3 pos)
+    {
+        _alarmWarnPsPool[_currentAlarmWarnPsIndex].transform.position = pos;
+        _alarmWarnPsPool[_currentAlarmWarnPsIndex].Play();
+        _currentAlarmWarnPsIndex = (_currentAlarmWarnPsIndex + 1) % _alarmWarnPsPool.Count;
+    }
+
+    /// <summary>
+    /// Helper method to reset state when going back to menu during gameplay
+    /// </summary>
+    public void SetIdle()
+    {
+        _gameState = GAME_STATE.IDLE;
+    }
+
     #endregion
 
 
@@ -1149,11 +1224,12 @@ public class GameMgr : MonoBehaviour {
 
     public bool SlowMoEnabled { get { return _slowMoEnabled; } set { _slowMoEnabled = value; } }
 
+    //Level completed analytics data
     public int GoldItmCount {  get { return _goldItmCount; } set { _goldItmCount = value; } }
     public int EqpItmCount {  get { return _eqpItmCount; } set { _eqpItmCount = value; } }
     public int GoldItmLostCount {  get { return _goldItmLostCount; } set { _goldItmLostCount = value; } }
     public int EqpItmLostCount {  get { return _eqpItmLostCount; } set { _eqpItmLostCount = value; } }
-    public bool Win {  get { return _win; } set { _win = value; } }
+    //public bool Win {  get { return _win; } set { _win = value; } }
     public int LvlAttempts {  get { return _lvlAttempts; } set { _lvlAttempts = value; } }
 
     public bool ShowInvFb {  get { return _showInvFb; } set { _showInvFb = value; } }
@@ -1169,6 +1245,8 @@ public class GameMgr : MonoBehaviour {
     //Guard canvases
     public Transform FrontGuardCanvas {  get { return _frontGuardCanvas; } set { _frontGuardCanvas = value; } }
     public Transform FarGuardCanvas { get { return _farGuardCanvas; } set { _farGuardCanvas = value; } }
+
+    public float MaxComboTime {  get { return _maxcomboTime; } private set { } }
     
     #endregion
 
@@ -1244,7 +1322,7 @@ public class GameMgr : MonoBehaviour {
     private Fruit _fr1, _fr2;
 
     [SerializeField]
-    private List<ParticleSystem> _goldHitPsPool, _equipmentHitPsPool, _poolSplashParticle, _poolFeatherParticle, _goldItemSplashPsPool, _equipmetSplashPsPool, _alarmPsPool;
+    private List<ParticleSystem> _goldHitPsPool, _equipmentHitPsPool, _poolSplashParticle, _poolFeatherParticle, _goldItemSplashPsPool, _equipmetSplashPsPool, _alarmPsPool, _alarmWarnPsPool;
 
     [SerializeField]
     private List<Gradient> _fruitSplashColorGradList, _featherSplashColorGradList;
@@ -1290,6 +1368,7 @@ public class GameMgr : MonoBehaviour {
     private bool _itemCollected, _goldCollected;
     private bool _flyngFruits;
 
+    private int _comboCount;
     private int _currentLaunchAudioIndex;
     private int _currentCollectedAudioIndex;
     private float _lastHitTime;
@@ -1306,7 +1385,8 @@ public class GameMgr : MonoBehaviour {
     private bool _resetShop;
     private bool _levelUnlocked;
 
-    private int _currentGoldPsIndex, _currentEquipmentPsIndex, _currentPoolSplashIndex, _currentPoolFeatherIndex, _currentGoldItemSplashIndex, _currentEquipmentSplashIndex, _currentAlarmPsIndex;
+    private int _currentGoldPsIndex, _currentEquipmentPsIndex, _currentPoolSplashIndex, _currentPoolFeatherIndex, _currentGoldItemSplashIndex, _currentEquipmentSplashIndex, _currentAlarmPsIndex, _currentAlarmWarnPsIndex;
+    private int _scoreResult, _restToFive;   //used to store combo total score
     #endregion
 
 }

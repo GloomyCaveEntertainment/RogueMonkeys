@@ -32,7 +32,7 @@ loc_accuracy,Genauigkeit
 loc_speedCol,Kollektorgeschwindigkeit
 loc_speedFruitFall,Fruchtabfallgeschwindigkeit
 loc_goldChance,Gold Artikel Spawn Chance
-loc_equipChance,
+loc_equipChance,Gegenstands-Chance
 loc_sackSize,Sackgröße
 loc_reloadSpeed,Neubildungsrate Sack
 loc_strikerArea,Striker Hit Bereich
@@ -92,7 +92,7 @@ loc_Winged Crocs,Winged crocs
 loc_Winged Boots,Winged boots
 loc_Winged Sports,Winged sports
 loc_Winged Rollers,Winged rollers
-loc_winged_rockets,Winged rockets
+loc_Winged Rockets,Winged rockets
 loc_Leather Gloves,Leather gloves
 loc_Wool Gloves,Wool gloves
 loc_Gorilla Gloves,Gorilla gloves
@@ -111,12 +111,12 @@ loc_Teleport Boots,Teleport boots
 loc_Working Glasses,Working glasses
 loc_Shiny Glasses,Shiny glasses
 loc_Fortune Glasses,Fortune glasses
-loc_lucky_glasses,Lucky glasses
-loc_gnome_glasses,Gnome glasses
-loc_midas_sight,Midas' sight
-loc_scavenger_glasses,Scavenger glasses
-loc_sunglasses,Sunglasses
-loc_wealth_glasses,Wealth glasses
+loc_Lucky Glasses,Lucky glasses
+loc_Gnome Glasses,Gnome glasses
+loc_Midas' Sight,Midas' sight
+loc_Scavenger Glasses,Scavenger glasses
+loc_Sunglasses,Sunglasses
+loc_Wealth Glasses,Wealth glasses
 loc_Future Glasses,Future glasses
 loc_Manipulation Gloves,Manipulation gloves
 loc_Prune Scissors,Prune scissors
@@ -130,7 +130,7 @@ loc_Bling Bling,Bling bling
 loc_Golden Egg,Golden egg
 loc_Medallion,Medallion
 loc_Pocket Watch,Pocket watch
-Maneki-neko,Maneki-neko
+loc_Maneki-neko,Maneki-neko
 loc_Lingot,Lingot
 loc_Chalice,Chalice
 loc_Ankh,Ankh

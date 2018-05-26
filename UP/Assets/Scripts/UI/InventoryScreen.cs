@@ -68,7 +68,8 @@ public class InventoryScreen : MonoBehaviour {
         //Check if need to instantiate new item miniatures
         if (_inventoryItems.Count > _inventoryItemButtonRootList.Count)
         {
-            _buttonMiniOffset = _inventoryItemButtonRootList[0].transform.position.y - _inventoryItemButtonRootList[4].transform.position.y;
+            _buttonMiniOffset = _inventoryItemButtonRootList[0].transform.parent.GetComponent<GridLayoutGroup>().cellSize.y;
+            //_buttonMiniOffset = _inventoryItemButtonRootList[0].transform.position.y - _inventoryItemButtonRootList[4].transform.position.y;
             for (int i= _inventoryItemButtonRootList.Count; i < _inventoryItems.Count; ++i)
             {
                 _inventoryItemButtonRootList.Add((GameObject)Instantiate(_inventoryBtnPref, _inventoryItemButtonRootList[0].transform.parent));
@@ -85,10 +86,11 @@ public class InventoryScreen : MonoBehaviour {
                 yMin = Mathf.Min(yMin, child.offsetMin.y);
                 yMax = Mathf.Max(yMax, child.offsetMax.y);
                 Debug.Log("YMIN " + yMin + " ymax: " + yMax);
+                Debug.Log("Mini offset: " + _buttonMiniOffset);
             }
 
             float finalSize = yMax - yMin;
-            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, (Mathf.CeilToInt((float)_inventoryItems.Count/ _itemsPerRow)) * _inventoryItemButtonRootList[0].transform.parent.GetComponent<GridLayoutGroup>().cellSize.y + 60f/*  finalSize*/);
+            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, (Mathf.CeilToInt((float)_inventoryItems.Count/ _itemsPerRow)) * _inventoryItemButtonRootList[0].transform.parent.GetComponent<GridLayoutGroup>().cellSize.y + _buttonMiniOffset/* 60f/*  finalSize*/);
             Debug.Log("finalSize: " + finalSize);   
         }
         for (int i = 0; i < _inventoryItems.Count; ++i)
@@ -696,7 +698,7 @@ public class InventoryScreen : MonoBehaviour {
                     displayedText = LocalizationService.Instance.GetTextByKey("loc_goldChance");
                     break;
                 case EquipmentItem.MOD_TYPE.ITEM_FIND_PROB:
-                    displayedText = LocalizationService.Instance.GetTextByKey("loc_shaker_item");
+                    displayedText = LocalizationService.Instance.GetTextByKey("loc_equipChance");
                     break;
 
                 case EquipmentItem.MOD_TYPE.RELOAD_SPEED:

@@ -24,7 +24,7 @@ public class LevelFinishedScreen : MonoBehaviour {
     public const float _rankERatio = .5f;
     public const float _rankFRatio = 0f;
 
-    public enum LF_MENU_STATE { IDLE = 0, COUNTING, RANK, FINISHED }
+    public enum LF_MENU_STATE { IDLE = 0, COUNTING, BONUS, TOTAL, RANK, FINISHED }
 
     public class FruitIndex
     {
@@ -157,18 +157,46 @@ public class LevelFinishedScreen : MonoBehaviour {
                     //End count
                     if (_collectedFruitIndex == GameMgr.Instance.StageCollectedFruits.Count)
                     {
-                        AudioController.Stop("aud_score");
-                        _state = LF_MENU_STATE.RANK;
+                        _state = LF_MENU_STATE.BONUS;
                         _timer = 0f;
-                        //Rank letter + stamp
-                        SetRank();
-                        
-                        if (GameMgr.Instance.GetCurrentLevel().CheckForHighScore(_tempScore))
-                        {
-                            //TODO: new score feedback
-                            _newScoreFb.SetActive(true);
-                        }
                     }
+                }
+                break;
+
+            case LF_MENU_STATE.BONUS:             
+                _bonusScoreText.gameObject.SetActive(true);
+                _bonusScoreTextLabel.gameObject.SetActive(true);
+                _timer += Time.deltaTime;
+                if (_timer / _bonusTextTime > 1f)
+                    _bonusScoreText.text = (GameMgr.Instance.Score - _tempScore).ToString("0");
+                else
+                    _bonusScoreText.text = ((GameMgr.Instance.Score - _tempScore) * (_timer / _bonusTextTime)).ToString("0");
+                if (_timer >= _bonusTextTime)
+                {
+                    _state = LF_MENU_STATE.TOTAL;
+                    _timer = 0f;
+                }
+                break;
+
+            case LF_MENU_STATE.TOTAL:               
+                _totalScoreText.gameObject.SetActive(true);
+                _totalScoreTextLabel.gameObject.SetActive(true);
+                _timer += Time.deltaTime;
+                if (_timer / _bonusTextTime > 1f)
+                    _totalScoreText.text = GameMgr.Instance.Score.ToString("0");
+                else
+                    _totalScoreText.text = (GameMgr.Instance.Score * (_timer / _bonusTextTime)).ToString("0");
+                if (_timer >= _bonusTextTime)
+                {
+                    AudioController.Stop("aud_score");
+                    _state = LF_MENU_STATE.RANK;
+                    _timer = 0f;
+                    //Rank letter + stamp
+                    SetRank();
+
+                    if (GameMgr.Instance.GetCurrentLevel().CheckForHighScore(_tempScore))
+                        _newScoreFb.SetActive(true);
+                    
                 }
                 break;
 
@@ -180,7 +208,6 @@ public class LevelFinishedScreen : MonoBehaviour {
                     AudioController.Play("aud_stamp");
                 }
                     
-
                 if (_timer >= _rankShowTime)
                 {
                     //Add gold
@@ -261,6 +288,10 @@ public class LevelFinishedScreen : MonoBehaviour {
         _rankStampFail.gameObject.SetActive(false);
         _newScoreFb.SetActive(false);
         _rankAudioPlayed = false;
+        _bonusScoreText.gameObject.SetActive(false);
+        _bonusScoreTextLabel.gameObject.SetActive(false);
+        _totalScoreText.gameObject.SetActive(false);
+        _totalScoreTextLabel.gameObject.SetActive(false);
 
     }
 
@@ -544,6 +575,13 @@ public class LevelFinishedScreen : MonoBehaviour {
 
     [SerializeField]
     private AnimationCurve _stampAC;
+
+    [SerializeField]
+    private Text _bonusScoreText, _totalScoreText;
+    [SerializeField]
+    private Text _bonusScoreTextLabel, _totalScoreTextLabel;
+    [SerializeField]
+    private float _bonusTextTime;
     #endregion
 
     #region Private Non-serialized Fields

@@ -27,7 +27,8 @@ public class ShopMenu : MonoBehaviour {
     void Update()
     {
         if (Input.GetKey(KeyCode.G))
-            GameMgr.Instance.AddGold(200);
+            TTTT();
+            //GameMgr.Instance.AddGold(200);
         if (_state == SHOP_ST.OPENING_BOX)
         {
             _frameTimer += Time.deltaTime;
@@ -238,8 +239,10 @@ public class ShopMenu : MonoBehaviour {
             BuyItem(_currentIndex);
         else
         {
-            //TODO: gold feedback
-            LeanTween.scale(_goldText.gameObject, Vector3.one*1.1f, .5f).setEase(_goldFeedbackAC).setLoopPingPong(1);
+            //No gold feedback
+            if (!LeanTween.isTweening(_goldText.gameObject))
+                LeanTween.scale(_goldText.gameObject, Vector3.one*1.1f, .5f).setEase(_goldFeedbackAC).setLoopPingPong(1);
+            AudioController.Play("aud_no_money");
         }
     }
 
@@ -293,8 +296,23 @@ public class ShopMenu : MonoBehaviour {
         else
             LeanTween.rotate(_tapBox, Vector3.forward * 20f, .1f).setLoopPingPong(1);
 
+        _boxTapMat.mainTexture = _boxTapPsTxList[(int)_currentBoxQuality];
+        ParticleSystem.MainModule main = _boxTapPs.main;
+        main.startSize = new ParticleSystem.MinMaxCurve(_boxTapPsSizeList[(int)_currentBoxQuality].x, _boxTapPsSizeList[(int)_currentBoxQuality].y);
+
+        _boxTapPs.Play();   //Particles
         AudioController.Play("aud_tear_01");
        
+    }
+
+    public void TTTT()
+    {
+        _boxTapMat.mainTexture = _boxTapPsTxList[(int)_currentBoxQuality];
+        ParticleSystem.MainModule main = _boxTapPs.main;
+        main.startSize = new ParticleSystem.MinMaxCurve(_boxTapPsSizeList[(int)_currentBoxQuality].x, _boxTapPsSizeList[(int)_currentBoxQuality].y);
+
+        _boxTapPs.Play();   //Particles
+        AudioController.Play("aud_tear_01");
     }
 
     /// <summary>
@@ -791,6 +809,14 @@ public class ShopMenu : MonoBehaviour {
 
     [SerializeField]
     private ParticleSystem _equipmentItemPs, _goldItemPs;
+    [SerializeField]
+    private ParticleSystem _boxTapPs;
+    [SerializeField]
+    private Material _boxTapMat;
+    [SerializeField]
+    private List<Texture> _boxTapPsTxList;   //ordered by Quality type
+    [SerializeField]
+    private List<Vector2> _boxTapPsSizeList;    //[min, max]
     #endregion
 
     #region Private Non-serialized Fields

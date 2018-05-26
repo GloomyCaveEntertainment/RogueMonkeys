@@ -81,8 +81,7 @@ public class Sack : MonoBehaviour {
                 if (_reloadTimer >= _reloadPerFruitTime)
                 { 
                     _reloadTimer = 0f;
-
-
+                    Debug.Log("REloading, stackindex_________________________________:::: " + _currentStackIndex);
                     _tempFruit = _fruitList[_currentStackIndex];
                     _fruitList.RemoveAt(_currentStackIndex);
                     --_currentStackIndex;
@@ -148,7 +147,11 @@ public class Sack : MonoBehaviour {
             if (_feedbackTimer >= _fullFbTime)
                 EnableFullFeedback(false);
             else
+            {
                 _sackOutline.effectColor = new Color(1f, 0f, 0f, Mathf.Lerp(0f, 1f, _fullFeedbackAnimC.Evaluate(_feedbackTimer / _fullFbTime)));
+                _sackOutline.effectDistance = Vector2.Lerp(new Vector2(1f,-1f),new Vector2(10f,-10f), _fullFeedbackAnimC.Evaluate(_feedbackTimer / _fullFbTime));
+            }
+                
         }
 
         if (_seekingSack)
@@ -194,6 +197,7 @@ public class Sack : MonoBehaviour {
         _currentSize = 0f;
 
         _initSackPos = _Collector._CollectorSack.transform.localPosition;
+        UpdateSackCountMiniList();
         //_catchAnimOffset = _Collector._Sack.transform.lossyScale.y * 0.1f;
         //Debug.Log("INIT SACK; sack init pos: " + _initSackHeight);
     }
@@ -232,7 +236,7 @@ public class Sack : MonoBehaviour {
                 f.FruitTree.DestroyFruit(f);
             _fruitList.Clear();
         }
-        _currentStackIndex = 0;
+        _currentStackIndex = -1;//TOCHECK
 
         _maxCount = _currentCapacity;
         _speedLoss = 0f;
@@ -324,7 +328,7 @@ public class Sack : MonoBehaviour {
     /// </summary>
     public void Reload()
     {
-        if (_state == S_STATE.RELOADING ||_fruitList.Count == 0 ||_state == S_STATE.STOP || _state == S_STATE.BROKEN)
+        if (_state == S_STATE.RELOADING ||_fruitList.Count == 0 ||_state == S_STATE.STOP || _state == S_STATE.BROKEN || _Collector._State == CollectorMonkey.C_STATE.FLEE)
             return;
 
         //Event call for any subscribed client(ie Tutorial)
@@ -400,12 +404,14 @@ public class Sack : MonoBehaviour {
             //Debug.Log("MAx count and count is :" + _maxCount + " / " + _fruitList.Count +" and size: "+ _currentSize);
             //(3) If List full,last top will get dismissed, else, duplicate last to seek iteration
 
-            if (_currentSize + 1f > _currentCapacity)   //TODO: MAgic Numbers (egg.size)
+            if (_currentSize + 0.5f > _currentCapacity)   //TODO: MAgic Numbers (egg.size)
             //if (_fruitList.Count == _maxCount)
             {
                 pushedFr_a = _fruitList[_fruitList.Count - 1];
+                _fruitList.RemoveAt(_fruitList.Count - 1);
                 //pushed fruit with size 1
-                if (_currentSize + 1f - pushedFr_a.Size <= _currentCapacity)
+                /* No longer needed with size 0.5 instead 1   
+                 * if (_currentSize + 0.5f - pushedFr_a.Size <= _currentCapacity)
                     _fruitList.RemoveAt(_fruitList.Count - 1);
                 //pushed fruit size 0.5, so need to push another one
                 else
@@ -413,7 +419,7 @@ public class Sack : MonoBehaviour {
                     pushedFr_b = _fruitList[_fruitList.Count - 2];
                     _fruitList.RemoveAt(_fruitList.Count - 1);
                     _fruitList.RemoveAt(_fruitList.Count - 1);
-                }
+                }*/
             }
             /*else
                 _fruitList.Add(_fruitList[_currentStackIndex]);*/
@@ -421,7 +427,8 @@ public class Sack : MonoBehaviour {
             //(2) Insert Egg at position
             tempEgg = GameMgr.Instance._FruitTree.GetEggFruit(fr.EggSpawnQuality);
             Debug.Log("Spawned egg with quality: " + tempEgg.CurrentEggQuality + "frStackIndex: "+ frStackIndex+ "_fruitList.Count: "+ _fruitList.Count);
-            tempEgg.transform.position = _stackEndPt.position + Vector3.up * (frStackIndex * _fruitStackHeightOffset);
+            
+            //tempEgg.transform.position = _sackFrPtList[ptListIndex + 2]//TOREVIEW: proper position
             tempEgg.transform.parent = transform;
             tempEgg.gameObject.SetActive(true);
             //if we are trying to spawn an egg on last position, spawn it at end of list (we could have pushed 1 or 2 fruits, depending on size)
@@ -429,13 +436,34 @@ public class Sack : MonoBehaviour {
                 _fruitList.Add(tempEgg);
             else
                 _fruitList.Insert(frStackIndex, tempEgg);
-           
+
+            //Get egg position
+            int ptListIndexAux = 0;
+            for (int i = 0; i < frStackIndex; ++i)
+            {
+                if (_fruitList[i].Size == 1f)
+                    ptListIndexAux += 2;
+                else
+                    ++ptListIndexAux;
+            }
+            //tempEgg.transform.position = _stackEndPt.position + Vector3.up * (frStackIndex * _fruitStackHeightOffset);
+            tempEgg.transform.position = _sackFrPtList[ptListIndexAux].position;
+            ++ptListIndexAux;   //skip egg already inserted
+            //Push fruits on top of egg
+            for (int i= frStackIndex+1; i <_fruitList.Count; ++i)
+            {
+                //Cancel any previous tween
+                if (LeanTween.isTweening(_fruitList[i].gameObject))
+                    LeanTween.cancel(_fruitList[i].gameObject);
+                LeanTween.move(_fruitList[i].gameObject, _sackFrPtList[ptListIndexAux], _eggSpawnTime);
+                ++ptListIndexAux;
+            }
             //Debug.Log("fruit list count after insert: " + _fruitList.Count);
             for (int i = 0; i < _fruitList.Count; ++i)
                 Debug.Log("---------------->>>> " + _fruitList[i]._Ftype);
             //_animatingFruitList.Insert(frStackIndex, new SackFruit(tempEgg, (Vector2)_stackEndPt.position + Vector2.up * (frStackIndex * _fruitStackHeightOffset)));
 
-            int ptListIndex = -1;
+            /*int ptListIndex = -1;
             for (int i = 0; i < _fruitList.Count; ++i)
             {
                 Debug.Log("pt index: " + ptListIndex);
@@ -450,9 +478,10 @@ public class Sack : MonoBehaviour {
                         if (LeanTween.isTweening(_fruitList[i].gameObject))
                             LeanTween.cancel(_fruitList[i].gameObject);
 
-                        if (_fruitList[i].Size == 1f)
-                            LeanTween.move(_fruitList[i].gameObject, _sackFrPtList[ptListIndex + 2], _eggSpawnTime);
-                        else
+                        //if (_fruitList[i].Size == 1f)
+                            //LeanTween.move(_fruitList[i].gameObject, _sackFrPtList[ptListIndex + 2], _eggSpawnTime);
+                        //else
+                        //all moved one position because egg has size 0.5
                             LeanTween.move(_fruitList[i].gameObject, _sackFrPtList[ptListIndex + 1], _eggSpawnTime);
                         
                             
@@ -463,7 +492,7 @@ public class Sack : MonoBehaviour {
                 else
                     ++ptListIndex;
                 
-            }
+            }*/
             //seek animation for fruits in top of chicken
             //for (int i = frStackIndex+1; i < _fruitList.Count-1; ++i)
             //{
@@ -497,7 +526,7 @@ public class Sack : MonoBehaviour {
                 _speedLoss = _speedLoss - _lossSpeedPerFruit * pushedFr_a.Size + _lossSpeedPerFruit * tempEgg.Size;
                 _Collector.ReduceSpeed(_speedLoss);
             }
-            if (pushedFr_b != null)
+            /*if (pushedFr_b != null)
             {
                 LeanTween.move(pushedFr_b.gameObject, pushedFr_b.transform.position + Vector3.up * _fruitStackHeightOffset * 3f, _eggSpawnTime * 0.4f).setEase(LeanTweenType.easeInOutQuad).setOnComplete(() =>
                 {
@@ -511,8 +540,8 @@ public class Sack : MonoBehaviour {
                 //Update Collector speed                                                              
                 _speedLoss = _speedLoss - _lossSpeedPerFruit * pushedFr_b.Size;
                 _Collector.ReduceSpeed(_speedLoss);
-            }
-            else if (pushedFr_a == null && pushedFr_b == null)
+            }*/
+            else if (pushedFr_a == null/* && pushedFr_b == null*/)
             {
                 ++_currentStackIndex;
                 //UI Sack Fill
@@ -529,13 +558,13 @@ public class Sack : MonoBehaviour {
                 _speedLoss += _lossSpeedPerFruit * tempEgg.Size;
                 _Collector.ReduceSpeed(_speedLoss);
             }
-
+            Debug.Log("Egg inserted, stack index________________________________: " + _currentStackIndex);
             //Sack Animation
             //_Collector._CollectorSack.transform.position = new Vector3(_Collector._CollectorSack.transform.position.x, _initSackPos, _Collector._CollectorSack.transform.position.z);    //reset position in case it was animating
             //LeanTween.moveLocalY(_Collector._CollectorSack, _Collector._CollectorSack.transform.localPosition.y + _catchAnimOffset, _catchAnimTime).setEase(_catchAnimCurve);
             _seekTimer = 0f;
             _seekingSack = true;
-            ++GameMgr.Instance.StageSpawnedFruitCount;
+            ++GameMgr.Instance.StageSpawnedFruitCount;  //Used for score count
             UpdateSackCountMiniList();
             //Audio
             AudioController.Play("aud_fr_egg_0");
@@ -623,6 +652,7 @@ public class Sack : MonoBehaviour {
         {
             _feedbackTimer = 0f;
             _sackOutline.effectColor = new Color(1f, 0f, 0f, 0f);//Red no alpha
+            _sackOutline.effectDistance = Vector2.one;
         }
         _fullFeedback = enable;
         _sackOutline.enabled = enable;

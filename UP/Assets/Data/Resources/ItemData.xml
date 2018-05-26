@@ -144,22 +144,22 @@
     <!-- STRIKER BOOTS -->
     <item id ="Jumping Crocs" spriteId ="strikerBJumpingCrocs" value ="35" slotType ="STRIKER_B">
       <modList>
-        <mod modType ="STRIKER_SPEED" modVal ="0.25"/>
+        <mod modType ="STRIKER_SPEED" modVal ="0.2"/>
       </modList>
     </item>
     <item id ="Jumping Boots" spriteId ="strikerBJumpingBoots" value ="70" slotType ="STRIKER_B">
       <modList>
-        <mod modType ="STRIKER_SPEED" modVal ="0.50"/>
+        <mod modType ="STRIKER_SPEED" modVal ="0.35"/>
       </modList>
     </item>
     <item id ="Air Camera Crocs" spriteId ="strikerBAirCameraCrocs" value ="135" slotType ="STRIKER_B">
       <modList>
-        <mod modType ="STRIKER_SPEED" modVal ="0.75"/>
+        <mod modType ="STRIKER_SPEED" modVal ="0.5"/>
       </modList>
     </item>
     <item id ="Fairy Boots" spriteId ="strikerBFairyBoots" value ="250" slotType ="STRIKER_B">
       <modList>
-        <mod modType ="STRIKER_SPEED" modVal ="1.25"/>
+        <mod modType ="STRIKER_SPEED" modVal ="0.75"/>
       </modList>
     </item>
     <item id ="Teleport Boots" spriteId ="strikerBTeleportBoots" value ="350" slotType ="STRIKER_B">
