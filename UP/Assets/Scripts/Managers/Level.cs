@@ -1,5 +1,5 @@
 ﻿/************************************************************************/
-/* @Author: Author Name
+/* @Author: Rodrigo Ribeiro-Pinto Carvajal, Gloomy Cave Entertainment
  * @Date: Date
  * @Brief: BBBrief
  * @Description: DDDescription
@@ -99,11 +99,14 @@ public class Level : MonoBehaviour {
                             break;
                     case INTRO_STATE.READY_TO_TREE:
                         GameMgr.Instance.GameCamera.transform.position = new Vector3(Mathf.Lerp(_introCamStartPos.x, _introCamShakerPos.x, _timer / _readyIntroTime), Mathf.Lerp(_introCamStartPos.y, _introCamShakerPos.y, _timer / _readyIntroTime), GameMgr.Instance.GameCamera.transform.position.z);
+                        GameMgr.Instance._CollectorMonkey._Sack.transform.position = GameMgr.Instance.GameCamera.transform.position - _sakCamRelativeOffset;
                         if (_timer >= _readyIntroTime)
                         {
                             _timer = 0f;
                             _introSt = INTRO_STATE.STEADY_TREE;
-                            UIHelper.Instance.LvlIntroText.text = LocalizationService.Instance.GetTextByKey("loc_steady");
+                            //No "Steady" on Japanese
+                            if (LocalizationService.Instance.Localization.CompareTo("Japanese")!=0)
+                                UIHelper.Instance.LvlIntroText.text = LocalizationService.Instance.GetTextByKey("loc_steady");
                             //Shaker animation
                             _fruitTree.Shake();
                         }
@@ -124,6 +127,7 @@ public class Level : MonoBehaviour {
 
                     case INTRO_STATE.STEADY_RETURN:
                         GameMgr.Instance.GameCamera.transform.position = new Vector3(Mathf.Lerp(_introCamShakerPos.x, _introCamStartPos.x, _timer / (_steadyIntroTime * 0.25f)), Mathf.Lerp(_introCamShakerPos.y, _introCamStartPos.y, _timer / (_steadyIntroTime * 0.25f)), GameMgr.Instance.GameCamera.transform.position.z);
+                        GameMgr.Instance._CollectorMonkey._Sack.transform.position = GameMgr.Instance.GameCamera.transform.position - _sakCamRelativeOffset;
                         //GameMgr.Instance.GameCamera.transform.position = Vector3.Lerp(_introCamShakerPos, _introCamStartPos, );
                         if (_timer >= _steadyIntroTime * 0.25f)
                         {
@@ -141,7 +145,7 @@ public class Level : MonoBehaviour {
                             UIHelper.Instance.LvlIntroText.gameObject.SetActive(false);
                             _fruitTree.InitPalmTree();
                             _fruitTree.StartSpawn();
-                            UIHelper.Instance.ShowFakeShack(false);
+                            //UIHelper.Instance.ShowFakeShack(false);
                         }
                         break;
                 }
@@ -239,15 +243,17 @@ public class Level : MonoBehaviour {
         {
             _state = L_STATE.START;
             _introSt = INTRO_STATE.READY;
-            UIHelper.Instance.ShowFakeShack(true);
+            //UIHelper.Instance.ShowFakeShack(true);
             UIHelper.Instance.LvlIntroText.gameObject.SetActive(true);
             UIHelper.Instance.LvlIntroText.text = LocalizationService.Instance.GetTextByKey("loc_ready");
             //TOCHECK
             _introCamStartPos = GameMgr.Instance.GameCamera.transform.position;
-            
+            _sakCamRelativeOffset = _introCamStartPos - GameMgr.Instance._CollectorMonkey._Sack.transform.position;
+
+
             if (AudioController.IsPlaying("Menu_Theme"))
                 AudioController.Stop("Menu_Theme");
-            AudioController.Play(_themeAudioId);//, GameMgr.Instance.GameCamera.transform);
+            /*_musicAudioRef = */AudioController.Play(_themeAudioId);//, GameMgr.Instance.GameCamera.transform);
         }  
     }
 
@@ -321,7 +327,7 @@ public class Level : MonoBehaviour {
         if (_currentSL == null)
             Debug.LogError("No layout comp attached!");
 
-        _netObject = _currentSL.GetNet();
+        _netObjectList = _currentSL.GetNetList();
         _fruitTree = _currentSL.GetFruitTree();
         _background = _currentSL.GetBackground();
         _netHeightRef = _currentSL.GetNetHeightRef();
@@ -427,7 +433,7 @@ public class Level : MonoBehaviour {
                 
                 //GameMgr.Instance._GuardPool[i].SetupGuard(); //Done later from GameMgr since we haven't already canvases references
                 //GameMgr.Instance._GuardPool[i].gameObject.SetActive(true);
-                GameMgr.Instance._GuardPool[i].GetComponent<Image>().enabled = true;
+                //GameMgr.Instance._GuardPool[i].GetComponent<Image>().enabled = true;
                 _guardList.Add(GameMgr.Instance._GuardPool[i]);
                 if (_guardDistribution[i])
                     _auxGuardRightPosList.RemoveAt(_auxSelectedGuardPosIndex);
@@ -441,12 +447,19 @@ public class Level : MonoBehaviour {
             else
                 GameMgr.Instance._GuardPool[i].gameObject.SetActive(false);
         }
+        //canvas render sort order
+        GameMgr.Instance._GuardPool.Sort((a, b) => (b.transform.position.y.CompareTo(a.transform.position.y)));  
+        for (int i = 0; i < GameMgr.Instance._GuardPool.Count; ++i)
+            GameMgr.Instance._GuardPool[i].transform.SetSiblingIndex(i);
+
 
         //Set timer and state
         UIHelper.Instance.SetLvlScreenTime(_levelTime);
         UIHelper.Instance.SetAlarmLevel();
         UIHelper.Instance.ResetAlarmUI();
         _state = L_STATE.IDLE;
+        if (_musicAudioRefList == null)
+            _musicAudioRefList = new List<AudioObject>();
     }
 
     public void Pause(bool pause)
@@ -460,6 +473,21 @@ public class Level : MonoBehaviour {
         {
             _state = _lastState;
         }
+        if (pause)
+        {
+            if (_musicAudioRefList.Count !=0)
+                _musicAudioRefList.Clear();
+            foreach (AudioObject ao in GameObject.FindObjectsOfType<AudioObject>())
+            {
+                ao.Pause(0.2f);
+                _musicAudioRefList.Add(ao);
+            }              
+        }
+        else
+        {
+            foreach (AudioObject ao in _musicAudioRefList)
+                ao.Play();
+        }        
     }
 	#endregion
 
@@ -482,7 +510,7 @@ public class Level : MonoBehaviour {
 
 
 	#region Properties
-    public GameObject NetObject { get { return _netObject; } private set { _netObject = value; } }
+    public List<GameObject> NetObject { get { return _netObjectList; } private set { _netObjectList = value; } }
     public Transform NetHeightRef { get { return _netHeightRef; } set { _netHeightRef = value; } }
     public Transform FloorHeightRef { get { return _floorHeightRef; } set { _floorHeightRef = value; } }
     public Transform LeftBotSpawnLimit { get { return _leftBotSpawnLimit; } set { _leftBotSpawnLimit = value; } }
@@ -564,7 +592,7 @@ public class Level : MonoBehaviour {
     private SceneLayout _currentSL;
     private Transform _minLeftFingerRef, _maxLeftFingerRef, _minRightFingerRef, _maxRightFingerRef;
 
-    private GameObject _netObject;
+    private List<GameObject> _netObjectList;
     private Transform _netHeightRef;     //Transform which defines fruit max ytayectory height
     private Transform _floorHeightRef;
     private Transform _leftBotSpawnLimit, _rightTopSpawnLimit;  //defines fruit spawn area
@@ -589,5 +617,9 @@ public class Level : MonoBehaviour {
 
     private INTRO_STATE _introSt;
     private Vector3 _introCamStartPos, _introCamShakerPos;
+
+    private List<AudioObject> _musicAudioRefList;
+
+    private Vector3 _sakCamRelativeOffset;
     #endregion
 }

@@ -1,138 +1,141 @@
 ﻿Id,German
-loc_start,Anfang
-loc_play,Spielen
+loc_start,Start
+loc_play,Play
 loc_pause,Pause
-loc_tutorial,Tutorial
+loc_tutorial,Spielanleitung
 loc_options,Optionen
-loc_credits,Kredite
-loc_exit,verlassen
+loc_credits,Abspann
+loc_exit,Verlassen
 loc_sureExit,Bist du sicher?
 loc_no,Nein
 loc_yes,Ja
-loc_next,Folgende
-loc_globVol,Master Volumen
-loc_musicVol,Musiklautstärke
-loc_sfxVol,Effektvolumen
+loc_next,Weiter
+loc_globVol,Gesamtlautstärke
+loc_musicVol,Volumen Musik
+loc_sfxVol,Volumen Spezialeffekte
 loc_vibration,Vibration
 loc_language,Sprache
 loc_spanish,Spanisch
 loc_french,Französisch
 loc_portuguese,Portugiesisch
 loc_english,Englisch
-loc_german,Deutsche
+loc_german,Deutsch
 loc_chinese,Chinesisch
 loc_japanese,Japanisch
-loc_return,Zurückfahren
-loc_stage,Szene
-loc_stageCom,Bühne abgeschlossen!
-loc_level,Niveau
+loc_return,Zurück
+loc_stage,Spielabschnitt
+loc_stageCom,Spielabschnitt abgeschlossen!
+loc_level,Level
 loc_empty,Leeren
-loc_score,Ergebnis
-loc_accuracy,Genauigkeit
-loc_speedCol,Kollektorgeschwindigkeit
-loc_speedFruitFall,Fruchtabfallgeschwindigkeit
-loc_goldChance,Gold Artikel Spawn Chance
-loc_equipChance,Gegenstands-Chance
+loc_score,Spielstand
+loc_accuracy,Treffsicherheit
+loc_speedCol,Geschwindigkeit des Sammlers
+loc_speedFruitFall,Fallgeschwindigkeit der Früchte
+loc_goldChance,Wahrscheinlichkeit der Goldobjekte
+loc_equipChance,Wahrscheinlichkeit der am Körper tragbaren Objekte
 loc_sackSize,Sackgröße
-loc_reloadSpeed,Neubildungsrate Sack
-loc_strikerArea,Striker Hit Bereich
-loc_strikerSpeed,Striker Geschwindigkeit
+loc_reloadSpeed,Sack-Füllgeschwindigkeit
+loc_strikerArea,Stürmerbereich
+loc_strikerSpeed,Stürmergeschwindigkeit
 loc_equip,Ausrüsten
 loc_remove,Entfernen
-loc_buy,kaufen
-loc_sell,verkaufen
-loc_gameDesign,Spieldesign
-loc_programming,Spielprogrammierer
+loc_buy,Kaufen
+loc_sell,Verkaufen
+loc_gameDesign,Game Design
+loc_programming,Game Programmierung
 loc_music,Musikproduktion
 loc_art,Kunst
-loc_producedBy,Ein Spiel von Gloomy Cave Entertainment produziert
+loc_producedBy,Ein von Gloomy Cave Entertainment produziertes Game
 loc_s,S
 loc_a,A
 loc_b,B
 loc_c,C
 loc_d,D
 loc_e,E
-loc_lose,Sie haben gefangen!
-loc_retry,Wiederholen
-loc_ok,Akzeptieren
-loc_shop,Geschäft
-loc_inventory,Inventar
+loc_lose,Ertappt!
+loc_retry,Nochmal versuchen
+loc_ok,Okay
+loc_shop,Laden
+loc_inventory,Bestand
 loc_backToMenu,Menü
-loc_tut_welcome,Willkommen bei Rogue Monkeys tutorial!
-loc_tut_collector,"Schieben Sie den linken Finger, um den Collector-Affen zu bewegen."
-loc_tut_striker,"Tippen Sie auf den rechten Bereich, um den Striker-Affen zu bewegen."
-loc_tut_shaker,"Shaker Affe machen Fruchtregen. Versuche, die Früchte zu treffen, bevor sie zu Boden fällt."
-loc_tut_alarm1,"Wenn irgendwelche Fr�chte auf den Boden fallen, werden enge Tiere gewarnt."
-loc_tut_alarm2,"Wenn die Alarmleiste voll wird, wird unsere Mission abgebrochen."
-loc_tut_run1,Sammle fünf Früchte.
-loc_tut_sack,"Wenn der Beutel voll ist, entleeren sie mehr Frucht zu bekommen."
-loc_tut_run2,Sammle fünf weitere Früchte.
+loc_tut_welcome,Willkommen zur Rogue Monkeys Spielanleitung!
+loc_tut_collector,Zum Bewegen des Sammler-Affen Finger nach rechts gleiten lassen.
+loc_tut_striker,Zum Bewegen des Stürmer-Affen rechten Bereich antippen.
+loc_tut_shaker,"Schüttelaffen verursachen Fruchtregen. Versuch die Frucht zu treffen, bevor sie auf den Boden fällt."
+loc_tut_alarm1,"Fallen Früchte auf den Boden, werden Tiere in der Umgebung alarmiert."
+loc_tut_alarm2,"Ist der Alarmbalken voll, wird unsere Mission abgebrochen."
+loc_tut_run1,Sammle fünf Früchte ein.
+loc_tut_sack,"Wenn der Sack voll ist, muss er geleert werden, um weitersammeln zu können."
+loc_tut_run2,Sammle weitere fünf Früchte ein.
 loc_tut_end,Gut gemacht!
-loc_popup_ad,Möchten Sie eine Anzeige für Gold sehen?
-loc_gold_full_ad,Vollständige Werbung sehen mehr Gold ...
-loc_gold,Oro
-loc_ready,Ready
-loc_steady,Steady
-loc_go,Go!
+loc_popup_ad,Werbung sehen und Gold bekommen?
+loc_gold_full_ad,"Schaust du dir die ganze Werbung an, gibt's mehr Gold…"
+loc_gold,Gold
+loc_ready,Achtung
+loc_steady,Fertig
+loc_go,Los!
 loc_newRecord,Neuer Rekord!
-loc_continue,Fortfahren
+loc_continue,Weiter
 loc_stage_0,Strand
 loc_stage_1,Dschungel
 loc_stage_2,Oase
-loc_stage_3,Hoher Berg
-loc_stage_4,Tropenwald
-loc_Quick Sack,Quick sack
-loc_Leather Sack,Leather sack
-loc_Light Sack,Light sack
-loc_Santa Sack,Santa's sack
-loc_Mage Sack,Mage sack
-loc_Lightning Sack,Lightning sack
-loc_Kevlar Sack,Kevlar Sack
-loc_Winged Crocs,Winged crocs
-loc_Winged Boots,Winged boots
-loc_Winged Sports,Winged sports
-loc_Winged Rollers,Winged rollers
-loc_Winged Rockets,Winged rockets
-loc_Leather Gloves,Leather gloves
-loc_Wool Gloves,Wool gloves
-loc_Gorilla Gloves,Gorilla gloves
-loc_Fitness Gloves,Fitness gloves
-loc_Silk Gloves,Silk gloves
-loc_Baseball Gloves,Baseball gloves
-loc_Kevlar Gloves,Kevlar gloves
-loc_Foam Gloves,Foam gloves
-loc_Finger Case,Finger case
-loc_Mech Gloves,Mech gloves
-loc_Jumping Crocs,Jumping crocs
-loc_Jumping Boots,Jumping boots
-loc_Air Camera Crocs,Air camera crocs
-loc_Fairy Boots,Fairy boots
-loc_Teleport Boots,Teleport boots
-loc_Working Glasses,Working glasses
-loc_Shiny Glasses,Shiny glasses
-loc_Fortune Glasses,Fortune glasses
-loc_Lucky Glasses,Lucky glasses
-loc_Gnome Glasses,Gnome glasses
-loc_Midas' Sight,Midas' sight
-loc_Scavenger Glasses,Scavenger glasses
-loc_Sunglasses,Sunglasses
-loc_Wealth Glasses,Wealth glasses
-loc_Future Glasses,Future glasses
-loc_Manipulation Gloves,Manipulation gloves
-loc_Prune Scissors,Prune scissors
-loc_Thief's Toolset,Thief's toolset
-loc_Laser Tools,Laser tools
+loc_stage_3,Hochgebirge
+loc_stage_4,Tropischer Wald
+loc_Quick Sack,Schneller Sack
+loc_Leather Sack,Ledersack
+loc_Light Sack,Leichter Sack
+loc_Santa Sack,Nikolaussack
+loc_Mage Sack,Zaubersack
+loc_Lightning Sack,Blitzsack
+loc_Kevlar Sack,Kevlar-Sack
+loc_Winged Crocs,Beflügelte Clogs
+loc_Winged Boots,Beflügelte Stiefel
+loc_Winged Sports,Beflügelte Turnschuhe
+loc_Winged Rollers,Beflügelte Inlineskates
+loc_Winged Rockets,Beflügelte Raketen
+loc_Leather Gloves,Lederhandschuhe
+loc_Wool Gloves,Wollhandschuhe
+loc_Gorilla Gloves,Gorilla-Handschuhe
+loc_Fitness Gloves,Fitness-Handschuhe
+loc_Silk Gloves,Seidenhandschuhe
+loc_Baseball Gloves,Baseball-Handschuhe
+loc_Kevlar Gloves,Kevlar-Handschuhe
+loc_Foam Gloves,Schaumstoff-Handschuhe
+loc_Finger Case,Fingerschutz
+loc_Mech Gloves,Mechanikerhandschuhe
+loc_Jumping Crocs,Springende Clogs
+loc_Jumping Boots,Springende Stiefel
+loc_Air Camera Crocs,Clogs mit Luftkammer
+loc_Fairy Boots,Feenstiefel
+loc_Teleport Boots,Teletransport-Stiefel
+loc_Working Glasses,Schutzbrille
+loc_Shiny Glasses,Glanzbrille
+loc_Fortune Glasses,Schicksalsbrille
+loc_Lucky Glasses,Glücksbrille
+loc_Gnome Glasses,Zwergenbrille
+loc_Midas' Sight,Midas-Blick
+loc_Scavenger Glasses,Müllmann-Brille
+loc_Sunglasses,Sonnenbrille
+loc_Wealth Glasses,Reichtumsbrille
+loc_Future Glasses,Zukunftsbrille
+loc_Manipulation Gloves,Manipulierhandschuhe
+loc_Prune Scissors,Baumschere
+loc_Thief's Toolset,Werkzeugset des Diebes
+loc_Laser Tools,Laser-Werkzeuge
 loc_Ring,Ring
-loc_Earrings,Earrings
-loc_Necklace,Necklace
-loc_Gold Nugget,Gold nugget
-loc_Bling Bling,Bling bling
-loc_Golden Egg,Golden egg
-loc_Medallion,Medallion
-loc_Pocket Watch,Pocket watch
+loc_Earrings,Ohrringe
+loc_Necklace,Halskette
+loc_Gold Nugget,Goldklumpen
+loc_Bling Bling,Bling-Bling
+loc_Golden Egg,Goldei
+loc_Medallion,Medaillon
+loc_Pocket Watch,Taschenuhr
 loc_Maneki-neko,Maneki-neko
-loc_Lingot,Lingot
-loc_Chalice,Chalice
-loc_Ankh,Ankh
-loc_cancel,Cancel
+loc_Lingot,Goldbarren
+loc_Chalice,Kelch
+loc_Ankh,Anch-Symbol
+loc_cancel,Annullieren
 loc_localization,Lokalisierung
+loc_ComboBonus,Kombinationsbonus
+loc_TotalScore,Total
+loc_SellValue,Verkaufspreis

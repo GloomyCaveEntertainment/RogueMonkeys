@@ -201,10 +201,10 @@ public class CollectorMonkey : MonoBehaviour {
             LoadSlotItem(_slotB);
 
         //Set Sack Pt List + Capacity
-        if (_slotA != null &&_slotA.ModTypeList.Contains(EquipmentItem.MOD_TYPE.SACK_SIZE))
+        if (_slotA != null) //&&_slotA.ModTypeList.Contains(EquipmentItem.MOD_TYPE.SACK_SIZE))
             _sack.SetCapacity(_currentCapacity, _slotA.IdName);
-        else if (_slotB != null && _slotB.ModTypeList.Contains(EquipmentItem.MOD_TYPE.SACK_SIZE))
-            _sack.SetCapacity(_currentCapacity, _slotB.IdName);
+        /*else if (_slotB != null && _slotB.ModTypeList.Contains(EquipmentItem.MOD_TYPE.SACK_SIZE))
+            _sack.SetCapacity(_currentCapacity, _slotB.IdName);*/
         else
             _sack.SetCapacity(_currentCapacity, "default");
         _sack.CurrentReloadTime = _currentReloadTime;

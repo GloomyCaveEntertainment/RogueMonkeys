@@ -102,16 +102,16 @@ loc_Finger Case,Cas de doigt
 loc_Mech Gloves,Gants mécaniques
 loc_Jumping Crocs,Sabots de saut
 loc_Jumping Boots,Bottes de saut
-loc_Air Camera Crocs,Air camera crocs
+loc_Air Camera Crocs,Sabots de sport
 loc_Fairy Boots,Bottes de fée
 loc_Teleport Boots,Bottes de téléportation
 loc_Working Glasses,Lunettes de travail
 loc_Shiny Glasses,Lunettes brillantes
 loc_Fortune Glasses,Lunettes de fortune
-loc_Lucky Glasses,Lunettes du chanceaux
+loc_Lucky Glasses,Lunettes de chanceaux
 loc_Gnome Glasses,Lunettes de lutin
 loc_Midas' Sight,La vue de Midas
-loc_Scavenger Glasses,Lunettes de charognard
+loc_Scavenger Glasses,Lunettes de ferrailleur
 loc_Sunglasses,Lunettes de soleil
 loc_Wealth Glasses,Lunettes de richesse
 loc_Future Glasses,Lunettes du futur
@@ -133,3 +133,6 @@ loc_Chalice,Calice
 loc_Ankh,Ankh
 loc_cancel,Annuler
 loc_localization,Localisation
+loc_ComboBonus,Bonus par combo
+loc_TotalScore,Score total
+loc_SellValue,Value

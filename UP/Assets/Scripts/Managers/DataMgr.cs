@@ -618,7 +618,33 @@ public class DataMgr : MonoBehaviour {
         XmlNodeList stages = ((XmlElement)root).GetElementsByTagName("stage");
         //Debug.Log("stages: " + stages);
 
-        //go to stage-level aand rewrite attribute data
+        //stage data
+        foreach (XmlAttribute attr in stages[stageIndex].Attributes)
+        {
+            if (attr.Name.Equals("state"))
+            {
+                switch (GameMgr.Instance._StageList[stageIndex].GetAvState())
+                {
+                    case Stage.STAGE_STATE.COMPLETED:
+                        attr.Value = "completed";
+                        break;
+
+                    case Stage.STAGE_STATE.LOCKED:
+                        attr.Value = "locked";
+                        break;
+
+                    case Stage.STAGE_STATE.UNAVAILABLE:
+                        attr.Value = "unavailable";
+                        break;
+
+                    case Stage.STAGE_STATE.UNLOCKED:
+                        attr.Value = "unlocked";
+                        break;
+                }
+            }
+        }
+                           
+        //go to stage-level and rewrite attribute data
         foreach (XmlAttribute attr in stages[stageIndex].ChildNodes[lvlIndex].Attributes)
         {
             Debug.Log("Score &&& State attr " + attr.Name);

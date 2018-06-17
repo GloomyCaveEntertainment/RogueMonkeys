@@ -21,12 +21,12 @@ public class UIHelper : MonoBehaviour {
     public const int _comboFontSize_m = 40; //[6,10]
     public const int _comboFontSize_l = 45; //[11,15]
     public const int _comboFontSize_xl = 50; //[16,inf)
-    public const int _comboFontSize_result = 35;
+    public const int _comboFontSize_result = 50;
     public static UIHelper Instance;
-	#endregion
+    #endregion
 
 
-	#region Behaviour Methods
+    #region Behaviour Methods
 
     void Awake()
     {
@@ -38,8 +38,8 @@ public class UIHelper : MonoBehaviour {
             DontDestroyOnLoad(this);
     }
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start() {
         _targetBarValue = 0f;
         _barGrowing = false;
         _initGlowColor = Color.white;// _glowSprite.color.a;
@@ -48,21 +48,21 @@ public class UIHelper : MonoBehaviour {
         _gameMgr = GameMgr.Instance;
         if (_gameMgr == null)
             Debug.LogError("No Game Manager found!");
-        _comboFeedbackTime = _gameMgr.MaxComboTime;
+        //_comboFeedbackTime = _gameMgr.MaxComboTime;
         _slowmotionDecal.SetActive(false);
         _slowmotionStrikerBgFx.SetActive(false);
         _slowMoSand_bot.gameObject.SetActive(false);
         _slowMoSand_top.gameObject.SetActive(false);
 
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
         #region Alarm
         if (_barGrowing)
         {
             _barTimer += Time.deltaTime;
-            _alarmSbar.value = _initBarValue + (_targetBarValue-_initBarValue) *_growCurve.Evaluate(_barTimer / _barGrowTime);
+            _alarmSbar.value = _initBarValue + (_targetBarValue - _initBarValue) * _growCurve.Evaluate(_barTimer / _barGrowTime);
             //_alarmSbar.value = Mathf.Lerp(_initBarValue, _targetBarValue, _growCurve.Evaluate(_barTimer / _barGrowTime));
             if (_barTimer >= _barGrowTime)
                 _barGrowing = false;
@@ -84,9 +84,9 @@ public class UIHelper : MonoBehaviour {
 
 
     }
-	#endregion
+    #endregion
 
-	#region Public Methods
+    #region Public Methods
     /// <summary>
     /// 
     /// </summary>
@@ -95,7 +95,7 @@ public class UIHelper : MonoBehaviour {
     {
         if (time < 0f)
             time = 0f;
-        
+
         //Format
         if (time < 5f)
             _timeText.text = time.ToString("00.00");
@@ -116,6 +116,8 @@ public class UIHelper : MonoBehaviour {
         {
             _shopScreen.InitShop();
             _shopScreen.gameObject.SetActive(true);
+            if (_stageCompletedFx.isPlaying)
+                _stageCompletedFx.Stop();
         }
         else
         {
@@ -138,6 +140,8 @@ public class UIHelper : MonoBehaviour {
                 LeanTween.cancel(_inventoryIconFx);
                 _inventoryIconFx.SetActive(false);
             }
+            if (_stageCompletedFx.isPlaying)
+                _stageCompletedFx.Stop();
         }
         _invScreen.gameObject.SetActive(show);
     }
@@ -179,7 +183,7 @@ public class UIHelper : MonoBehaviour {
         _targetBarValue = GameMgr.Instance.CurrentAlarmLevel / GameMgr.Instance.MaxAlarmLevel;
         if (_targetBarValue >= 0.5f)
         {
-            if (_targetBarValue >= 0.75f && (_currentFadeTime != _glowFadeTime_75pc) )
+            if (_targetBarValue >= 0.75f && (_currentFadeTime != _glowFadeTime_75pc))
             {
                 _currentFadeTime = _glowFadeTime_75pc;
                 //Speed up tween animation
@@ -189,8 +193,8 @@ public class UIHelper : MonoBehaviour {
                     _alarmIcon.transform.localScale = Vector3.one;
                     LeanTween.scale(_alarmIcon, Vector2.one * 1.2f, _currentFadeTime).setLoopPingPong();
                 }
-            }  
-            else if (_targetBarValue < 0.75f &&  _currentFadeTime != _glowFadeTime_50pc)
+            }
+            else if (_targetBarValue < 0.75f && _currentFadeTime != _glowFadeTime_50pc)
             {
                 _currentFadeTime = _glowFadeTime_50pc;
                 //Lower speed
@@ -200,8 +204,8 @@ public class UIHelper : MonoBehaviour {
                     _alarmIcon.transform.localScale = Vector3.one;
                     LeanTween.scale(_alarmIcon, Vector2.one * 1.2f, _currentFadeTime).setLoopPingPong();
                 }
-            } 
-            
+            }
+
             if (!glowEnabled)
             {
                 glowEnabled = true;
@@ -226,9 +230,9 @@ public class UIHelper : MonoBehaviour {
             _targetBarValue -= val;
         else
             _alarmSbar.value -= val;
-        _alarmText.text = GameMgr.Instance.CurrentAlarmLevel.ToString("0") + " / " + GameMgr.Instance.MaxAlarmLevel; 
+        _alarmText.text = GameMgr.Instance.CurrentAlarmLevel.ToString("0") + " / " + GameMgr.Instance.MaxAlarmLevel;
         if (glowEnabled && GameMgr.Instance.CurrentAlarmLevel/*_targetBarValue*/ < 50f)
-        { 
+        {
             glowEnabled = false;
             if (LeanTween.isTweening(_alarmIcon))
             {
@@ -238,7 +242,7 @@ public class UIHelper : MonoBehaviour {
                 _currentFadeTime = _glowFadeTime_50pc;
             }
             _glowSprite.color = Color.white;
-        }     
+        }
     }
     /// <summary>
     /// 
@@ -257,7 +261,7 @@ public class UIHelper : MonoBehaviour {
     }
     public void SetLevelText(int level)
     {
-        _levelText.text = LocalizationService.Instance.GetTextByKey("loc_stage_"+_gameMgr.GetCurrentStage().GetStageIndex()) +" - "+ (level+1).ToString();
+        _levelText.text = LocalizationService.Instance.GetTextByKey("loc_stage_" + _gameMgr.GetCurrentStage().GetStageIndex()) + " - " + (level + 1).ToString();
     }
 
     /// <summary>
@@ -287,14 +291,17 @@ public class UIHelper : MonoBehaviour {
     /// </summary>
     public void Pause()
     {
+        if (_gameMgr.GetCurrentLevel().GetLevelState() == Level.L_STATE.FINISHED)
+            return;
+
         _paused = !_paused;
         GameMgr.Instance.Pause(_paused);
         _pausePanel.SetActive(_paused);
         _pauseBtn.interactable = !_paused;
-       // if (_paused)
-            AudioController.PauseMusic(0.5f);
+        // if (_paused)
+        AudioController.PauseMusic(0.5f);
         //else
-            //AudioController.
+        //AudioController.
     }
 
     /// <summary>
@@ -314,7 +321,9 @@ public class UIHelper : MonoBehaviour {
     /// <param name="fromLoseScreen"></param>
     public void Retry(bool fromLoseScreen)
     {
-        GameMgr.Instance.StartCurrentLevel();
+        
+
+        
         if (fromLoseScreen)
         {
             ++_gameMgr.LvlAttempts;
@@ -324,7 +333,34 @@ public class UIHelper : MonoBehaviour {
         {
             _lvlFinishedScr.gameObject.SetActive(false);
             _gameMgr.LvlAttempts = 0;
+
+            //Recover level index, alresdy incremented in FinishedScreen
+            //(1)general case
+            if (GameMgr.Instance.LevelIndex > 0)
+            {
+                //edge case: last stage, last level completed, avoid lowering lvl index
+                if (_gameMgr.GetCurrentLevel().AvailabilitySt == Level.AVAILABILITY_STATE.UNLOCKED)
+                    --GameMgr.Instance.LevelIndex;
+            }
+
+            //level = 0, check if we came from previous stage
+            else
+            {
+                if (GameMgr.Instance.StageIndex < 0)
+                {
+                    --GameMgr.Instance.StageIndex;
+                    GameMgr.Instance.LevelIndex = 14;
+
+                }
+                else
+                {
+                    Debug.LogWarning("Trying to retry lvl 0 as if we succeeded, REVIEW");
+
+                }
+            }
         }
+
+        GameMgr.Instance.StartCurrentLevel();
     }
 
     /// <summary>
@@ -337,9 +373,16 @@ public class UIHelper : MonoBehaviour {
         if (enable)
         {
             _slowMoGlow.GetComponent<ParticleSystem>().Play();
-            
+
         }
-        _slowmotionDecal.SetActive(enable);
+        //_slowmotionDecal.SetActive(enable);
+        //Tree, background and guards to grey
+        GameMgr.Instance._FruitTree.GetComponent<Image>().color = enable ? _slowMoDisabledColor : Color.white;
+        foreach (Guard g in _gameMgr.GetCurrentLevel().GuardList)
+            g.GetComponent<Image>().color = enable ? _slowMoDisabledColor : Color.white;
+        _gameMgr.GetCurrentLevel().GetSceneLayout().GetBackground().GetComponent<Image>().color = enable ? _slowMoDisabledColor : Color.white;
+        foreach (GameObject net in _gameMgr.GetCurrentLevel().GetSceneLayout().GetNetList())
+            net.GetComponent<Image>().color = enable ? _slowMoDisabledColor : Color.white;
         _slowmotionStrikerBgFx.SetActive(enable);
         _slowMoSand_bot.gameObject.SetActive(enable);
         _slowMoSand_top.gameObject.SetActive(enable);
@@ -360,7 +403,7 @@ public class UIHelper : MonoBehaviour {
             _slowMoFill_global.fillAmount = value;
     }
 
-   
+
 
     /// <summary>
     /// Speed boost
@@ -371,7 +414,7 @@ public class UIHelper : MonoBehaviour {
         _slowMoBg.gameObject.SetActive(enable);
         _slowMoFill_global.gameObject.SetActive(enable);
         //if (_slowMoGlow.gameObject.activeSelf)
-            //_slowMoGlow.gameObject.SetActive(false);
+        //_slowMoGlow.gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -381,7 +424,7 @@ public class UIHelper : MonoBehaviour {
     /// <returns></returns>
     public bool ContainsPauseBtn(Vector2 pos)
     {
-        Debug.Log("------------Rect-------> " + _pauseBtn.transform.position+" and pos: "+pos);
+        Debug.Log("------------Rect-------> " + _pauseBtn.transform.position + " and pos: " + pos);
         if ((pos.x >= _pauseBtn.transform.position.x - _pauseBtn.GetComponent<RectTransform>().rect.width * 0.5f) &&
                 (pos.x <= _pauseBtn.transform.position.x + _pauseBtn.GetComponent<RectTransform>().rect.width * 0.5f) &&
                 (pos.y >= _pauseBtn.transform.position.y - _pauseBtn.GetComponent<RectTransform>().rect.height * 0.5f) &&
@@ -397,10 +440,12 @@ public class UIHelper : MonoBehaviour {
     /// <param name="show"></param>
     public void ShowFakeShack(bool show)
     {
-        GameMgr.Instance._CollectorMonkey._Sack.GetComponent<Image>().enabled = !show;
-        GameMgr.Instance._CollectorMonkey._Sack.transform.GetChild(4).GetComponent<Image>().enabled = !show;    //sack fill img
-        GameMgr.Instance._CollectorMonkey._Sack.transform.GetChild(5).gameObject.SetActive(!show);    //sack count miniatures
-        _fakeShack.gameObject.SetActive(show);
+        //TODO: update with sack img index or serialize the images and set it directly to the sack insetad activating objects
+        //_gameMgr._CollectorMonkey._Sack.transform.GetChild(0).GetComponentInChildren<Image>().enabled = !show;
+        //_gameMgr._CollectorMonkey._Sack.transform.GetChild(5).GetComponent<Image>().enabled = !show;    //sack fill img
+        //_gameMgr._CollectorMonkey._Sack.transform.GetChild(4).gameObject.SetActive(!show);    //sack count miniatures
+        //_fakeShack.GetComponent<Image>().sprite = _gameMgr._CollectorMonkey._Sack.transform.GetChild(5).GetComponent<Image>().sprite;
+        //_fakeShack.gameObject.SetActive(show);
     }
 
     /// <summary>
@@ -414,25 +459,33 @@ public class UIHelper : MonoBehaviour {
         {
             _comboText.fontSize = _comboFontSize_s;
             _comboText.color = _comboColor_s;
-        }         
+        }
         else if (count <= _comboCount_m)
         {
             _comboText.fontSize = _comboFontSize_m;
             _comboText.color = _comboColor_m;
-        }      
+        }
         else if (count <= _comboCount_l)
         {
             _comboText.fontSize = _comboFontSize_l;
             _comboText.color = _comboColor_l;
-        }       
+        }
         else
         {
             _comboText.fontSize = _comboFontSize_xl;
             _comboText.color = _comboColor_xl;
         }
-            
+        _comboText.transform.rotation = Quaternion.identity;
 
         _comboText.text = "x " + count.ToString();
+        //Bg
+        if (!_comboBg.gameObject.activeSelf)
+            _comboBg.gameObject.SetActive(true);
+        if (_comboTotalBg.gameObject.activeSelf)
+            _comboTotalBg.gameObject.SetActive(false);
+        LeanTween.cancel(_comboBg.gameObject);
+        LeanTween.alpha(_comboBg.gameObject, .01f, _comboFeedbackTime);
+
         //_comboText.color = Color.white;
         if (!_comboText.transform.parent.gameObject.activeInHierarchy)
             _comboText.transform.parent.gameObject.SetActive(true);
@@ -440,8 +493,11 @@ public class UIHelper : MonoBehaviour {
         LeanTween.cancel(_comboText.transform.parent.gameObject);
         _comboText.transform.parent.localScale = Vector3.one;
         _comboText.transform.parent.gameObject.transform.localPosition = Vector3.zero;
+        LeanTween.scale(_comboText.transform.parent.gameObject, Vector3.one * 1.5f, _comboFeedbackTime*0.5f);
         LeanTween.moveLocalY(_comboText.transform.parent.gameObject, _comboOffset, _comboFeedbackTime);
-        LeanTween.textAlpha(_comboText.rectTransform, .01f, _comboFeedbackTime);
+        LeanTween.textAlpha(_comboText.rectTransform, .01f, _comboFeedbackTime).setOnComplete(() => { _comboText.transform.parent.gameObject.SetActive(false); });
+
+        
     }
 
     /// <summary>
@@ -451,16 +507,31 @@ public class UIHelper : MonoBehaviour {
     public void ShowComboResult(int comboCount)
     {
         //TODO: localization
-        _comboText.text = "Bonus + " + comboCount.ToString();
+        _comboText.text = "+ " + comboCount.ToString();
         _comboText.color = _comboResultColor;
         _comboText.fontSize = _comboFontSize_result;
+        _comboText.transform.rotation = Quaternion.Euler(Vector3.forward * 25f);
+
+        if (!_comboText.transform.parent.gameObject.activeInHierarchy)
+            _comboText.transform.parent.gameObject.SetActive(true);
+        //Bg
+        if (_comboBg.gameObject.activeSelf)
+            _comboBg.gameObject.SetActive(false);
+        if (!_comboTotalBg.gameObject.activeSelf)
+            _comboTotalBg.gameObject.SetActive(true);
+        LeanTween.cancel(_comboTotalBg.gameObject);
+        LeanTween.alpha(_comboTotalBg.gameObject, .01f, _comboFeedbackTime);
+
         if (!_comboText.gameObject.activeInHierarchy)
             _comboText.gameObject.SetActive(true);
         LeanTween.cancel(_comboText.transform.parent.gameObject);
         LeanTween.cancel(_comboText.gameObject);
         LeanTween.moveLocalY(_comboText.transform.parent.gameObject, _comboOffset, _comboFeedbackTime);
-        LeanTween.scale(_comboText.transform.parent.gameObject, Vector3.one * 2f, _comboFeedbackTime);
-        LeanTween.textAlpha(_comboText.rectTransform, .01f, _comboFeedbackTime).setOnComplete(() => { Debug.Log("ONCOMPLETEEEEEEEEEEEEEEEEEEEEEEEEEEE"); _comboText.transform.parent.gameObject.SetActive(false); });
+        _comboText.transform.parent.localScale = Vector3.one;
+        LeanTween.scale(_comboText.transform.parent.gameObject, Vector3.one * 1.2f, _comboFeedbackTime*0.5f);
+        LeanTween.textAlpha(_comboText.rectTransform, .01f, _comboFeedbackTime).setOnComplete(() => {  _comboText.transform.parent.gameObject.SetActive(false); });
+
+        
     }
 
     public void HideComboCount()
@@ -480,6 +551,8 @@ public class UIHelper : MonoBehaviour {
     public Text ScoreText { get { return _scoreText; } set { _scoreText = value; } }
     public bool _ShowLevelTime { get { return _showLevelTime; } set { _showLevelTime = value; } }
     public Text LvlIntroText { get { return _lvlIntroText; } set { _lvlIntroText = value; } }
+    public GameObject SlowmotionStrikerBgFx { get { return _slowmotionStrikerBgFx;} private set { }}
+    public GameObject FakeSack {  get { return _fakeShack; }  set { _fakeShack = value; } }
     #endregion
 
     #region Private Serialized Fields
@@ -535,6 +608,8 @@ public class UIHelper : MonoBehaviour {
     [SerializeField]
     private Text _comboText;
     [SerializeField]
+    private Image _comboBg, _comboTotalBg;
+    [SerializeField]
     private float _comboOffset;
     [SerializeField]
     private float _comboFeedbackTime;
@@ -551,6 +626,11 @@ public class UIHelper : MonoBehaviour {
 
     [SerializeField]
     private GameObject _clock;
+
+    [SerializeField]
+    private Color _slowMoDisabledColor;
+    [SerializeField]
+    private ParticleSystem _stageCompletedFx;
     #endregion
 
     #region Private Non-serialized Fields

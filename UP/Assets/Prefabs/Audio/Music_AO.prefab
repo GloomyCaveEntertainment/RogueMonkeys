@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc3135f9b5f7b5478b3a0645904bd2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPoolSize: 10
-  preloadCount: 0
+  maxPoolSize: 1
+  preloadCount: 1
   doNotDestroyOnLoad: 0
   sendAwakeStartOnDestroyMessage: 1
   sendPoolableActivateDeactivateMessages: 0

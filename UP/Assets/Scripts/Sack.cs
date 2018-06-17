@@ -39,6 +39,12 @@ public class Sack : MonoBehaviour {
         public string _Id;
         public List<Image> _ImgList;
     }
+    [System.Serializable]
+    public class SackImageListEntry
+    {
+        public string _Id;
+        public int _ChildIndex;
+    }
     #endregion
 
 
@@ -47,10 +53,9 @@ public class Sack : MonoBehaviour {
     void Start () {
         //InitSack();
         _fruitStackHeightOffset = _sackFrPtList[2].position.y - _sackFrPtList[0].position.y;    //fruit size = 1 aprox size on UI sack
-        if (_sackOutline == null)
-            _sackOutline = GetComponent<Outline>();
-        if (_sackOutline.enabled)
-            _sackOutline.enabled = false;
+        /*if (_sackOutline == null)
+            _sackOutline = GetComponent<Outline>();*/
+        
 
 
     }
@@ -149,7 +154,7 @@ public class Sack : MonoBehaviour {
             else
             {
                 _sackOutline.effectColor = new Color(1f, 0f, 0f, Mathf.Lerp(0f, 1f, _fullFeedbackAnimC.Evaluate(_feedbackTimer / _fullFbTime)));
-                _sackOutline.effectDistance = Vector2.Lerp(new Vector2(1f,-1f),new Vector2(10f,-10f), _fullFeedbackAnimC.Evaluate(_feedbackTimer / _fullFbTime));
+                _sackOutline.effectDistance = Vector2.Lerp(new Vector2(1f,-1f),new Vector2(20f,-20f), _fullFeedbackAnimC.Evaluate(_feedbackTimer / _fullFbTime));
             }
                 
         }
@@ -197,6 +202,7 @@ public class Sack : MonoBehaviour {
         _currentSize = 0f;
 
         _initSackPos = _Collector._CollectorSack.transform.localPosition;
+        
         UpdateSackCountMiniList();
         //_catchAnimOffset = _Collector._Sack.transform.lossyScale.y * 0.1f;
         //Debug.Log("INIT SACK; sack init pos: " + _initSackHeight);
@@ -258,26 +264,46 @@ public class Sack : MonoBehaviour {
     }
 
     /// <summary>
-    /// Set Sack Capacity and its associated on_sack collected pt list and fruit amount mini list
+    /// Set Sack Capacity and its associated image, on_sack collected pt list and fruit amount mini list
     /// </summary>
     /// <param name="value"></param>
     /// <param name="id"></param>
     public void SetCapacity(float value, string id)
     {
         _currentCapacity = value;
+        //fruit target point list
         SackPointListEntry se = _sackPtListIndex.Find((e) => e._Id.CompareTo(id) == 0);
         if (se != null)
             _sackFrPtList = se._PtList;
         else
             _sackFrPtList = _sackPtListIndex.Find((e) => e._Id.CompareTo("default") == 0)._PtList;
+        //miniature list
         SackCountMiniListEntry sc = _sackCountMiniListIndex.Find((e) => e._Id.CompareTo(id) == 0);
         if (sc != null)
             _sackCountMiniList = sc._ImgList;
         else
             _sackCountMiniList = _sackCountMiniListIndex.Find((e) => e._Id.CompareTo("default") == 0)._ImgList;
+        //sack image
+        int siIndex = -1;
+        siIndex = _sackImgListIndex.FindIndex((e) => e._Id.CompareTo(id) == 0);
+        if (siIndex == -1)
+            siIndex = 0;    //default
+        for (int i=0; i <_sackImgList.Count; ++i)
+            _sackImgList[i].SetActive(i==siIndex);
+
+        Debug.Log("______"+ id+"_____________________Index img: " + siIndex);
+        transform.GetChild(5).GetComponent<Image>().sprite = _sackImgList[siIndex].GetComponent<Image>().sprite;
+        _sackOutline = _sackImgList[siIndex].GetComponent<Outline>();
+        if (_sackOutline.enabled)
+            _sackOutline.enabled = false;
         //enable/disable root object
-        foreach (SackCountMiniListEntry scm in _sackCountMiniListIndex)
-                scm._ImgList[0].transform.parent.parent.gameObject.SetActive(scm._Id.CompareTo(id) == 0);
+        int miniIndex = _sackPtListIndex.FindIndex((e) => e._Id.CompareTo(id) == 0);
+        if (miniIndex == -1)
+            miniIndex = 0;//default if not found
+        for (int i = 0; i < _sackCountMiniListIndex.Count; ++i)
+            _sackCountMiniListIndex[i]._ImgList[0].transform.parent.parent.gameObject.SetActive(i == miniIndex);
+        /*foreach (SackCountMiniListEntry scm in _sackCountMiniListIndex)
+                scm._ImgList[0].transform.parent.parent.gameObject.SetActive(scm._Id.CompareTo(id) == 0);*/
         UpdateSackCountMiniList();
         
     
@@ -309,7 +335,12 @@ public class Sack : MonoBehaviour {
             else
             {
                 if (f._Ftype != Fruit.F_TYPE.SACK_BREAKER_LAUNCH)
+                {
                     EnableFullFeedback(true);
+                    if (DataMgr.Instance.Vibration == 1)
+                        Vibration.Vibrate(GameMgr._fruitFullSackVibrationTime);
+                }
+                    
                 if (SackFullEvt != null)
                     SackFullEvt();
                 return false;
@@ -626,6 +657,8 @@ public class Sack : MonoBehaviour {
         //_Collector._CollectorSack.transform.position = new Vector3(_Collector._CollectorSack.transform.position.x, _initSackHeight, _Collector._CollectorSack.transform.position.z);    //reset position in case it was animating
         //LeanTween.moveY(_Collector._CollectorSack, _Collector._CollectorSack.transform.position.y + _catchAnimOffset, _catchAnimTime).setEase(_catchAnimCurve).setOnComplete(() => { ResetToInitPos(); });
         AudioController.Play("aud_fr_catch_0");
+        if (DataMgr.Instance.Vibration == 1)
+            Vibration.Vibrate(GameMgr._fruitOnSackVibrationTime);
     }
 
     /// <summary>
@@ -672,6 +705,7 @@ public class Sack : MonoBehaviour {
             {
                 _sackCountMiniList[i].sprite = _fullSlotMini;
                 _sackCountMiniList[i].gameObject.SetActive(true);
+                
             }
             else
                 _sackCountMiniList[i].gameObject.SetActive(false);
@@ -764,6 +798,10 @@ public class Sack : MonoBehaviour {
     private List<SackPointListEntry> _sackPtListIndex;
     [SerializeField]
     private List<SackCountMiniListEntry> _sackCountMiniListIndex;
+    [SerializeField]
+    private List<SackImageListEntry> _sackImgListIndex;
+    [SerializeField]
+    private List<GameObject> _sackImgList;
     [SerializeField]
     private Sprite _fullSlotMini, _halfSlotMini;
 

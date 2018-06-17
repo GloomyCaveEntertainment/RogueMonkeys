@@ -93,6 +93,7 @@ public class FruitTree : MonoBehaviour {
                         _shaking = false;
                         _img.sprite = _shakeSpList[0];  //idle;
                         _shakerImg.sprite = _shakerMonkeySpList[0];
+                        _shakerImg.rectTransform.anchoredPosition = _shakerOffsetList[0];
                     }
                     else
                     {
@@ -189,6 +190,7 @@ public class FruitTree : MonoBehaviour {
         _shakingTimer = 0f;
         _state = PT_STATE.IDLE;
         _img.sprite = _shakeSpList[0];  //idle;
+        _shakerImg.rectTransform.anchoredPosition = _shakerOffsetList[0];
         _audioTimer = 0f;
         AudioController.Play("shake_intro", GameMgr.Instance.transform, 0.5f);
         //_shakerImg.sprite = _shakerMonkeySpList[0];
@@ -566,7 +568,7 @@ public class FruitTree : MonoBehaviour {
             Debug.LogError("Index out of range!");
 
         Fruit returnFr = null;
-        returnFr = _eggFruitPool[_currentEggPoolIndex];
+        returnFr = _eggFruitPool[_currentEggPoolIndex];     
         ++_currentEggPoolIndex;
         returnFr.SetupFruitAsEgg(quality);
         Debug.Log("Get egg index_________________________: " + _currentEggPoolIndex+" -- "+returnFr);

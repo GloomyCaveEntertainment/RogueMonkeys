@@ -16,9 +16,9 @@ public class SceneLayout : MonoBehaviour {
 
 
 	#region Public Methods
-    public GameObject GetNet()
+    public List<GameObject> GetNetList()
     {
-        return _netObject;
+        return _netObjectList;
     }
 
     public Transform GetLeftBotspawnLimit()
@@ -160,7 +160,7 @@ public class SceneLayout : MonoBehaviour {
 
 	#region Private Serialized Fields
     [SerializeField]
-    private GameObject _netObject;
+    private List<GameObject> _netObjectList;
     [SerializeField]
     private Transform _leftBotSpawnLimit, _rightTopSpawnLimit;  //defines fruit spawn area
     [SerializeField]

@@ -336,7 +336,6 @@ public class MenuSelection : MonoBehaviour {
             switch (_stageList[i].GetAvState())
             {
                 case Stage.STAGE_STATE.COMPLETED:
-                    //TODO: any completed stamp...
                     _stageMiniList[i].transform.GetChild(1).gameObject.SetActive(false);
                     _stageMiniList[i].transform.GetChild(2).gameObject.SetActive(false);
                     _stageMiniList[i].transform.GetChild(3).gameObject.SetActive(true);

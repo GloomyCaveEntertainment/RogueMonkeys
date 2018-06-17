@@ -173,7 +173,7 @@ public class Tutorial : MonoBehaviour {
         _alarmTipShown = false;
         //_mainMenu.TutorialReady();
         _state = TUT_STATE.IDLE;
-        UIHelper.Instance.ShowFakeShack(false);
+        //UIHelper.Instance.ShowFakeShack(false);
         //GameMgr.Instance.AlarmIncrease = 5f;
         GetComponent<Canvas>().worldCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         _introCamShakerPos = GameMgr.Instance.GetCurrentLevel().IntroCamShakerPos;

@@ -78,7 +78,7 @@
             </box_prob>
           </box_prob_list>      
     </data_entry>
-  <data_entry breakLvl ="14">
+  <data_entry breakLvl ="13">
           <box_prob_list>
             <box_prob type="S" prob ="0.6" val="35">
               <item_pool>
@@ -118,6 +118,47 @@
             </item_pool>
             </box_prob>
           </box_prob_list>      
+    </data_entry>
+    <data_entry breakLvl ="14">
+      <box_prob_list>
+        <box_prob type="S" prob ="0.2" val="35">
+          <item_pool>
+            <item id="Empty" prob ="0.2"/>
+            <item id="Ring" prob ="0.1"/>
+            <item id="Earrings" prob ="0.25"/>
+            <item id="Necklace" prob ="0.25"/>
+            <item id="Light Sack" prob ="0.1"/>
+            <item id="Manipulation Gloves" prob ="0.1"/>
+          </item_pool>
+        </box_prob>
+        <box_prob type="M" prob ="0.5" val="75">
+          <item_pool>
+            <item id="Empty" prob ="0.15"/>
+            <item id="Earrings" prob ="0.15"/>
+            <item id="Necklace" prob ="0.15"/>
+            <item id="Gold Nugget" prob ="0.1"/>
+            <item id="Winged Boots" prob ="0.1"/>
+            <item id="Shiny Glasses" prob ="0.1"/>
+            <item id="Sunglasses" prob ="0.1"/>
+            <item id="Leather Gloves" prob ="0.1"/>
+          </item_pool>
+        </box_prob>
+        <box_prob type="L" prob ="0.3" val="160">
+          <item_pool>
+            <item id="Empty" prob ="0.1"/>
+            <item id="Earrings" prob ="0.05"/>
+            <item id="Necklace" prob ="0.15"/>
+            <item id="Gold Nugget" prob ="0.2"/>
+            <item id="Winged Boots" prob ="0.15"/>
+            <item id="Shiny Glasses" prob ="0.05"/>
+            <item id="Sunglasses" prob ="0.05"/>
+            <item id="Leather Gloves" prob ="0.05"/>
+            <item id="Wool Gloves" prob ="0.1"/>
+            <item id="Jumping Boots" prob ="0.1"/>
+            <item id="Lucky Glasses" prob ="0.1"/>
+          </item_pool>
+        </box_prob>
+      </box_prob_list>
     </data_entry>
   </stage_data>
   <stage_data val ="1">
@@ -200,7 +241,7 @@
         </box_prob>
       </box_prob_list>
     </data_entry>
-    <data_entry breakLvl ="14">
+    <data_entry breakLvl ="13">
       <box_prob_list>
         <box_prob type="S" prob ="0.6" val="65">
           <item_pool>
@@ -225,6 +266,45 @@
           </item_pool>
         </box_prob>
         <box_prob type="L" prob ="0.2" val="300">
+          <item_pool>
+            <item id="Empty" prob ="0.1"/>
+            <item id="Bling Bling" prob ="0.1"/>
+            <item id="Medallion" prob ="0.1"/>
+            <item id="Pocket Watch" prob ="0.2"/>
+            <item id="Wealth Glasses" prob ="0.15"/>
+            <item id="Prune Scissors" prob ="0.1"/>
+            <item id="Winged Sports" prob ="0.05"/>
+            <item id="Kevlar Gloves" prob ="0.1"/>
+            <item id="Santa Sack" prob ="0.1"/>
+          </item_pool>
+        </box_prob>
+      </box_prob_list>
+    </data_entry>
+    <data_entry breakLvl ="14">
+      <box_prob_list>
+        <box_prob type="S" prob ="0.2" val="65">
+          <item_pool>
+            <item id="Empty" prob ="0.2"/>
+            <item id="Necklace" prob ="0.1"/>
+            <item id="Gold Nugget" prob ="0.25"/>
+            <item id="Bling Bling" prob ="0.25"/>
+            <item id="Light Sack" prob ="0.1"/>
+            <item id="Manipulation Gloves" prob ="0.1"/>
+          </item_pool>
+        </box_prob>
+        <box_prob type="M" prob ="0.5" val="140">
+          <item_pool>
+            <item id="Empty" prob ="0.15"/>
+            <item id="Gold Nugget" prob ="0.1"/>
+            <item id="Bling Bling" prob ="0.2"/>
+            <item id="Medallion" prob ="0.15"/>
+            <item id="Wealth Glasses" prob ="0.1"/>
+            <item id="Prune Scissors" prob ="0.1"/>
+            <item id="Winged Sports" prob ="0.1"/>
+            <item id="Kevlar Gloves" prob ="0.1"/>
+          </item_pool>
+        </box_prob>
+        <box_prob type="L" prob ="0.3" val="300">
           <item_pool>
             <item id="Empty" prob ="0.1"/>
             <item id="Bling Bling" prob ="0.1"/>
@@ -332,7 +412,7 @@
         </box_prob>
       </box_prob_list>
     </data_entry>
-    <data_entry breakLvl ="14">
+    <data_entry breakLvl ="13">
       <box_prob_list>
         <box_prob type="S" prob ="0.6" val="120">
           <item_pool>
@@ -357,6 +437,45 @@
           </item_pool>
         </box_prob>
         <box_prob type="L" prob ="0.2" val="570">
+          <item_pool>
+            <item id="Empty" prob ="0.2"/>
+            <item id="Maneki-neko" prob ="0.1"/>
+            <item id="Lingot" prob ="0.1"/>
+            <item id="Chalice" prob ="0.1"/>
+            <item id="Gorilla Gloves" prob ="0.15"/>
+            <item id="baseball gloves" prob ="0.1"/>
+            <item id="Midas' Sight" prob ="0.1"/>
+            <item id="Fairy Boots" prob ="0.05"/>
+            <item id="Thief's Toolset" prob ="0.1"/>
+          </item_pool>
+        </box_prob>
+      </box_prob_list>
+    </data_entry>
+    <data_entry breakLvl ="14">
+      <box_prob_list>
+        <box_prob type="S" prob ="0.2" val="120">
+          <item_pool>
+            <item id="Empty" prob ="0.3"/>
+            <item id="Bling Bling" prob ="0.15"/>
+            <item id="Pocket Watch" prob ="0.2"/>
+            <item id="Maneki-neko" prob ="0.15"/>
+            <item id="Light Sack" prob ="0.1"/>
+            <item id="Manipulation Gloves" prob ="0.1"/>
+          </item_pool>
+        </box_prob>
+        <box_prob type="M" prob ="0.5" val="250">
+          <item_pool>
+            <item id="Empty" prob ="0.2"/>
+            <item id="Pocket Watch" prob ="0.1"/>
+            <item id="Maneki-neko" prob ="0.2"/>
+            <item id="Lingot" prob ="0.15"/>
+            <item id="Fairy Boots" prob ="0.1"/>
+            <item id="Thief's Toolset" prob ="0.1"/>
+            <item id="Kevlar Sack" prob ="0.1"/>
+            <item id="Gorilla Gloves" prob ="0.05"/>
+          </item_pool>
+        </box_prob>
+        <box_prob type="L" prob ="0.3" val="570">
           <item_pool>
             <item id="Empty" prob ="0.2"/>
             <item id="Maneki-neko" prob ="0.1"/>
@@ -459,7 +578,7 @@
         </box_prob>
       </box_prob_list>
     </data_entry>
-    <data_entry breakLvl ="14">
+    <data_entry breakLvl ="13">
       <box_prob_list>
         <box_prob type="S" prob ="0.6" val="220">
           <item_pool>
@@ -484,6 +603,43 @@
           </item_pool>
         </box_prob>
         <box_prob type="L" prob ="0.2" val="950">
+          <item_pool>
+            <item id="Empty" prob ="0.2"/>
+            <item id="Lingot" prob ="0.1"/>
+            <item id="Chalice" prob ="0.15"/>
+            <item id="Ankh" prob ="0.15"/>
+            <item id="Laser Tools" prob ="0.1"/>
+            <item id="Future Glasses" prob ="0.15"/>
+            <item id="Teleport Boots" prob ="0.15"/>
+          </item_pool>
+        </box_prob>
+      </box_prob_list>
+    </data_entry>
+    <data_entry breakLvl ="14">
+      <box_prob_list>
+        <box_prob type="S" prob ="0.2" val="220">
+          <item_pool>
+            <item id="Empty" prob ="0.3"/>
+            <item id="Maneki-neko" prob ="0.15"/>
+            <item id="Lingot" prob ="0.2"/>
+            <item id="Chalice" prob ="0.15"/>
+            <item id="Ankh" prob ="0.15"/>
+            <item id="Winged Rockets" prob ="0.1"/>
+            <item id="Laser Tools" prob ="0.1"/>
+          </item_pool>
+        </box_prob>
+        <box_prob type="M" prob ="0.5" val="460">
+          <item_pool>
+            <item id="Empty" prob ="0.2"/>
+            <item id="Lingot" prob ="0.15"/>
+            <item id="Chalice" prob ="0.2"/>
+            <item id="Ankh" prob ="0.15"/>
+            <item id="Laser Tools" prob ="0.1"/>
+            <item id="Future Glasses" prob ="0.1"/>
+            <item id="Teleport Boots" prob ="0.1"/>
+          </item_pool>
+        </box_prob>
+        <box_prob type="L" prob ="0.3" val="950">
           <item_pool>
             <item id="Empty" prob ="0.2"/>
             <item id="Lingot" prob ="0.1"/>
@@ -584,7 +740,7 @@
         </box_prob>
       </box_prob_list>
     </data_entry>
-    <data_entry breakLvl ="14">
+    <data_entry breakLvl ="13">
       <box_prob_list>
         <box_prob type="S" prob ="0.6" val="220">
           <item_pool>
@@ -609,6 +765,43 @@
           </item_pool>
         </box_prob>
         <box_prob type="L" prob ="0.2" val="950">
+          <item_pool>
+            <item id="Empty" prob ="0.2"/>
+            <item id="Lingot" prob ="0.1"/>
+            <item id="Chalice" prob ="0.15"/>
+            <item id="Ankh" prob ="0.15"/>
+            <item id="Laser Tools" prob ="0.1"/>
+            <item id="Future Glasses" prob ="0.15"/>
+            <item id="Teleport Boots" prob ="0.15"/>
+          </item_pool>
+        </box_prob>
+      </box_prob_list>
+    </data_entry>
+    <data_entry breakLvl ="14">
+      <box_prob_list>
+        <box_prob type="S" prob ="0.2" val="220">
+          <item_pool>
+            <item id="Empty" prob ="0.3"/>
+            <item id="Maneki-neko" prob ="0.15"/>
+            <item id="Lingot" prob ="0.2"/>
+            <item id="Chalice" prob ="0.15"/>
+            <item id="Ankh" prob ="0.15"/>
+            <item id="Winged Rockets" prob ="0.1"/>
+            <item id="Laser Tools" prob ="0.1"/>
+          </item_pool>
+        </box_prob>
+        <box_prob type="M" prob ="0.5" val="460">
+          <item_pool>
+            <item id="Empty" prob ="0.2"/>
+            <item id="Lingot" prob ="0.15"/>
+            <item id="Chalice" prob ="0.2"/>
+            <item id="Ankh" prob ="0.15"/>
+            <item id="Laser Tools" prob ="0.1"/>
+            <item id="Future Glasses" prob ="0.1"/>
+            <item id="Teleport Boots" prob ="0.1"/>
+          </item_pool>
+        </box_prob>
+        <box_prob type="L" prob ="0.3" val="950">
           <item_pool>
             <item id="Empty" prob ="0.2"/>
             <item id="Lingot" prob ="0.1"/>

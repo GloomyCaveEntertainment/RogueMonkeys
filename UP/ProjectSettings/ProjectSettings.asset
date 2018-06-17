@@ -125,7 +125,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.96
+  bundleVersion: 1.0.0
   preloadedAssets: []
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -150,10 +150,10 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.GloomyCaveEntertainment.RogueMonkeys_test
+    Android: com.GloomyCaveEntertainment.RogueMonkeys_Free
   buildNumber: {}
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 18
+  AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -615,7 +615,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
   cloudProjectId: cf985756-3ac1-4a2e-ab70-44e34612ab24
-  projectName: Rogue Monkey
+  projectName: Rogue Monkeys Free
   organizationId: gloomycaveentertainment
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

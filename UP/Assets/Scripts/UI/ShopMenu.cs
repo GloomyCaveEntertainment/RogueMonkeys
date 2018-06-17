@@ -22,13 +22,9 @@ public class ShopMenu : MonoBehaviour {
     public enum KEEPER_ST {  IDLE = 0, ANIM }
     #endregion
 
-
     #region Behaviour Methods
     void Update()
     {
-        if (Input.GetKey(KeyCode.G))
-            TTTT();
-            //GameMgr.Instance.AddGold(200);
         if (_state == SHOP_ST.OPENING_BOX)
         {
             _frameTimer += Time.deltaTime;
@@ -61,9 +57,11 @@ public class ShopMenu : MonoBehaviour {
         }
         else if (_state == SHOP_ST.BOX_OPENED && _delayTimer < _rewardShowMinTime)
             _delayTimer += Time.deltaTime;
-        
+        /*else if (_state == SHOP_ST.BOX_OPENED)
+            _state = SHOP_ST.IDLE;*/
+
         //Shop keeper anim
-        _keeperTimer += Time.deltaTime;
+            _keeperTimer += Time.deltaTime;
         switch (_keeperSt)
         {
             case KEEPER_ST.IDLE:
@@ -185,6 +183,9 @@ public class ShopMenu : MonoBehaviour {
         //(5) Init variables
         _boxTapCounter = 0;
         _itemBought = false;    //flag used to decide if saving gold/inventory is needed
+        _boxPopUp.SetActive(false);
+        _boxReward.SetActive(false);
+        _state = SHOP_ST.IDLE;
     }
 
     /// <summary>
@@ -192,6 +193,9 @@ public class ShopMenu : MonoBehaviour {
     /// </summary>
     public void Back()
     {
+        if (_state != SHOP_ST.IDLE && _state != SHOP_ST.BOX_OPENED)
+            return;
+
         gameObject.SetActive(false);
         //Save data
         if (GameMgr.Instance.ShowInvFb)
@@ -210,7 +214,7 @@ public class ShopMenu : MonoBehaviour {
     /// <param name="itemIndex"></param>
     public void AttemptToBuy(int itemIndex)
     {
-        if (_showingBoughtItem)
+        if (_state != SHOP_ST.IDLE)
             return;
 
         int currentBoxPrice = -1;
@@ -304,7 +308,7 @@ public class ShopMenu : MonoBehaviour {
         AudioController.Play("aud_tear_01");
        
     }
-
+    /*
     public void TTTT()
     {
         _boxTapMat.mainTexture = _boxTapPsTxList[(int)_currentBoxQuality];
@@ -313,7 +317,7 @@ public class ShopMenu : MonoBehaviour {
 
         _boxTapPs.Play();   //Particles
         AudioController.Play("aud_tear_01");
-    }
+    }*/
 
     /// <summary>
     /// 
@@ -321,7 +325,6 @@ public class ShopMenu : MonoBehaviour {
     /// <param name="index"></param>
     public void ShowItemOnFrame()
     {
-        Debug.Log("ShowitemonfRame");
         if (_delayTimer < _rewardShowMinTime)
             return;
 
@@ -332,7 +335,6 @@ public class ShopMenu : MonoBehaviour {
         //Reveal box item on image frame
         if (_availableShopItemList[_currentIndex].IdSpriteName.CompareTo("Empty") != 0)
         {
-            Debug.Log("Showing sprite " + _availableShopItemList[_currentIndex].IdName);
             _itemBoughtImg.sprite = Resources.Load(_availableShopItemList[_currentIndex].IdSpriteName, typeof(Sprite)) as Sprite;
             _itemBoughtImg.gameObject.SetActive(true);
             SetItemText(_availableShopItemList[_currentIndex]);
@@ -356,6 +358,7 @@ public class ShopMenu : MonoBehaviour {
                 GameMgr.Instance.ShowInvFb = true;
             }
         }
+        _state = SHOP_ST.IDLE;
     }
     #endregion
 
@@ -453,11 +456,6 @@ public class ShopMenu : MonoBehaviour {
     }
     */
 
-    
-    public void DEBUG_REMOVE_ADD_GOLD()
-    {
-        GameMgr.Instance.AddGold(100);
-    }
 
     /// <summary>
     /// Create a set of three boxes generating random items based on shop data table
@@ -602,8 +600,6 @@ public class ShopMenu : MonoBehaviour {
     /// <param name="index"></param>
     private void BuyItem(int index)
     {
-        //TODO: opening animation
-
         _itemBought = true;
         //This box no longer available
         _itemSpawnPtList[index].GetComponentInChildren<Button>().interactable = false;
@@ -648,7 +644,6 @@ public class ShopMenu : MonoBehaviour {
     {
         _state = SHOP_ST.OPENING_BOX;
         _frameTimer = 0f;
-        
     }
     
     /// <summary>
@@ -826,7 +821,6 @@ public class ShopMenu : MonoBehaviour {
     private List<DataMgr.BOX_QUALITY> _auxQualityList;
     private static System.Random rng = new System.Random();
 
-    private bool _showingBoughtItem;        //flag used to prevent buying any other item until accept current one shown
     private ShopItem _currentBoughtItem;
     private DataMgr.BOX_QUALITY _currentBoxQuality;
     private int _boxTapCounter;

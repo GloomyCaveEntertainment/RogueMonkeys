@@ -55,6 +55,8 @@ public class StrikerMonkey : MonoBehaviour {
             else
                 UIHelper.Instance.UpdateSlowMoFill(_speedBoostTimer / _speedBoostDur, false);
         }
+        else if (_sBoostSt == S_BOOST_STATE.SLOWMOTION)
+            _slowmoBgFx.transform.position = transform.position;
 
         switch (_state)
         {
@@ -71,7 +73,8 @@ public class StrikerMonkey : MonoBehaviour {
 
             case MONKEY_STATE.MOVING_TO_POS:
                 //Animation
-                if (_frameIndex < _movSpList.Count && _frameTimer >= _jumpFrameTime/*_gameMgr.FrameTime*/)
+                //Deperecated: now using fixed frame (index:2)
+                /*if (_frameIndex < _movSpList.Count && _frameTimer >= _jumpFrameTime)
                 {
                     _frameTimer = 0f;
                     ++_frameIndex;// = (_frameIndex + 1) % _movSpList.Count;
@@ -80,7 +83,7 @@ public class StrikerMonkey : MonoBehaviour {
                         _img.sprite = _movSpList[_frameIndex];
                         _img.SetNativeSize();
                     }
-                }
+                }*/
                 
  
                 if (_gameMgr.SlowMoEnabled) //Check again in case we stoped slowmotion
@@ -310,7 +313,7 @@ public class StrikerMonkey : MonoBehaviour {
         Debug.Log("mov to pos: " + position);
         _frameTimer = 0f;
         _frameIndex = 0;
-        _img.sprite = _movSpList[0];
+        _img.sprite = _movSpList[2];
         _img.SetNativeSize();
         _state = MONKEY_STATE.MOVING_TO_POS;
         //if (position.y + _jumpOffset.y <= _gameMgr.FloorYPos)
@@ -331,7 +334,7 @@ public class StrikerMonkey : MonoBehaviour {
         _hitPos = position;
         _targetPos = position + _jumpOffset;
         _movDirVector = (_targetPos - (Vector2)transform.position).normalized;
-        _jumpFrameTime = Mathf.Abs(_targetPos.x - transform.position.x) / (_jumpSpeed*_movSpList.Count);
+        _jumpFrameTime = (_targetPos - (Vector2)transform.position).magnitude/* Mathf.Abs(_targetPos.x - transform.position.x)*/ / (_jumpSpeed*_movSpList.Count);
         //Debug.Log("Rot before: " + transform.rotation.eulerAngles);
         Debug.Log("ROT: " +rotAngle+"movDirector:"+ _movDirVector);
         //if (_movDirVector.x > 0f)
@@ -483,6 +486,8 @@ public class StrikerMonkey : MonoBehaviour {
                         _sBoostSt = S_BOOST_STATE.SLOWMOTION;
                         _speedBoostTimer = _speedBoostDur;
                         _gameMgr.SetSlowMotion(true);
+                        if (_slowmoBgFx == null)
+                            _slowmoBgFx = UIHelper.Instance.SlowmotionStrikerBgFx;
                     }
                     else
                     {
@@ -797,5 +802,7 @@ public class StrikerMonkey : MonoBehaviour {
 
     private float _jumpFrameTime;
     private Vector2 _hitPos;
+
+    private GameObject _slowmoBgFx;
     #endregion
 }

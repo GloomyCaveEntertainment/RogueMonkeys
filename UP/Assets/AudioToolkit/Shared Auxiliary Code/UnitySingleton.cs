@@ -266,7 +266,8 @@ public abstract class SingletonMonoBehaviour<T> : MonoBehaviour, ISingletonMonoB
 #if UNITY_FLASH
             UnitySingleton<T>._Awake( this );
 #else
-            UnitySingleton<T>._Awake( this as T );
+            if (Instance == null)//TOREVIEW, Rodri
+                UnitySingleton<T>._Awake( this as T );
 #endif
             //Debug.Log( "Awake: " + this.GetType().Name );
         }

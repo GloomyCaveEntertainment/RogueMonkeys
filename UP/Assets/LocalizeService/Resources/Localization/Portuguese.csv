@@ -32,13 +32,13 @@ loc_accuracy,Precisão
 loc_speedCol,Velocidade do Collector
 loc_speedFruitFall,Velocidade de queda de frutas
 loc_goldChance,Probabilidade de objetos de ouro
-loc_equipChance,Probabilidade de objetos de equipo
+loc_equipChance,Probabilidade de objetos de item
 loc_sackSize,Tamanho do saco
 loc_reloadSpeed,Velocidade de recarga
 loc_strikerArea,Área de ataque do Striker
 loc_strikerSpeed,Velocidade do Striker
 loc_equip,Equipar
-loc_remove,Decolar
+loc_remove,Descartar
 loc_buy,Comprar
 loc_sell,Vender
 loc_gameDesign,Design de jogo
@@ -68,12 +68,12 @@ loc_tut_run1,Colete cinco frutas.
 loc_tut_sack,"Cuando o saco está cheio, você deve esvaziá-la para continuar colhendo frutas."
 loc_tut_run2,Colete cinco frutas.
 loc_tut_end,Bem feito!
-loc_popup_ad,Você gostaria de ver um anúncio de ouro?
+loc_popup_ad,Você gostaria de ver um anúncio em troca de ouro?
 loc_gold_full_ad,Ver anúncio completo dá mais ouro ...
 loc_gold,Ouro
-loc_ready,Pronto
-loc_steady,Firme
-loc_go,Vai!
+loc_ready,Preparados
+loc_steady,Prontos
+loc_go,Já!
 loc_newRecord,Novo registro!
 loc_continue,Continue
 loc_stage_0,Praia
@@ -104,8 +104,8 @@ loc_Foam Gloves,Luvas de espuma
 loc_Finger Case,Luvas de dedo
 loc_Mech Gloves,Luvas mecânicas
 loc_Jumping Crocs,Tamancos saltitantes
-loc_Jumping Boots,Botas de salto
-loc_Air Camera Crocs,Air camera crocs
+loc_Jumping Boots,Botas saltitantes
+loc_Air Camera Crocs,Esportes saltitantes
 loc_Fairy Boots,Botas de fada
 loc_Teleport Boots,Botas de teletransporte
 loc_Working Glasses,Óculos de trabalho
@@ -113,7 +113,7 @@ loc_Shiny Glasses,Óculos brilhantes
 loc_Fortune Glasses,Óculos de fortuna
 loc_Lucky Glasses,Óculos de sorte
 loc_Gnome Glasses,Óculos de gnomo
-loc_Midas' Sight,Midas' sight
+loc_Midas' Sight,Visão de Midas
 loc_Scavenger Glasses,Scavenger glasses
 loc_Sunglasses,Sunglasses
 loc_Wealth Glasses,Wealth glasses
@@ -136,3 +136,6 @@ loc_Chalice,Cálice
 loc_Ankh,Ankh
 loc_cancel,Cancelar
 loc_localization,Localização
+loc_ComboBonus,Bônus por combo
+loc_TotalScore,Total
+loc_SellValue,Valor

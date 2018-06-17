@@ -1123,12 +1123,12 @@ Prefab:
     - target: {fileID: 224745913207369098, guid: 3ecef67bd39608e43baa5c3522e7e4eb,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1712
+      value: -1651
       objectReference: {fileID: 0}
     - target: {fileID: 224745913207369098, guid: 3ecef67bd39608e43baa5c3522e7e4eb,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -1712
+      value: -1651
       objectReference: {fileID: 0}
     - target: {fileID: 224560286489645954, guid: 3ecef67bd39608e43baa5c3522e7e4eb,
         type: 2}
@@ -1316,7 +1316,7 @@ Prefab:
     - target: {fileID: 224745913207369098, guid: 3ecef67bd39608e43baa5c3522e7e4eb,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224551431283074648, guid: 3ecef67bd39608e43baa5c3522e7e4eb,
         type: 2}
@@ -1570,6 +1570,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114539772661265860, guid: 2fc809d7063c80c40a18d6ef21a47cba,
         type: 2}
+      propertyPath: _netObjectList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114539772661265860, guid: 2fc809d7063c80c40a18d6ef21a47cba,
+        type: 2}
       propertyPath: _guardSpawnPositions.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1740,6 +1745,36 @@ Prefab:
       propertyPath: _guardSpawnPositionsLeft.Array.data[2]
       value: 
       objectReference: {fileID: 292888672}
+    - target: {fileID: 114539772661265860, guid: 2fc809d7063c80c40a18d6ef21a47cba,
+        type: 2}
+      propertyPath: _netObjectList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1218108945}
+    - target: {fileID: 114539772661265860, guid: 2fc809d7063c80c40a18d6ef21a47cba,
+        type: 2}
+      propertyPath: _netObjectList.Array.data[1]
+      value: 
+      objectReference: {fileID: 704383984}
+    - target: {fileID: 114539772661265860, guid: 2fc809d7063c80c40a18d6ef21a47cba,
+        type: 2}
+      propertyPath: _netObjectList.Array.data[2]
+      value: 
+      objectReference: {fileID: 1819025661}
+    - target: {fileID: 114539772661265860, guid: 2fc809d7063c80c40a18d6ef21a47cba,
+        type: 2}
+      propertyPath: _netObjectList.Array.data[3]
+      value: 
+      objectReference: {fileID: 448361400}
+    - target: {fileID: 114539772661265860, guid: 2fc809d7063c80c40a18d6ef21a47cba,
+        type: 2}
+      propertyPath: _netObjectList.Array.data[4]
+      value: 
+      objectReference: {fileID: 503291657}
+    - target: {fileID: 114539772661265860, guid: 2fc809d7063c80c40a18d6ef21a47cba,
+        type: 2}
+      propertyPath: _netObjectList.Array.data[5]
+      value: 
+      objectReference: {fileID: 915303283}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2fc809d7063c80c40a18d6ef21a47cba, type: 2}
   m_IsPrefabParent: 0

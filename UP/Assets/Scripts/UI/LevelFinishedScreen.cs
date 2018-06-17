@@ -222,8 +222,12 @@ public class LevelFinishedScreen : MonoBehaviour {
                         {
                             if (GameMgr.Instance.StageIndex < GameMgr.Instance._StageList.Count)
                             {
-                                ++GameMgr.Instance.StageIndex;
-                                GameMgr.Instance.LevelIndex = 0;
+                                //not last stage, last level
+                                if (GameMgr.Instance.StageIndex < GameMgr.Instance._StageList.Count - 1)
+                                {
+                                    ++GameMgr.Instance.StageIndex;
+                                    GameMgr.Instance.LevelIndex = 0;
+                                }
                                 _stageFinishedFb.gameObject.SetActive(true);
                                 LeanTween.scale(_stageFinishedFb.gameObject, Vector3.one * 1.1f, 1f).setLoopPingPong();
                             }
@@ -499,6 +503,13 @@ public class LevelFinishedScreen : MonoBehaviour {
                 //GameMgr.Instance.GetCurrentLevel().Rank = Level.RANK.F;
                 GameMgr.Instance.GetCurrentLevel().AvailabilitySt = Level.AVAILABILITY_STATE.FAILED;
             }              
+        }
+        //Check for stage completion
+        if (GameMgr.Instance.LevelIndex == GameMgr.Instance.GetCurrentStage().GetLevelList().Count -1 && 
+            GameMgr.Instance.GetCurrentLevel().AvailabilitySt != Level.AVAILABILITY_STATE.FAILED)
+        {
+            GameMgr.Instance.GetCurrentStage().State = Stage.STAGE_STATE.COMPLETED;
+
         }
         _rankLetterImg.gameObject.SetActive(true);
         _currentStamp.gameObject.SetActive(true);

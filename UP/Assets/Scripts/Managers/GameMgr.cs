@@ -46,13 +46,15 @@ public class GameMgr : MonoBehaviour {
 
     public const float _monkeysFleeTime = 2f;
     public const long _fruitHitVibrationTime = 50;
+    public const long _fruitOnSackVibrationTime = 30;
     public const long _fruitCollectedVibrationTime = 20;
+    public const long _fruitFullSackVibrationTime = 100;
     public const long _missFruitVibrationTime = 200;
     public const long _loseVibrationTime = 750;
     public const float _slowMoTimeScale = 0.5f;
     public const float _slowMoDuration = 2f;
     public const float _maxAccuracy = 2f;
-    public const float _farGuardCanvasScaleRatio = 0.7f;
+    public const float _farGuardCanvasScaleRatio = 0.8f;
 
     public delegate void OnAlarmRaisedEvt();
 
@@ -154,7 +156,7 @@ public class GameMgr : MonoBehaviour {
                     #region Touch management
                     foreach (Touch t in Input.touches)
                     {
-                        Debug.Log("Touch::: " + t.fingerId);
+                        //Debug.Log("Touch::: " + t.fingerId);
                         switch (t.phase)
                         {
                             case TouchPhase.Began:
@@ -833,6 +835,9 @@ public class GameMgr : MonoBehaviour {
             if (g.gameObject.activeSelf)
                 g.Pause(pause);
         
+            //AudioController.PauseMusic(_currentStage.au);   //0.2s fade out
+        
+        
     }
 
     /// <summary>
@@ -1158,7 +1163,7 @@ public class GameMgr : MonoBehaviour {
         //if (Physics.Raycast(t.position, Vector2.right, .1f, raycastHitResults))
         tWorldPosition = GameCamera.ScreenToWorldPoint(t.position);
         if (tWorldPosition.x > _minRightFingerRef.position.x && tWorldPosition.x < _maxRightFingerRef.position.x
-            && !UIHelper.Instance.ContainsPauseBtn(t.position))
+            && !UIHelper.Instance.ContainsPauseBtn(tWorldPosition/*t.position*/))
             return true;
         return false;
     }

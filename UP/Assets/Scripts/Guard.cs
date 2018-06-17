@@ -99,7 +99,7 @@ public class Guard : MonoBehaviour {
                 Alarm();
             else
                 Alarm(alarm);*/
-            GameMgr.Instance.SetAlarmWarnPs(transform.position +_alarmPsOffset);
+            GameMgr.Instance.SetAlarmWarnPs(transform.position +_alarmPsOffset[GameMgr.Instance.StageIndex]);
             _state = GUARD_STATE.WARNED;
             _timer = 0f;
             _currentFrameIndex = 3;
@@ -166,7 +166,7 @@ public class Guard : MonoBehaviour {
             _state = GUARD_STATE.WAKING_UP;
             _frameTimer = Random.Range(0f, _frameTime); //desyn anim between guards
             _currentFrameIndex = 0;
-            GameMgr.Instance.SetAlarmPs(transform.position + _alarmPsOffset + Vector3.up*_alarmPsOffset.y*.5f);  //1.5 times y_offset to keep on top while waking up anim
+            GameMgr.Instance.SetAlarmPs(transform.position + _alarmPsOffset[GameMgr.Instance.StageIndex] + Vector3.up*_alarmPsOffset[GameMgr.Instance.StageIndex].y*.5f);  //1.5 times y_offset to keep on top while waking up anim
         }
     }
 
@@ -252,6 +252,7 @@ public class Guard : MonoBehaviour {
             }
         }
         _img.sprite = _idleSpList[0];
+        _img.enabled = true;
     }
     
 	#endregion
@@ -281,7 +282,7 @@ public class Guard : MonoBehaviour {
     private float _wakeUpTime;
 
     [SerializeField]
-    private Vector3 _alarmPsOffset;
+    private List<Vector3> _alarmPsOffset; //offset list;each element for each differetn guard/stage
     [SerializeField]
     private float _warnTime;
 

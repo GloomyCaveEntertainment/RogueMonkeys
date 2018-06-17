@@ -56,29 +56,29 @@ public class Fruit : MonoBehaviour {
     public const float _maxClusterUnitDeviation = 0.25f;
 
     //Fruit score
-    public const int _cocoScore_L = 5;
-    public const int _cocoScore_M = 10;
-    public const int _cocoScore_S = 15;
-    public const int _bananaScore = 15;
-    public const int _cacaoScore = 5;
-    public const int _littleRipenScore = 10;
-    public const int _mellowRipenScore = 20;
-    public const int _matureRipenScore = 5;
+    public const int _cocoScore_L = 10;//5;
+    public const int _cocoScore_M = 20;//10;
+    public const int _cocoScore_S = 30;//15;
+    public const int _bananaScore = 30;//15;
+    public const int _cacaoScore = 10;//5;
+    public const int _littleRipenScore = 20;//10;
+    public const int _mellowRipenScore = 40;//20;
+    public const int _matureRipenScore = 10;//5;
     public const int _staleRipenScore = 0;
-    public const int _chickenScore = 5;
+    public const int _chickenScore = 10;//5;
 
-    public const int _eggScoreQuality_0 = 10;
-    public const int _eggScoreQuality_1 = 15;
-    public const int _eggScoreQuality_2 = 20;
+    public const int _eggScoreQuality_0 = 20;//10;
+    public const int _eggScoreQuality_1 = 30;//15;
+    public const int _eggScoreQuality_2 = 40;//20;
     public const float _eggTierOneChance = 0.5f;
     public const float _eggTierTwoChance = 0.35f;
     public const float _eggTierGoldChance = 0.15f;
 
-    public const int _slowMoScore = 15;
-    public const int _clusterScore = 10;
-    public const int _kiwiScore = 20;
-    public const int _goldItemScore = 25;
-    public const int _equipmentItemScore = 75;
+    public const int _slowMoScore = 30;//15;
+    public const int _clusterScore = 20;//10;
+    public const int _kiwiScore = 40;//20;
+    public const int _goldItemScore = 50;//25;
+    public const int _equipmentItemScore = 150;//75;
 
     //Egg
     public const int _maxSpawnedEggs = 4;
@@ -200,7 +200,7 @@ public class Fruit : MonoBehaviour {
                         case RIPEN_STATE.MATURE:
                             //Animation
                             if (_ripenTransAnim)
-                                transform.localScale = Vector3.Lerp(Vector3.one, Vector3.one * 1.3f, _ripenAnimCurve.Evaluate(_timer - _ripentTime_stale * 0.75f) / (_ripentTime_stale * 0.25f));
+                                transform.localScale = Vector3.Lerp(Vector3.one*1.3f, Vector3.one*1.15f, _ripenStaleAnimCurve.Evaluate(_timer - _ripentTime_stale * 0.75f) / (_ripentTime_stale * 0.25f));
                             else if (_timer >= _ripentTime_stale * 0.75f)
                                 _ripenTransAnim = true;
 
@@ -209,6 +209,7 @@ public class Fruit : MonoBehaviour {
                                 _ripenSt = RIPEN_STATE.STALE;
                                 _img.sprite = _staleRipenSp;
                                 _currentScore = _staleRipenScore;
+                                transform.localScale = Vector3.one * 1.2f;
                             }
                             break;
                     }
@@ -797,6 +798,7 @@ public class Fruit : MonoBehaviour {
         //_goldItemType = (G_TYPE)goldTypeIndex;
         if (_img == null)
             _img = GetComponent<Image>();
+        _img.raycastTarget = false;     //this fruit doesn't get called by DepositOnSack so we disable collisions here
         _currentEggQuality = quality;
         //2nd egg is random
         /*if (quality == _maxSpawnedEggs-1)
@@ -1296,7 +1298,7 @@ public class Fruit : MonoBehaviour {
     private List<PathIndexEntry> _pathIndexList;
 
     [SerializeField]
-    private AnimationCurve _chickenPushEggAnimCurve, _eggPushEggAnimCurve, _ripenAnimCurve;
+    private AnimationCurve _chickenPushEggAnimCurve, _eggPushEggAnimCurve, _ripenAnimCurve,_ripenStaleAnimCurve;
     [SerializeField]
     private float _eggAnimTime;
     #endregion
