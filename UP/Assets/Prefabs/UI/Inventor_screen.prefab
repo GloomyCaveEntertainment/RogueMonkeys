@@ -1906,6 +1906,7 @@ GameObject:
   - component: {fileID: 222517091042448460}
   - component: {fileID: 114579969819990588}
   - component: {fileID: 114863957309016958}
+  - component: {fileID: 114649779649756768}
   m_Layer: 5
   m_Name: Equip_unequip_text
   m_TagString: Untagged
@@ -5745,6 +5746,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114649779649756768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1748878773585688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1137a3dd71637cb4183ce720f58b1991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: loc_equip
 --- !u!114 &114656317113713234
 MonoBehaviour:
   m_ObjectHideFlags: 1

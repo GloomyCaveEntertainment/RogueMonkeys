@@ -125,7 +125,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.0.0
+  bundleVersion: 1.0.1
   preloadedAssets: []
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -150,9 +150,9 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.GloomyCaveEntertainment.RogueMonkeys_Free
+    Android: com.GloomyCaveEntertainment.RogueMonkeys
   buildNumber: {}
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 2
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -226,8 +226,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: C:/G Copy/UnityProjects/RogueMonkeys/UP/RM_ks.keystore
+  AndroidKeyaliasName: roguemonkeys
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   AndroidEnableTango: 0
@@ -243,7 +243,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 691891cb499edf1469179c2023a75ae8, type: 3}
+      m_Icon: {fileID: 2800000, guid: 51a5bd3c34e60f047b4d691fdfe4e0ff, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

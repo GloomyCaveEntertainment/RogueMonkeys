@@ -447,7 +447,7 @@ public class GameMgr : MonoBehaviour {
         Debug.Log("Start cLevel");
         //Show Adv
         //Once ad ended, LEvelReady is called from AdsMgr
-        if (!AdsMgr.Instance.ShowAd())
+        //if (!AdsMgr.Instance.ShowAd())
             LevelReady();
         //_levelText.text = "Level "+_currentLevelIndex;
     }
