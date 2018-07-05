@@ -14341,7 +14341,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 63817fbaf64d4fc48934eb761977f1cf, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -29592,6 +29592,11 @@ Prefab:
       propertyPath: _netObjectList.Array.data[5]
       value: 
       objectReference: {fileID: 744713582}
+    - target: {fileID: 114539772661265860, guid: 2fc809d7063c80c40a18d6ef21a47cba,
+        type: 2}
+      propertyPath: _skyBackground
+      value: 
+      objectReference: {fileID: 2032696969}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2fc809d7063c80c40a18d6ef21a47cba, type: 2}
   m_IsPrefabParent: 0

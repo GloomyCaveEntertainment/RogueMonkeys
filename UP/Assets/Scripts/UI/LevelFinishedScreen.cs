@@ -292,6 +292,8 @@ public class LevelFinishedScreen : MonoBehaviour {
         _rankStampFail.gameObject.SetActive(false);
         _newScoreFb.SetActive(false);
         _rankAudioPlayed = false;
+        _scoreText.gameObject.SetActive(false);
+        _scoreLabel.gameObject.SetActive(false);
         _bonusScoreText.gameObject.SetActive(false);
         _bonusScoreTextLabel.gameObject.SetActive(false);
         _totalScoreText.gameObject.SetActive(false);
@@ -310,6 +312,8 @@ public class LevelFinishedScreen : MonoBehaviour {
         else
         {
             _state = LF_MENU_STATE.COUNTING;
+            _scoreText.gameObject.SetActive(true);
+            _scoreLabel.gameObject.SetActive(true);
             AudioController.Play("aud_score");
         }
         _timer = 0f;
@@ -554,7 +558,7 @@ public class LevelFinishedScreen : MonoBehaviour {
     [SerializeField]
     private Image _rankLetterImg, _rankStampSuccess, _rankStampFail;
     [SerializeField]
-    private Text _scoreText;
+    private Text _scoreText, _scoreLabel;
     [SerializeField]
     private GameObject _newScoreFb;
 

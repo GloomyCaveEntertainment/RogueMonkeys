@@ -193,7 +193,7 @@ public class ShopMenu : MonoBehaviour {
     /// </summary>
     public void Back()
     {
-        if (_state != SHOP_ST.IDLE && _state != SHOP_ST.BOX_OPENED)
+        if (_state != SHOP_ST.IDLE /*&& _state != SHOP_ST.BOX_OPENED*/)
             return;
 
         gameObject.SetActive(false);

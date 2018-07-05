@@ -55,6 +55,7 @@ public class GameMgr : MonoBehaviour {
     public const float _slowMoDuration = 2f;
     public const float _maxAccuracy = 2f;
     public const float _farGuardCanvasScaleRatio = 0.8f;
+    public const float _marginSaverDist = 50f;
 
     public delegate void OnAlarmRaisedEvt();
 
@@ -90,15 +91,16 @@ public class GameMgr : MonoBehaviour {
         _stageDismissedFruitCount = _stageSpawnedFruitCount = _stageSucceededFruitCount = 0;
         _gameState = GAME_STATE.IDLE;
 
+        
         //_invScreen = GameObject.FindGameObjectWithTag("InventoryScreen").GetComponent<InventoryScreen>();
         //_shopScreen = GameObject.FindGameObjectWithTag("ShopScreen").GetComponent<ShopMenu>(); ;
-        
+
         //GameMgr.Instance.SetLevelIndex(_currentLevelIndex);
-        
-        
+
+
         //_cocoFlyTime = .5f;
         //_gravity = -9.8f;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -164,10 +166,10 @@ public class GameMgr : MonoBehaviour {
                                 //Check either rightFinger isnt init or it has ended
                                 if (//_rightFingerTouch.fingerId == -1 
                                     /*|| (_rightFingerTouch.fingerId == t.fingerId))*/
-                                    /*&&*/ IsOnRightFingerZone(t))
+                                    /*&&*/ IsOnRightFingerZone(t, out _rightFingerTouch))
 
                                 {
-                                    _rightFingerTouch = t;
+                                    //DEPRECATED _rightFingerTouch = t;
                                     _strikerMonkey.MoveToHit(GameCamera.ScreenToWorldPoint(t.position));
 
                                 }
@@ -447,7 +449,7 @@ public class GameMgr : MonoBehaviour {
         Debug.Log("Start cLevel");
         //Show Adv
         //Once ad ended, LEvelReady is called from AdsMgr
-        //if (!AdsMgr.Instance.ShowAd())
+        if (!AdsMgr.Instance.ShowAd())
             LevelReady();
         //_levelText.text = "Level "+_currentLevelIndex;
     }
@@ -1156,16 +1158,26 @@ public class GameMgr : MonoBehaviour {
     /// </summary>
     /// <param name="t"></param>
     /// <returns></returns>
-    private bool IsOnRightFingerZone(Touch t)
+    private bool IsOnRightFingerZone(Touch t, out Touch normalizedT)
     {
         Vector2 tWorldPosition;
         //RaycastHit2D[] raycastHitResults = null;
         //if (Physics.Raycast(t.position, Vector2.right, .1f, raycastHitResults))
+        normalizedT = t;
         tWorldPosition = GameCamera.ScreenToWorldPoint(t.position);
-        if (tWorldPosition.x > _minRightFingerRef.position.x && tWorldPosition.x < _maxRightFingerRef.position.x
+        if (tWorldPosition.x > (_minRightFingerRef.position.x - _marginSaverDist) && tWorldPosition.x < (_maxRightFingerRef.position.x + _marginSaverDist)
             && !UIHelper.Instance.ContainsPauseBtn(tWorldPosition/*t.position*/))
+        {
+            //left margin saver
+            if (tWorldPosition.x < _minRightFingerRef.position.x)
+                normalizedT.position = new Vector2(_minLeftFingerRef.position.x, t.position.y);
+            //right margin saver
+            else if (tWorldPosition.x > _maxRightFingerRef.position.x)
+                normalizedT.position = new Vector2(_minLeftFingerRef.position.x, t.position.y);
             return true;
-        return false;
+        }
+        else 
+            return false;
     }
 
     

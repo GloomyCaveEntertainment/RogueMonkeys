@@ -56,6 +56,11 @@ public class SceneLayout : MonoBehaviour {
         return _background;
     }
 
+    public GameObject GetSkyBackground()
+    {
+        return _skyBackground;
+    }
+
     public FruitTree GetFruitTree()
     {
         return _fruitTree;
@@ -170,7 +175,7 @@ public class SceneLayout : MonoBehaviour {
     [SerializeField]
     private Transform _netHeightRef, _floorHeightRef;
     [SerializeField]
-    private GameObject _background;
+    private GameObject _background, _skyBackground;
     [SerializeField]
     private FruitTree _fruitTree;
     [SerializeField]

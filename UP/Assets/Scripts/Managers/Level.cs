@@ -330,6 +330,7 @@ public class Level : MonoBehaviour {
         _netObjectList = _currentSL.GetNetList();
         _fruitTree = _currentSL.GetFruitTree();
         _background = _currentSL.GetBackground();
+        _skyBg = _currentSL.GetSkyBackground();
         _netHeightRef = _currentSL.GetNetHeightRef();
         _floorHeightRef = _currentSL.GetFloorHeightRef();
         _leftBotSpawnLimit = _currentSL.GetLeftBotspawnLimit();
@@ -348,6 +349,11 @@ public class Level : MonoBehaviour {
         //_netObject.GetComponent<Image>().sprite = Resources.Load(_netSpriteId, typeof(Sprite)) as Sprite;
         //_fruitTree.GetComponent<Image>().sprite = Resources.Load(_treeId, typeof(Sprite)) as Sprite;
 
+        //Background
+        //_background.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width, Screen.height);//world canvas so setup according to current resolution
+        //_skyBg.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width, 400f * (Screen.height/1080f));
+        Debug.Log(GameMgr.Instance.GameCamera.aspect);
+        GameMgr.Instance.GameCamera.aspect = 16f/9f;
         //Setup Tree
         _fruitTree.SetGoldPool(_goldItemPoolType);
         _fruitTree.SetEquipmentPool(_equipmentItemPoolType);
@@ -593,12 +599,13 @@ public class Level : MonoBehaviour {
     private Transform _minLeftFingerRef, _maxLeftFingerRef, _minRightFingerRef, _maxRightFingerRef;
 
     private List<GameObject> _netObjectList;
-    private Transform _netHeightRef;     //Transform which defines fruit max ytayectory height
+    private Transform _netHeightRef;     //Transform which defines fruit max trayectory height
     private Transform _floorHeightRef;
     private Transform _leftBotSpawnLimit, _rightTopSpawnLimit;  //defines fruit spawn area
     private Transform _leftCollectorLimit, _rightCollectorLimit;    //defines fruit left fall area (Collector monkey)
     private FruitTree _fruitTree;
     private GameObject _background;
+    private GameObject _skyBg;
 
     [SerializeField]
     private int _maxScore;
