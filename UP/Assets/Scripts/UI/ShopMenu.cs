@@ -25,6 +25,13 @@ public class ShopMenu : MonoBehaviour {
     #region Behaviour Methods
     void Update()
     {
+        /*if (Input.GetKeyDown(KeyCode.C))
+        {
+            _boxTapPs.gameObject.SetActive(true);
+            _boxTapPs.Stop();
+            _boxTapPs.Play();
+        }*/
+
         if (_state == SHOP_ST.OPENING_BOX)
         {
             _frameTimer += Time.deltaTime;
@@ -43,13 +50,20 @@ public class ShopMenu : MonoBehaviour {
                     if (DataMgr.Instance.GetGoldItems().Find((itm) => (itm.IdSpriteName.CompareTo(_availableShopItemList[_currentIndex].IdSpriteName) == 0)) != null)
                     {
                         AudioController.Play("ding");
+                        //Deprecated since UIparticles comp added, they get autoplayed..
+                        _goldItemPs.gameObject.SetActive(true);
+                        _goldItemPs.Stop();
                         _goldItemPs.Play();
+                        //_goldItemPs.gameObject.SetActive(true);
                     }
                     else
                     {
                         AudioController.Play("aud_box_success_01");
+                        //Deprecated since UIparticles comp added, they get autoplayed.. 
+                        _equipmentItemPs.gameObject.SetActive(true);
+                        _equipmentItemPs.Stop();
                         _equipmentItemPs.Play();
-
+                        //_equipmentItemPs.gameObject.SetActive(true);
                     }
                 }
             }
@@ -185,6 +199,9 @@ public class ShopMenu : MonoBehaviour {
         _itemBought = false;    //flag used to decide if saving gold/inventory is needed
         _boxPopUp.SetActive(false);
         _boxReward.SetActive(false);
+        _equipmentItemPs.gameObject.SetActive(false);
+        _goldItemPs.gameObject.SetActive(false);
+        _boxTapPs.gameObject.SetActive(false);
         _state = SHOP_ST.IDLE;
     }
 
@@ -304,7 +321,12 @@ public class ShopMenu : MonoBehaviour {
         ParticleSystem.MainModule main = _boxTapPs.main;
         main.startSize = new ParticleSystem.MinMaxCurve(_boxTapPsSizeList[(int)_currentBoxQuality].x, _boxTapPsSizeList[(int)_currentBoxQuality].y);
 
+        _boxTapPs.gameObject.SetActive(true);
+        _boxTapPs.Stop();
         _boxTapPs.Play();   //Particles
+        //_boxTapPs.gameObject.SetActive(false);
+        //_boxTapPs.gameObject.SetActive(true);
+        
         AudioController.Play("aud_tear_01");
        
     }

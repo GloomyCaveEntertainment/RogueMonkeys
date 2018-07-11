@@ -12,25 +12,15 @@ using SunCubeStudio.Localization;
 
 public class InventoryScreen : MonoBehaviour {
 
-	#region Public Data
+    #region Public Data
 
-	#endregion
+    #endregion
 
 
-	#region Behaviour Methods
-	// Use this for initialization
-	/*void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        //if (Input.GetKeyDown(KeyCode.I))
-            //InitScreen();
-	}*/
-	#endregion
+    #region Behaviour Methods
+    #endregion
 
-	#region Public Methods
+    #region Public Methods
     /// <summary>
     /// 
     /// </summary>
@@ -64,7 +54,23 @@ public class InventoryScreen : MonoBehaviour {
             slot.transform.GetChild(3).gameObject.SetActive(false);//frame
             slot.GetComponentInChildren<Text>().text = "";
         }
-        
+
+        RectTransform rectTransform = _inventoryItemButtonRootList[0].transform.parent.GetComponent<RectTransform>();
+        //int dynamicColCount = 0;
+        //float childmaxX = -9999f;
+        //Calculate managed cols/rows per Layout Group (content panel) to get later relative content panel deltaSize per row
+        /*for (int i = 0; i < _inventoryItemButtonRootList.Count; ++i)
+        {
+            if (_inventoryItemButtonRootList[i].transform.position.x > childmaxX)
+            {
+                childmaxX = _inventoryItemButtonRootList[i].transform.position.x;
+                ++dynamicColCount;
+            }
+            else
+                break;  //new row
+        }*/
+        //int rowNumber = Mathf.CeilToInt((float)_inventoryItemButtonRootList.Count / dynamicColCount);
+        //_cellSize = rectTransform.rect.height / rowNumber;
         //Check if need to instantiate new item miniatures
         if (_inventoryItems.Count > _inventoryItemButtonRootList.Count)
         {
@@ -78,24 +84,20 @@ public class InventoryScreen : MonoBehaviour {
             }
 
             //Adjust content panel size
-            RectTransform rectTransform = _inventoryItemButtonRootList[0].transform.parent.GetComponent<RectTransform>();
-            float yMin = 0.0f;
-            float yMax = 0.0f;
-            foreach (RectTransform child in _inventoryItemButtonRootList[0].transform.parent.GetComponentsInChildren<RectTransform>())
-            {
-                yMin = Mathf.Min(yMin, child.offsetMin.y);
-                yMax = Mathf.Max(yMax, child.offsetMax.y);
-                Debug.Log("YMIN " + yMin + " ymax: " + yMax);
-                Debug.Log("Mini offset: " + _buttonMiniOffset);
-            }
+            //RectTransform rectTransform = _inventoryItemButtonRootList[0].transform.parent.GetComponent<RectTransform>();
+            //float yMin = 0.0f;
+            //float yMax = 0.0f;
 
-            float finalSize = yMax - yMin;
-            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, (Mathf.CeilToInt((float)_inventoryItems.Count/ _itemsPerRow)) * _inventoryItemButtonRootList[0].transform.parent.GetComponent<GridLayoutGroup>().cellSize.y + _buttonMiniOffset/* 60f/*  finalSize*/);
-            Debug.Log("finalSize: " + finalSize);   
+
+            //float finalSize = yMax - yMin;
+            //Debug.Log("---------------" + rectTransform.GetComponent<GridLayoutGroup>().constraintCount);
+            //Calculate new row number with added intantiated new items
+            //rowNumber = Mathf.CeilToInt((float)_inventoryItemButtonRootList.Count / dynamicColCount);
+            //rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, /*(Mathf.CeilToInt((float)_inventoryItems.Count/ _itemsPerRow))*/(float)rowNumber *_inventoryItemButtonRootList[0].transform.parent.GetComponent<GridLayoutGroup>().cellSize.y /*+ _buttonMiniOffset*//* 60f/*  finalSize*/);
         }
         for (int i = 0; i < _inventoryItems.Count; ++i)
         {
-            Debug.Log("Attemting to load: " + _inventoryItems[i].IdName+ "Equipped: "+ _inventoryItems[i].Equipped);
+            Debug.Log("Attempting to load: " + _inventoryItems[i].IdName+ "Equipped: "+ _inventoryItems[i].Equipped);
             _inventoryItemButtonRootList[i].transform.GetChild(1).GetComponent<Image>().sprite = _inventoryItems[i]._Sprite;
             _inventoryItemButtonRootList[i].gameObject.SetActive(true);
 
@@ -808,5 +810,6 @@ public class InventoryScreen : MonoBehaviour {
     private EquipmentItem _currentSelectedItem;
 
     private bool _showingSellPopup;
-	#endregion
+    private float _cellSize;    //cell size used in grid content panel
+    #endregion
 }

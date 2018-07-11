@@ -24,11 +24,11 @@ loc_chinese,Chinois
 loc_japanese,Japonais
 loc_return,Retourner
 loc_stage,Étape
-loc_StageCom,Ètape terminée!
+loc_stageCom,Ètape terminée!
 loc_level,Niveau
 loc_empty,Vider
 loc_score,Score
-loc_accuracy,Précision,
+loc_accuracy,Précision
 loc_speedCol,Vitesse du collecteur
 loc_speedFruitFall,Vitesse de chute des fruits
 loc_goldChance,Chance de spawn d'élément d'or
@@ -38,7 +38,7 @@ loc_reloadSpeed,Vitesse de rechargement
 loc_strikerArea,Zone de Striker
 loc_strikerSpeed,Vitesse du Striker
 loc_equip,Équiper
-loc_remove,,Retirer
+loc_remove,Retirer
 loc_buy,Acheter
 loc_sell,Vendre
 loc_gameDesign,Design du jeu
@@ -71,6 +71,9 @@ loc_tut_end,Bien joué!
 loc_popup_ad,Voulez-vous voir une annonce pour l'or?
 loc_gold_full_ad,Voir l'annonce complète donne plus d'or ...
 loc_gold,Oro
+loc_ready,À vos marques
+loc_steady,Prêt?
+loc_go,Partez!
 loc_newRecord,Nouveau record!
 loc_continue,Continuer
 loc_stage_0,Plage

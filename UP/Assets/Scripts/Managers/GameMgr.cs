@@ -1166,7 +1166,7 @@ public class GameMgr : MonoBehaviour {
         normalizedT = t;
         tWorldPosition = GameCamera.ScreenToWorldPoint(t.position);
         if (tWorldPosition.x > (_minRightFingerRef.position.x - _marginSaverDist) && tWorldPosition.x < (_maxRightFingerRef.position.x + _marginSaverDist)
-            && !UIHelper.Instance.ContainsPauseBtn(tWorldPosition/*t.position*/))
+            && !UIHelper.Instance.ContainsPauseBtn(/*tWorldPosition*/t.position))
         {
             //left margin saver
             if (tWorldPosition.x < _minRightFingerRef.position.x)

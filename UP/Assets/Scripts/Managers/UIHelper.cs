@@ -372,11 +372,12 @@ public class UIHelper : MonoBehaviour {
         _slowMoGlow.SetActive(enable);
         if (enable)
         {
+            _slowMoGlow.GetComponent<ParticleSystem>().Stop();
             _slowMoGlow.GetComponent<ParticleSystem>().Play();
 
         }
         //_slowmotionDecal.SetActive(enable);
-        //Tree, background and guards to grey
+        //Tree, background, net elements and guards to grey
         GameMgr.Instance._FruitTree.GetComponent<Image>().color = enable ? _slowMoDisabledColor : Color.white;
         foreach (Guard g in _gameMgr.GetCurrentLevel().GuardList)
             g.GetComponent<Image>().color = enable ? _slowMoDisabledColor : Color.white;
