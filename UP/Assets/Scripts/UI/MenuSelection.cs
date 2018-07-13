@@ -284,7 +284,7 @@ public class MenuSelection : MonoBehaviour {
     public void ShowRewardAd()
     {
         AdsMgr.Instance.ShowRewardAd();
-        ShowAdRewardPopup(false);
+        _adPopup.SetActive(false);
         AudioController.Play("aud_menu_accept");
     }
 
