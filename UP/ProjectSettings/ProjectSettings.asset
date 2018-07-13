@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: GloomyCaveEntertainment
-  productName: Rogue Monkeys
+  productName: Rogue Monkeys Free
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -152,7 +152,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.GloomyCaveEntertainment.RogueMonkeys
+    Android: com.GloomyCaveEntertainment.RogueMonkeys_Free
   buildNumber: {}
   AndroidBundleVersionCode: 3
   AndroidMinSdkVersion: 19
@@ -242,8 +242,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/G Copy/UnityProjects/RogueMonkeys_Free/Publishing/Premium/rm_ks_premium.keystore
-  AndroidKeyaliasName: roguemonkeys
+  AndroidKeystoreName: C:/G Copy/UnityProjects/RogueMonkeys_Free/Publishing/Free/rm_ks_free.keystore
+  AndroidKeyaliasName: roguemonkeys_free
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   AndroidEnableTango: 0
@@ -259,7 +259,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 51a5bd3c34e60f047b4d691fdfe4e0ff, type: 3}
+      m_Icon: {fileID: 2800000, guid: 691891cb499edf1469179c2023a75ae8, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -267,7 +267,7 @@ PlayerSettings:
   - m_BuildTarget: Android
     m_Icons:
     - m_Textures:
-      - {fileID: 2800000, guid: 51a5bd3c34e60f047b4d691fdfe4e0ff, type: 3}
+      - {fileID: 2800000, guid: 691891cb499edf1469179c2023a75ae8, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 0
@@ -303,7 +303,7 @@ PlayerSettings:
       m_Kind: 0
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 51a5bd3c34e60f047b4d691fdfe4e0ff, type: 3}
+      - {fileID: 2800000, guid: 691891cb499edf1469179c2023a75ae8, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 1
@@ -339,8 +339,8 @@ PlayerSettings:
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 982356d09407ff14faa90558db516d8d, type: 3}
-      - {fileID: 2800000, guid: de5393b2ddd68d0448327a3eeb64f5fb, type: 3}
+      - {fileID: 2800000, guid: d0804b642380475498f0f015cf33ed5a, type: 3}
+      - {fileID: 2800000, guid: 595c1b3335cd5ad4c85ce61817396b4c, type: 3}
       m_Width: 432
       m_Height: 432
       m_Kind: 2

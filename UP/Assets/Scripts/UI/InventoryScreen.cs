@@ -76,13 +76,13 @@ public class InventoryScreen : MonoBehaviour {
         {
             _buttonMiniOffset = _inventoryItemButtonRootList[0].transform.parent.GetComponent<GridLayoutGroup>().cellSize.y;
             //_buttonMiniOffset = _inventoryItemButtonRootList[0].transform.position.y - _inventoryItemButtonRootList[4].transform.position.y;
-            for (int i= _inventoryItemButtonRootList.Count; i < _inventoryItems.Count; ++i)
+            for (int i = _inventoryItemButtonRootList.Count; i < _inventoryItems.Count; ++i)
             {
                 _inventoryItemButtonRootList.Add((GameObject)Instantiate(_inventoryBtnPref, _inventoryItemButtonRootList[0].transform.parent));
                 int argVal = _inventoryItemButtonRootList.Count - 1;
-                _inventoryItemButtonRootList[argVal].transform.GetChild(1).GetComponent<Button>().onClick.AddListener(()  => SelectInventoryItemIndex(argVal));
+                _inventoryItemButtonRootList[argVal].transform.GetChild(1).GetComponent<Button>().onClick.AddListener(() => SelectInventoryItemIndex(argVal));
             }
-
+            rectTransform.GetComponent<ContentSizeFitter>().enabled = true;     //automatically fit content panel to total items
             //Adjust content panel size
             //RectTransform rectTransform = _inventoryItemButtonRootList[0].transform.parent.GetComponent<RectTransform>();
             //float yMin = 0.0f;
@@ -95,6 +95,8 @@ public class InventoryScreen : MonoBehaviour {
             //rowNumber = Mathf.CeilToInt((float)_inventoryItemButtonRootList.Count / dynamicColCount);
             //rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, /*(Mathf.CeilToInt((float)_inventoryItems.Count/ _itemsPerRow))*/(float)rowNumber *_inventoryItemButtonRootList[0].transform.parent.GetComponent<GridLayoutGroup>().cellSize.y /*+ _buttonMiniOffset*//* 60f/*  finalSize*/);
         }
+        else
+            rectTransform.GetComponent<ContentSizeFitter>().enabled = false;    //disable to prevent having a panel with less than standard size
         for (int i = 0; i < _inventoryItems.Count; ++i)
         {
             Debug.Log("Attempting to load: " + _inventoryItems[i].IdName+ "Equipped: "+ _inventoryItems[i].Equipped);
