@@ -663,6 +663,15 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: 0.50001526
       objectReference: {fileID: 0}
+    - target: {fileID: 1408844128122166, guid: d276bf2187c32bc4d88178194c473297, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114464448444566778, guid: d276bf2187c32bc4d88178194c473297,
+        type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d276bf2187c32bc4d88178194c473297, type: 2}
   m_IsPrefabParent: 0
@@ -15099,6 +15108,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1239814546638042, guid: 148e47691b02dad48ab7578199d283c7, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 148e47691b02dad48ab7578199d283c7, type: 2}
   m_IsPrefabParent: 0
@@ -16674,6 +16687,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 224476174129546324, guid: d52fd986952794d4ba8de09d7137a178,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52fd986952794d4ba8de09d7137a178, type: 2}
   m_IsPrefabParent: 0
@@ -17672,6 +17690,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1866401629}
+  - component: {fileID: 1866401630}
   m_Layer: 5
   m_Name: Score_root
   m_TagString: Untagged
@@ -17699,6 +17718,22 @@ RectTransform:
   m_AnchoredPosition: {x: 117.25, y: 5.300049}
   m_SizeDelta: {x: -154.5, y: -5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1866401630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1866401628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33792b8c89fd47c458f90b78e9c92733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _left: 123.5
+  _top: 0
+  _right: 30.995
+  _bottom: 5
+  _parent: {fileID: 0}
 --- !u!1 &1880666859
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class XPhoneTransformHelper : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        if (/*UnityEngine.iOS.Device.generation == UnityEngine.iOS.DeviceGeneration.iPhoneX && */_parent == null)
+        if (UnityEngine.iOS.Device.generation == UnityEngine.iOS.DeviceGeneration.iPhoneX && _parent == null)
         {
             RectTransform rt = GetComponent<RectTransform>();
             rt.offsetMin = new Vector2(_left, _bottom);
@@ -16,14 +16,12 @@ public class XPhoneTransformHelper : MonoBehaviour {
     }
     void Start()
     {
-        if (/*UnityEngine.iOS.Device.generation == UnityEngine.iOS.DeviceGeneration.iPhoneX &&*/ _parent != null)
+        if (UnityEngine.iOS.Device.generation == UnityEngine.iOS.DeviceGeneration.iPhoneX && _parent != null)
         {
             RectTransform rt = GetComponent<RectTransform>();
             rt.offsetMin = new Vector2(_left, _bottom);
             rt.offsetMax = new Vector2(-_right, _top);
         }
-        //Destroy(this);
-
     }
 
     [SerializeField]
