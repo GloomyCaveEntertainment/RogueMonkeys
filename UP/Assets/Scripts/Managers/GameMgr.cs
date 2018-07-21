@@ -142,7 +142,7 @@ public class GameMgr : MonoBehaviour {
 
                 if (_currentLevel.GetLevelState() == Level.L_STATE.RUN || _currentLevel.GetLevelState() == Level.L_STATE.IDLE || _currentLevel.GetLevelState() == Level.L_STATE.WAITNG_FLYING_FRUITS) //IDLE for tutorial scenario
                 {
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
                     if (Input.GetMouseButtonDown(0))
                     {
                         if (!UIHelper.Instance.ContainsPauseBtn(Input.mousePosition))
@@ -154,66 +154,66 @@ public class GameMgr : MonoBehaviour {
                     }
                     if (Input.GetKeyDown(KeyCode.Space))
                         _collectorMonkey._Sack.Reload(); //collect sack fruits
-#endif
-                    #region Touch management
-                    foreach (Touch t in Input.touches)
-                    {
-                        //Debug.Log("Touch::: " + t.fingerId);
-                        switch (t.phase)
-                        {
-                            case TouchPhase.Began:
+//#endif
+                //    #region Touch management
+                //    foreach (Touch t in Input.touches)
+                //    {
+                //        //Debug.Log("Touch::: " + t.fingerId);
+                //        switch (t.phase)
+                //        {
+                //            case TouchPhase.Began:
 
-                                //Check either rightFinger isnt init or it has ended
-                                if (//_rightFingerTouch.fingerId == -1 
-                                    /*|| (_rightFingerTouch.fingerId == t.fingerId))*/
-                                    /*&&*/ IsOnRightFingerZone(t, out _rightFingerTouch))
+                //                //Check either rightFinger isnt init or it has ended
+                //                if (//_rightFingerTouch.fingerId == -1 
+                //                    /*|| (_rightFingerTouch.fingerId == t.fingerId))*/
+                //                    /*&&*/ IsOnRightFingerZone(t, out _rightFingerTouch))
 
-                                {
-                                    //DEPRECATED _rightFingerTouch = t;
-                                    _strikerMonkey.MoveToHit(GameCamera.ScreenToWorldPoint(t.position));
+                //                {
+                //                    //DEPRECATED _rightFingerTouch = t;
+                //                    _strikerMonkey.MoveToHit(GameCamera.ScreenToWorldPoint(t.position));
 
-                                }
-                                else if (/*(_leftFingerTouch.fingerId == -1
-                                || (_leftFingerTouch.phase == TouchPhase.Ended || _leftFingerTouch.phase == TouchPhase.Canceled))
-                                &&*/ IsOnLeftFingerZone(t))
-                                {
-                                    //TOCHEC: rBody moveposition
-                                    _leftFingerTouch = t;
-                                    _collectorMonkey.Move(t);
-                                    //_leftMonkey.transform.position = new Vector3(GameCamera.ScreenToWorldPoint(t.position).x, transform.position.y, transform.position.z);
-                                }
-                                break;
+                //                }
+                //                else if (/*(_leftFingerTouch.fingerId == -1
+                //                || (_leftFingerTouch.phase == TouchPhase.Ended || _leftFingerTouch.phase == TouchPhase.Canceled))
+                //                &&*/ IsOnLeftFingerZone(t))
+                //                {
+                //                    //TOCHEC: rBody moveposition
+                //                    _leftFingerTouch = t;
+                //                    _collectorMonkey.Move(t);
+                //                    //_leftMonkey.transform.position = new Vector3(GameCamera.ScreenToWorldPoint(t.position).x, transform.position.y, transform.position.z);
+                //                }
+                //                break;
 
-                            case TouchPhase.Canceled | TouchPhase.Ended:
-                                if (t.fingerId == _rightFingerTouch.fingerId)
-                                {
+                //            case TouchPhase.Canceled | TouchPhase.Ended:
+                //                if (t.fingerId == _rightFingerTouch.fingerId)
+                //                {
 
-                                    //TODO: send right monkey to floor
-                                }
-                                else if (t.fingerId == _leftFingerTouch.fingerId)
-                                {
-                                    //TODO: leftmonkey animation stop
-                                    _collectorMonkey.Stop();
-                                }
+                //                    //TODO: send right monkey to floor
+                //                }
+                //                else if (t.fingerId == _leftFingerTouch.fingerId)
+                //                {
+                //                    //TODO: leftmonkey animation stop
+                //                    _collectorMonkey.Stop();
+                //                }
 
-                                break;
+                //                break;
 
-                            case TouchPhase.Moved:
-                                if (IsOnLeftFingerZone(t))
-                                {
-                                    //TOCHEC: rBody moveposition
-                                    _leftFingerTouch = t;
-                                    _collectorMonkey.Move(t);
-                                    //_leftMonkey.transform.position = new Vector3(GameCamera.ScreenToWorldPoint(t.position).x, FloorYPos, _leftMonkey.transform.position.z);
-                                }
-                                break;
+                //            case TouchPhase.Moved:
+                //                if (IsOnLeftFingerZone(t))
+                //                {
+                //                    //TOCHEC: rBody moveposition
+                //                    _leftFingerTouch = t;
+                //                    _collectorMonkey.Move(t);
+                //                    //_leftMonkey.transform.position = new Vector3(GameCamera.ScreenToWorldPoint(t.position).x, FloorYPos, _leftMonkey.transform.position.z);
+                //                }
+                //                break;
 
-                            case TouchPhase.Stationary:
+                //            case TouchPhase.Stationary:
 
-                                break;
-                        }
-                    }
-                    #endregion
+                //                break;
+                //        }
+                //    }
+                //    #endregion
                 }
 
 

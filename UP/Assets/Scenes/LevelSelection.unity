@@ -10978,10 +10978,10 @@ RectTransform:
   m_Father: {fileID: 1351274544}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.3, y: 0}
-  m_SizeDelta: {x: 73.8, y: 30}
+  m_AnchorMin: {x: 0, y: 0.29839683}
+  m_AnchorMax: {x: 1, y: 0.64279765}
+  m_AnchoredPosition: {x: 17.8, y: 3.5}
+  m_SizeDelta: {x: -97.2, y: -11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &193985917
 MonoBehaviour:
@@ -19806,7 +19806,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.32000002}
   m_AnchorMax: {x: 1, y: 0.63100004}
   m_AnchoredPosition: {x: -20, y: 1}
-  m_SizeDelta: {x: -60, y: -5}
+  m_SizeDelta: {x: -60, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &376728872
 MonoBehaviour:
@@ -38629,7 +38629,7 @@ Prefab:
     - target: {fileID: 224465165505915172, guid: d52fd986952794d4ba8de09d7137a178,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -7.000038
+      value: -7.0000305
       objectReference: {fileID: 0}
     - target: {fileID: 224476174129546324, guid: d52fd986952794d4ba8de09d7137a178,
         type: 2}
@@ -62198,6 +62198,7 @@ GameObject:
   - component: {fileID: 1206976853}
   - component: {fileID: 1206976852}
   - component: {fileID: 1206976851}
+  - component: {fileID: 1206976854}
   m_Layer: 5
   m_Name: Iventory_Fb
   m_TagString: Untagged
@@ -62256,6 +62257,22 @@ RectTransform:
   m_AnchoredPosition: {x: 109, y: 6.5}
   m_SizeDelta: {x: 112, y: 112}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1206976854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1206976850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33792b8c89fd47c458f90b78e9c92733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _left: 148.4
+  _top: 0
+  _right: 112
+  _bottom: 112
+  _parent: {fileID: 0}
 --- !u!1 &1207163556
 GameObject:
   m_ObjectHideFlags: 0
@@ -84002,9 +84019,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33792b8c89fd47c458f90b78e9c92733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _left: 135.8
+  _left: 229.21
   _top: -3.9
-  _right: 39.45
+  _right: 202.85
   _bottom: 13.3
   _parent: {fileID: 765991103}
 --- !u!1 &1674834029
@@ -87229,7 +87246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.086220995}
-  m_AnchoredPosition: {x: 0, y: -3.999939}
+  m_AnchoredPosition: {x: 0, y: -4}
   m_SizeDelta: {x: 0, y: 7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1748820112
