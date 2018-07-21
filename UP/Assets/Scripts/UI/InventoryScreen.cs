@@ -95,8 +95,8 @@ public class InventoryScreen : MonoBehaviour {
             //rowNumber = Mathf.CeilToInt((float)_inventoryItemButtonRootList.Count / dynamicColCount);
             //rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, /*(Mathf.CeilToInt((float)_inventoryItems.Count/ _itemsPerRow))*/(float)rowNumber *_inventoryItemButtonRootList[0].transform.parent.GetComponent<GridLayoutGroup>().cellSize.y /*+ _buttonMiniOffset*//* 60f/*  finalSize*/);
         }
-        else
-            rectTransform.GetComponent<ContentSizeFitter>().enabled = false;    //disable to prevent having a panel with less than standard size
+        else if (_inventoryItems == null || _inventoryItems.Count == 0)
+            rectTransform.GetComponent<ContentSizeFitter>().enabled = false;    //disable to prevent having a panel with no size
         for (int i = 0; i < _inventoryItems.Count; ++i)
         {
             Debug.Log("Attempting to load: " + _inventoryItems[i].IdName+ "Equipped: "+ _inventoryItems[i].Equipped);
