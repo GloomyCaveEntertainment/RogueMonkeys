@@ -1,11 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <item_data>
-  <item id="Sunglasses" equipped="True" new="False" count="1" />
-  <item id="Prune Scissors" equipped="True" new="False" count="1" />
-  <item id="Leather Sack" equipped="False" new="False" count="1" />
-  <item id="Winged Boots" equipped="False" new="False" count="1" />
-  <item id="Quick Sack" equipped="False" new="False" count="1" />
-  <item id="Wool Gloves" equipped="False" new="False" count="1" />
-  <item id="Jumping Crocs" equipped="False" new="False" count="1" />
-  <item id="Leather Gloves" equipped="False" new="False" count="1" />
 </item_data>
