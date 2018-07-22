@@ -194,7 +194,7 @@ public class LevelFinishedScreen : MonoBehaviour {
                     //Rank letter + stamp
                     SetRank();
 
-                    if (GameMgr.Instance.GetCurrentLevel().CheckForHighScore(_tempScore))
+                    if (GameMgr.Instance.GetCurrentLevel().CheckForHighScore(GameMgr.Instance.Score))
                         _newScoreFb.SetActive(true);
                     
                 }
