@@ -275,6 +275,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 223960566485409238, guid: 038ad6af1992d5f4dba1c2975cea173d,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 210757821}
     - target: {fileID: 114098020494366442, guid: 038ad6af1992d5f4dba1c2975cea173d,
         type: 2}
       propertyPath: _slowmotionDecal
@@ -285,11 +290,6 @@ Prefab:
       propertyPath: _slowmotionStrikerBgFx
       value: 
       objectReference: {fileID: 535294343}
-    - target: {fileID: 223960566485409238, guid: 038ad6af1992d5f4dba1c2975cea173d,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 210757821}
     - target: {fileID: 224619744094076358, guid: 038ad6af1992d5f4dba1c2975cea173d,
         type: 2}
       propertyPath: m_AnchorMax.x

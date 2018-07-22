@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <level_data>
-  <stage id="0" state="unlocked">
+  <stage id="0" state="completed">
     <level id="0" score="0" state="completed" rank="A">
     </level>
     <level id="1" score="0" state="completed" rank="S">
@@ -64,7 +64,7 @@
     <level id="14" score="0" state="completed" rank="E">
     </level>
   </stage>
-  <stage id="2" state="completed">
+  <stage id="2" state="unlocked">
     <level id="0" score="0" state="completed" rank="B">
     </level>
     <level id="1" score="0" state="completed" rank="S">
