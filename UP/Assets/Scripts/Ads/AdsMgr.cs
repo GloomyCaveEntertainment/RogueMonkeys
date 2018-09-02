@@ -94,25 +94,6 @@ public class AdsMgr : MonoBehaviour {
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    public void ShowAdsOnExit()
-    {
-        ++AnalyticsMgr.Instance.AdsAttemptCount;
-        ++AnalyticsMgr.Instance.AdsAttemptOnExitCount;
-        if (Advertisement.IsReady())
-        {
-            var options = new ShowOptions { resultCallback = ExitAfterAds  };
-            Advertisement.Show(options);
-            ++AnalyticsMgr.Instance.AdsShownCount;
-            ++AnalyticsMgr.Instance.AdsShownOnExitCount;
-        }
-        else
-        {
-            Application.Quit();
-        }
-    }
 
     /// <summary>
     /// 
@@ -129,34 +110,7 @@ public class AdsMgr : MonoBehaviour {
         }
     }
 
-#if UNITY_ADS
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="result"></param>
-    private void ExitAfterAds(ShowResult result)
-    {
-        /*
-        switch (result)
-        {
-            case ShowResult.Finished:
-                Debug.Log("The ad was successfully shown.");
-                //
-                // YOUR CODE TO REWARD THE GAMER
-                // Give coins etc.
-                break;
-            case ShowResult.Skipped:
-                Debug.Log("The ad was skipped before reaching the end.");
-                break;
-            case ShowResult.Failed:
-                Debug.LogError("The ad failed to be shown.");
-                break;
-        }
-         * */
-        Application.Quit();
-    }
 
-#endif
 	#endregion
 
 
