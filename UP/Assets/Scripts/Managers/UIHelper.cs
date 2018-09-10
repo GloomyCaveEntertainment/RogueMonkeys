@@ -10,6 +10,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using SunCubeStudio.Localization;
+using System.IO;
 
 public class UIHelper : MonoBehaviour {
 
@@ -84,6 +85,7 @@ public class UIHelper : MonoBehaviour {
 
 
     }
+    
     #endregion
 
     #region Public Methods
@@ -320,10 +322,7 @@ public class UIHelper : MonoBehaviour {
     /// </summary>
     /// <param name="fromLoseScreen"></param>
     public void Retry(bool fromLoseScreen)
-    {
-        
-
-        
+    {  
         if (fromLoseScreen)
         {
             ++_gameMgr.LvlAttempts;
@@ -333,33 +332,10 @@ public class UIHelper : MonoBehaviour {
         {
             _lvlFinishedScr.gameObject.SetActive(false);
             _gameMgr.LvlAttempts = 0;
-
             //Recover level index, alresdy incremented in FinishedScreen
-            //(1)general case
-            if (GameMgr.Instance.LevelIndex > 0)
-            {
-                //edge case: last stage, last level completed, avoid lowering lvl index
-                if (_gameMgr.GetCurrentLevel().AvailabilitySt == Level.AVAILABILITY_STATE.UNLOCKED)
-                    --GameMgr.Instance.LevelIndex;
-            }
-
-            //level = 0, check if we came from previous stage
-            else
-            {
-                if (GameMgr.Instance.StageIndex < 0)
-                {
-                    --GameMgr.Instance.StageIndex;
-                    GameMgr.Instance.LevelIndex = 14;
-
-                }
-                else
-                {
-                    Debug.LogWarning("Trying to retry lvl 0 as if we succeeded, REVIEW");
-
-                }
-            }
+            _gameMgr.LevelIndex = _gameMgr.LastLevelPlayed;
+            _gameMgr.StageIndex = _gameMgr.LastStagePlayed;
         }
-
         GameMgr.Instance.StartCurrentLevel();
     }
 
@@ -539,6 +515,14 @@ public class UIHelper : MonoBehaviour {
     {
         _comboText.gameObject.SetActive(false);
         _comboText.transform.parent.gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// Raise flag to take the screenshot and share OnPostRender
+    /// </summary>
+    public void ShareScore()
+    {
+        _gameMgr.GameCamera.GetComponent<ShareFunction>().NativeShareScreen();
     }
     #endregion
 

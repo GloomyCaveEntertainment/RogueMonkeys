@@ -448,8 +448,8 @@ public class GameMgr : MonoBehaviour {
     {
         Debug.Log("Start cLevel");
         //Show Adv
-        //Once ad ended, LEvelReady is called from AdsMgr
-        //if (!AdsMgr.Instance.ShowAd())
+        //Once ads ended, LevelReady is called from AdsMgr
+        if (!AdsMgr.Instance.ShowAd())
             LevelReady();
         //_levelText.text = "Level "+_currentLevelIndex;
     }
@@ -853,16 +853,15 @@ public class GameMgr : MonoBehaviour {
             ++_comboCount;
             if (_comboCount > 1)
                 UIHelper.Instance.ShowComboCount(_comboCount);
-            ++_currentLaunchAudioIndex;
             if (_comboCount > 9)    //TODO: magic numbers!
                 _currentLaunchAudioIndex = 9;
             else
-                _currentLaunchAudioIndex = _comboCount;
+                _currentLaunchAudioIndex = _comboCount-1;
         }
         else
         {
             _lastHitTime = Time.time;
-            _currentLaunchAudioIndex = -1;   //reset index if there's no combo
+            _currentLaunchAudioIndex = 0;   //reset index if there's no combo
         }
     }
 
@@ -1265,6 +1264,9 @@ public class GameMgr : MonoBehaviour {
 
     public float MaxComboTime {  get { return _maxcomboTime; } private set { } }
     
+    //Used to store stage - level before increment after completing a level
+    public int LastStagePlayed { get; set; }
+    public int LastLevelPlayed { get; set; }
     #endregion
 
     #region Private Serialized Fields

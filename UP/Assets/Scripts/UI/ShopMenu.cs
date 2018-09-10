@@ -218,7 +218,6 @@ public class ShopMenu : MonoBehaviour {
         if (GameMgr.Instance.ShowInvFb)
         {
             DataMgr.Instance.SaveInventoryItems();
-            //TODO: check if game screen or selection and enable invenotry feedback
         }
         if (_itemBought)
             DataMgr.Instance.SaveGold();
@@ -729,17 +728,17 @@ public class ShopMenu : MonoBehaviour {
                 //Sign
                 if (((EquipmentItem)sItem).ModValueList[i] >= 0f)
                 {
-                    //if (((EquipmentItem)sItem).ModTypeList[i] != EquipmentItem.MOD_TYPE.FALL_SPEED && ((EquipmentItem)sItem).ModTypeList[i] != EquipmentItem.MOD_TYPE.RELOAD_SPEED)
+                    if (((EquipmentItem)sItem).ModTypeList[i] != EquipmentItem.MOD_TYPE.RELOAD_SPEED)
                         _itemBoughtText.text += " + ";
-                    //else
-                        //_itemBoughtText.text += " - ";
+                    else
+                        _itemBoughtText.text += " - ";
                 }
                 else
                 {
-                    //if (((EquipmentItem)sItem).ModTypeList[i] != EquipmentItem.MOD_TYPE.FALL_SPEED && ((EquipmentItem)sItem).ModTypeList[i] != EquipmentItem.MOD_TYPE.RELOAD_SPEED)
+                    if (((EquipmentItem)sItem).ModTypeList[i] != EquipmentItem.MOD_TYPE.RELOAD_SPEED)
                         _itemBoughtText.text += " - ";
-                    //else
-                        //_itemBoughtText.text += " + ";
+                    else
+                        _itemBoughtText.text += " + ";
                 }
                 //Format
                 if ((((EquipmentItem)sItem).ModTypeList[i]) != EquipmentItem.MOD_TYPE.SACK_SIZE)

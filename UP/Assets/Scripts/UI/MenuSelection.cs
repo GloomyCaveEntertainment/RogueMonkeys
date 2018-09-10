@@ -294,7 +294,7 @@ public class MenuSelection : MonoBehaviour {
     public void UpdateMoney()
     {
         _goldText.text = GameMgr.Instance.Gold.ToString("0");
-        AudioController.Play("aud_gold_coins");
+        //AudioController.Play("aud_money_01");
         LeanTween.scale(_goldText.gameObject, _goldText.transform.localScale * 1.2f, .5f).setEase(_goldFbCurve);//.setLoopPingPong(1);
     }
 

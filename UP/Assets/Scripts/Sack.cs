@@ -204,6 +204,8 @@ public class Sack : MonoBehaviour {
         _initSackPos = _Collector._CollectorSack.transform.localPosition;
         
         UpdateSackCountMiniList();
+
+        _handFeedbackImg.SetActive(false);
         //_catchAnimOffset = _Collector._Sack.transform.lossyScale.y * 0.1f;
         //Debug.Log("INIT SACK; sack init pos: " + _initSackHeight);
     }
@@ -370,6 +372,9 @@ public class Sack : MonoBehaviour {
         _reloadPerFruitTime = _currentReloadTime / _fruitList.Count;
         _reloadTimer = _reloadPerFruitTime; //firs fruit pop is instant
         _Collector.Reload(/*_reloadTime*/);
+
+        if (GameMgr.Instance.LevelIndex == 0 && GameMgr.Instance.StageIndex == 0 && _handFeedbackImg.activeInHierarchy)
+            _handFeedbackImg.SetActive(false);
     }
 
     /// <summary>
@@ -639,7 +644,7 @@ public class Sack : MonoBehaviour {
        
         f.DepositOnSack();
         f.transform.position = _stackEnterPt.position;
-        f.transform.SetParent(transform);
+        f.transform.SetParent(_collectedFruitRoot);
         _fruitList.Add(f);
         ++_currentStackIndex;
         UpdateUISack(f);       
@@ -686,6 +691,8 @@ public class Sack : MonoBehaviour {
             _feedbackTimer = 0f;
             _sackOutline.effectColor = new Color(1f, 0f, 0f, 0f);//Red no alpha
             _sackOutline.effectDistance = Vector2.one;
+            if (GameMgr.Instance.LevelIndex == 0 && GameMgr.Instance.StageIndex == 0)
+                _handFeedbackImg.SetActive(true);
         }
         _fullFeedback = enable;
         _sackOutline.enabled = enable;
@@ -779,6 +786,12 @@ public class Sack : MonoBehaviour {
     private AnimationCurve _fullFeedbackAnimC;
     [SerializeField]
     private float _fullFbTime;  //full sack feedback anim time
+
+    [SerializeField]
+    private GameObject _handFeedbackImg;
+
+    [SerializeField]
+    private RectTransform _collectedFruitRoot;
     #endregion
 
     #region Private Non-serialized Fields

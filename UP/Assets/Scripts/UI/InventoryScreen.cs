@@ -456,17 +456,17 @@ public class InventoryScreen : MonoBehaviour {
             //Sign
             if (eI.ModValueList[i] >= 0f)
             {
-                //if (eI.ModTypeList[i] != EquipmentItem.MOD_TYPE.FALL_SPEED && eI.ModTypeList[i] != EquipmentItem.MOD_TYPE.RELOAD_SPEED)
+                if (eI.ModTypeList[i] != EquipmentItem.MOD_TYPE.RELOAD_SPEED)
                     displayedText += " + ";
-                //else
-                    //displayedText += " - ";
+                else
+                    displayedText += " - ";
             }
             else
             {
-                //if (eI.ModTypeList[i] != EquipmentItem.MOD_TYPE.FALL_SPEED && eI.ModTypeList[i] != EquipmentItem.MOD_TYPE.RELOAD_SPEED)
+                if (eI.ModTypeList[i] != EquipmentItem.MOD_TYPE.RELOAD_SPEED)
                     displayedText += " - ";
-                //else
-                    //displayedText += " + ";
+                else
+                    displayedText += " + ";
             }
             //Format, percent/integer
             if (eI.ModTypeList[i] != EquipmentItem.MOD_TYPE.SACK_SIZE)
@@ -725,17 +725,17 @@ public class InventoryScreen : MonoBehaviour {
             //Sign
             if (eI.ModValueList[i] >= 0f)
             {
-                //if (eI.ModTypeList[i] != EquipmentItem.MOD_TYPE.FALL_SPEED && eI.ModTypeList[i] != EquipmentItem.MOD_TYPE.RELOAD_SPEED)
+                if (eI.ModTypeList[i] != EquipmentItem.MOD_TYPE.RELOAD_SPEED)
                     displayedText += " + ";
-                //else
-                    //displayedText += " - ";
+                else
+                    displayedText += " - ";
             }
             else
             {
-                //if (eI.ModTypeList[i] != EquipmentItem.MOD_TYPE.FALL_SPEED && eI.ModTypeList[i] != EquipmentItem.MOD_TYPE.RELOAD_SPEED)
+                if (eI.ModTypeList[i] != EquipmentItem.MOD_TYPE.RELOAD_SPEED)
                     displayedText += " - ";
-                //else
-                    //displayedText += " + ";
+                else
+                    displayedText += " + ";
             }
 
             //Format, percent/integer

@@ -156,6 +156,15 @@ public class FruitTree : MonoBehaviour {
             LoadSlotItem(_slotB);
 
         GenerateFruitPool(_levelFruitSpawnTypeList, _currentGoldSpawnChance, _currentEquipmentSpawnChance);
+
+        if (GameMgr.Instance.LevelIndex == 0 && GameMgr.Instance.StageIndex == 0 )
+        {
+            _feedbackHandRoot = _feedbackHandPool[0].transform.parent;
+            _currentFeedbackHandIndex = 0;
+            foreach (GameObject hand in _feedbackHandPool)
+                hand.SetActive(false);
+        }
+        
     }
 
     /// <summary>
@@ -729,8 +738,7 @@ public class FruitTree : MonoBehaviour {
         fr.transform.SetParent(_fruitRoot);     //Reset parent to pool root
 
         if (fruitMissed)
-        {
-            
+        {        
             //Water sound: deprecated
             if (_gameMgr.StageIndex == 0 && fr.transform.position.x < _gameMgr.MinRightFingerRef.position.x && fr.transform.position.x > _gameMgr.MaxLeftFingerRef.position.x)
                 AudioController.Play("aud_fr_missed_0");
@@ -789,18 +797,42 @@ public class FruitTree : MonoBehaviour {
                 //Splash particles
                 GameMgr.Instance.SetSplashParticle(fr, fr.transform.position);
                 AudioController.Play("aud_fr_missed_0");
-            }
-                
+            }              
         }
         else
         {
             if (fr._Ftype == Fruit.F_TYPE.SPIKY || fr._Ftype == Fruit.F_TYPE.SACK_BREAKER_LAUNCH)
                 fr.StopFallingSound();
         }
-
+        //if using tutorial feedback, return to its pool
+        if (fr._FState == Fruit.FRUIT_ST.FALLING_FROM_TREE && _gameMgr.LevelIndex == 0 && _gameMgr.StageIndex == 0)
+            RemoveFeedbackHand(fr.GetComponentInChildren<FeedbackHand>());
+        
         
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="fh"></param>
+    public void RemoveFeedbackHand(FeedbackHand fh)
+    {
+        Debug.Log("NULL???" + fh == null);
+        if (_currentFeedbackHandIndex > 0)
+        {
+            --_currentFeedbackHandIndex;
+            fh.gameObject.SetActive(false);
+            fh.transform.parent = _feedbackHandRoot;
+
+            //seek left and place at the end the current unit
+            GameObject tmp = _feedbackHandPool[_currentFeedbackHandIndex];
+            for (int i = _currentFeedbackHandIndex; i < _feedbackHandPool.Count - 1; ++i)
+                _feedbackHandPool[i] = _feedbackHandPool[i + 1];
+            _feedbackHandPool[_feedbackHandPool.Count - 1] = tmp;
+        }
+        else
+            Debug.LogWarning("Attemtping to remove an unexistent feedback hand");
+    }
     /// <summary>
     ///     
     /// </summary>
@@ -865,6 +897,14 @@ public class FruitTree : MonoBehaviour {
             _fruitList[_currentPoolIndex].FruitTree = this;
             _fruitList[_currentPoolIndex].StartFruit();
 
+            //If it's first level, place hand feedback image over falling fruits
+            if (_gameMgr.LevelIndex == 0 && _gameMgr.StageIndex == 0)
+            {
+                _feedbackHandPool[_currentFeedbackHandIndex].transform.parent = _fruitList[_currentPoolIndex].transform;
+                _feedbackHandPool[_currentFeedbackHandIndex].transform.position = _fruitList[_currentPoolIndex].transform.position;
+                _feedbackHandPool[_currentFeedbackHandIndex].SetActive(true);
+                ++_currentFeedbackHandIndex;
+            }
             //Leaves particles
             SetLeavesParticle(_fruitList[_currentPoolIndex].transform.position.x);
 
@@ -1021,8 +1061,8 @@ public class FruitTree : MonoBehaviour {
     private Transform _leavesPsHeightRef;
     [SerializeField]
     private Material _fruitSplashMaterial, _featherSplashMaterial;
-    //[SerializeField]
-    //private List<Gradient> _fruitSplashColorGradList;  //ordered by FType
+    [SerializeField]
+    private List<GameObject> _feedbackHandPool; //fill this list only for level0-stage0 scene
     #endregion
 
     #region Private Non-serialized Fields
@@ -1062,5 +1102,7 @@ public class FruitTree : MonoBehaviour {
     private bool _shaking;
 
     private int _currentPoolSplashIndex, _currentPoolFeatherIndex,  _currentPoolLeavesIndex;   //particles pool index 
+    private int _currentFeedbackHandIndex;
+    private Transform _feedbackHandRoot;
     #endregion
 }

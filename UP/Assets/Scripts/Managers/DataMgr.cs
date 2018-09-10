@@ -706,7 +706,8 @@ public class DataMgr : MonoBehaviour {
             GameMgr.Instance.LevelUnlocked = true;
         }
         //stage completed if last level completed
-        else if (GameMgr.Instance._StageList[stageIndex].GetLevelList()[lvlIndex].AvailabilitySt != Level.AVAILABILITY_STATE.FAILED && lvlIndex == GameMgr.Instance._StageList[stageIndex].GetLevelList().Count - 1 && stageIndex < stages.Count - 1)
+        else if (GameMgr.Instance._StageList[stageIndex].GetLevelList()[lvlIndex].AvailabilitySt != Level.AVAILABILITY_STATE.FAILED && lvlIndex == GameMgr.Instance._StageList[stageIndex].GetLevelList().Count - 1 
+            && stageIndex < stages.Count - 1 && GameMgr.Instance._StageList[stageIndex + 1].GetAvState() == Stage.STAGE_STATE.LOCKED)
         {
             GameMgr.Instance.LevelUnlocked = true;
             //unlock next stage

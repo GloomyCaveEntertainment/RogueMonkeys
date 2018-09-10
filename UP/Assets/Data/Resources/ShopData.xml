@@ -6,7 +6,7 @@
             <box_prob type="S" prob ="0.8" val="25">
               <item_pool>
                 <item id="Empty" prob ="0.2"/>
-                <item id="Mech Gloves" prob ="0.3"/>
+                <item id="Ring" prob ="0.3"/>
                 <item id="Earrings" prob ="0.2"/>
                 <item id="Necklace" prob ="0.1"/>
                 <item id="Quick Sack" prob ="0.2"/>

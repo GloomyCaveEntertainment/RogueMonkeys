@@ -509,6 +509,9 @@ public class Fruit : MonoBehaviour {
                     
                     break;
             }
+            //remove feedback image on launch
+            if (GameMgr.Instance.LevelIndex == 0 && GameMgr.Instance.StageIndex == 0)
+                _fTree.RemoveFeedbackHand(GetComponentInChildren<FeedbackHand>());
             Debug.Log("Launch!");
         }
         

@@ -63,8 +63,8 @@ public class LevelFinishedScreen : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         _fruitIndex = new List<FruitIndex>();
-        EnableIconButtons(false);
-	}
+        EnableIconButtons(false); 
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -214,6 +214,10 @@ public class LevelFinishedScreen : MonoBehaviour {
                     GameMgr.Instance.AddGold(_tempGold);
                     GameMgr.Instance.SaveProgress();
                     _state = LF_MENU_STATE.FINISHED;
+
+                    GameMgr.Instance.LastStagePlayed = GameMgr.Instance.StageIndex;
+                    GameMgr.Instance.LastLevelPlayed = GameMgr.Instance.LevelIndex;
+                    //Level progression
                     if (GameMgr.Instance.GetCurrentLevel().GetAvState() != Level.AVAILABILITY_STATE.FAILED)
                     {
                         if (GameMgr.Instance.LevelIndex < GameMgr.Instance.GetCurrentStage().GetLevelList().Count - 1)
@@ -240,7 +244,7 @@ public class LevelFinishedScreen : MonoBehaviour {
                         //GameMgr.Instance.UpdateAndSaveProgression();
                     }
                     _nextButton.SetActive(true);    //always enabled since it goes to Selection Menu
-                    //}
+                    _shareButton.SetActive(true);
 
                     _retryButton.SetActive(true);
                     EnableGoldFeedback(GameMgr.Instance.GoldCollected);
@@ -326,6 +330,7 @@ public class LevelFinishedScreen : MonoBehaviour {
             LeanTween.cancel(_stageFinishedFb.gameObject);
         _stageFinishedFb.gameObject.SetActive(false);
         _nextButton.SetActive(false);
+        _shareButton.SetActive(false);
         _retryButton.SetActive(false);
         _rankLetterImg.gameObject.SetActive(false);
         _rankStampSuccess.gameObject.SetActive(false);
@@ -385,6 +390,7 @@ public class LevelFinishedScreen : MonoBehaviour {
         else if (_inventoryIconFx.activeSelf)
             _inventoryIconFx.SetActive(false);
     }
+
     #endregion
 
 
@@ -565,7 +571,7 @@ public class LevelFinishedScreen : MonoBehaviour {
     [SerializeField]
     private GameObject _stageFinishedFb;        //displayed when last stage level has finished
     [SerializeField]
-    private GameObject _retryButton, _nextButton;
+    private GameObject _retryButton, _shareButton, _nextButton;
     [SerializeField]
     private List<Button> _iconButtonList;
     [SerializeField]
